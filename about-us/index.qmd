@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+::: {.draft-note}
+Team, independence statement, acknowledgements, and contact for rights holders to come (Stage 5).
+:::

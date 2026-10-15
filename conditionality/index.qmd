@@ -1,0 +1,48 @@
+---
+title: "Conditionality"
+dataset: conditionality
+toc: true
+# Retired 2017 page (plan Section 4, URL map). Test on staging.
+aliases:
+  - /imf-conditionality.html
+---
+
+::: {.draft-note}
+Summary paragraph to come (Stage 4).
+:::
+
+## At a glance
+
+{{< dataset-glance >}}
+
+## Downloads
+
+{{< dataset-downloads >}}
+
+## How to cite
+
+{{< dataset-cite >}}
+
+## Figures
+
+::: {.draft-note}
+Figures to come, redrawn in R from the data (Stage 6).
+:::
+
+## Related datasets
+
+::: {.dataset-grid}
+{{< dataset-card programs >}}
+:::
+
+## Publications using the data
+
+::: {.draft-note}
+List to come (Stage 4).
+:::
+
+## Version history
+
+::: {.draft-note}
+Version history to come (Stage 4).
+:::

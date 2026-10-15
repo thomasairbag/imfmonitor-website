@@ -1,0 +1,75 @@
+# Single source of truth for dataset facts shown on the site (plan Section 6).
+# _quarto.yml loads this file as metadata for every page, and the shortcodes in
+# _extensions/imfmonitor/ display it. Change a fact here, once.
+#
+# Fill a field only with a verified value, and record where it came from in
+# `sources`. Leave unknown fields empty: the site then shows "To be confirmed".
+#
+#   id        page folder, e.g. conditionality -> /conditionality/
+#   name      display name
+#   tagline   one-line description for dataset cards
+#   coverage  period and countries covered
+#   version   version label
+#   unit      unit of observation
+#   updated   date of the last data update
+#   licence   licence name
+#   status    available | forthcoming | replication-only
+#   citation  recommended citation, in Markdown (italics with *...*)
+#   files     list of downloads; each has label, href (path under files/ or a
+#             DOI URL), kind (codebook | data | code | archive), format, size,
+#             and version. Codebooks are listed first automatically.
+#   sources   list: which file, codebook, publication, or person each fact
+#             above comes from
+
+datasets:
+  - id: conditionality
+    name: Conditionality
+    tagline:
+    coverage:
+    version:
+    unit:
+    updated:
+    licence:
+    status:
+    citation:
+    files: []
+    sources: []
+
+  - id: programs
+    name: Programs
+    tagline:
+    coverage:
+    version:
+    unit:
+    updated:
+    licence:
+    status:
+    citation:
+    files: []
+    sources: []
+
+  - id: governance
+    name: Governance
+    tagline:
+    coverage:
+    version:
+    unit:
+    updated:
+    licence:
+    status:
+    citation:
+    files: []
+    sources: []
+
+  - id: technical-assistance
+    name: Technical Assistance
+    tagline:
+    coverage:
+    version:
+    unit:
+    updated:
+    licence:
+    status:
+    citation:
+    files: []
+    sources: []

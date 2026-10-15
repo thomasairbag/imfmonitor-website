@@ -1,0 +1,29 @@
+---
+title: "IMF Monitor"
+subtitle: "Independent research data on the International Monetary Fund"
+pagetitle: "Independent research data on the International Monetary Fund"
+---
+
+<!-- Draft introduction, adapted from the current site's description. Thomas to review. -->
+
+::: {.lead}
+IMF Monitor makes research data on the International Monetary Fund accessible to academics, policymakers, journalists, and civil society. The data are compiled by independent researchers, not published by the IMF. They draw on IMF documents and aim to let users trace results back to their documentary sources.
+:::
+
+## Datasets
+
+::: {.dataset-grid}
+{{< dataset-card conditionality >}}
+
+{{< dataset-card programs >}}
+
+{{< dataset-card governance >}}
+
+{{< dataset-card technical-assistance >}}
+:::
+
+## More data
+
+- [Other Data](other-data/index.qmd): smaller datasets and supplementary data.
+- [Download Data](download-data/index.qmd): every public dataset and its files in one place.
+- [Replication Data](replication-data/index.qmd): data and code for published research.

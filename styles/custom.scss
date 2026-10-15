@@ -1,0 +1,262 @@
+/*-- scss:defaults --*/
+
+// Starting palette (plan Section 5). Contrast on white: text 16.7:1,
+// green 8.2:1, muted 6.3:1, amber 5.9:1; white on green 8.2:1.
+$imfm-text:    #1A1F1E;
+$imfm-primary: #24584C;
+$imfm-sand:    #F6EFE4;
+$imfm-rule:    #D9D4CA;
+$imfm-muted:   #5C625F;
+$imfm-amber:   #8A5A00;  // status: forthcoming
+
+$body-color:   $imfm-text;
+$primary:      $imfm-primary;
+$link-color:   $imfm-primary;
+$border-color: $imfm-rule;
+$navbar-bg:    $imfm-primary;
+$navbar-fg:    #FFFFFF;
+$footer-bg:    $imfm-sand;
+$footer-fg:    $imfm-text;
+
+// Source Serif 4 and Source Sans 3 (SIL OFL) are to be self-hosted once
+// approved. Until then these stacks fall back to system fonts.
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family:   "Source Serif 4", Georgia, "Times New Roman", serif;
+$headings-font-weight:   600;
+
+// Tighter menu spacing, so the wordmark and eight items fit from 1200px.
+$navbar-nav-link-padding-x: 0.4rem;
+
+/*-- scss:rules --*/
+
+// Header and navigation
+
+.navbar-brand .navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45rem;
+}
+
+.skip-link:focus {
+  position: absolute;
+  z-index: 2000;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #FFFFFF;
+  color: $imfm-primary;
+  border: 2px solid $imfm-primary;
+}
+
+// Text
+
+.lead {
+  font-weight: 400;
+}
+
+// Visible marker for text still to be written. None may remain at launch.
+.draft-note {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px dashed $imfm-muted;
+  border-radius: 0.25rem;
+  color: $imfm-muted;
+  font-style: italic;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.tbc {
+  color: $imfm-muted;
+  font-style: italic;
+}
+
+// Status badges: Available, Forthcoming, Replication only
+
+.status {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.status-available {
+  background: $imfm-primary;
+  border-color: $imfm-primary;
+  color: #FFFFFF;
+}
+
+.status-forthcoming {
+  color: $imfm-amber;
+}
+
+.status-replication-only {
+  color: $imfm-text;
+  border-color: $imfm-rule;
+}
+
+.status-tbc {
+  color: $imfm-muted;
+  border-style: dashed;
+  font-weight: 400;
+  font-style: italic;
+}
+
+// Dataset cards (Home, related datasets, Other Data)
+
+.dataset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.dataset-card {
+  position: relative;
+  padding: 1rem 1.25rem;
+  border: 1px solid $imfm-rule;
+  border-radius: 0.375rem;
+  background: #FFFFFF;
+
+  &:hover,
+  &:focus-within {
+    border-color: $imfm-primary;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card-label {
+  font-weight: 600;
+}
+
+// At-a-glance panel
+
+.glance {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: $imfm-sand;
+  border: 1px solid $imfm-rule;
+  border-radius: 0.375rem;
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.4rem 1.5rem;
+    margin: 0;
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    dl {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    dd {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Download list
+
+.downloads {
+  margin: 1rem 0 1.5rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid $imfm-rule;
+  }
+
+  li {
+    border-bottom: 1px solid $imfm-rule;
+  }
+}
+
+.download-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 0;
+}
+
+.file-details {
+  color: $imfm-muted;
+  font-size: 0.875rem;
+}
+
+// Citation box
+
+.cite-box {
+  margin: 1rem 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: $imfm-sand;
+  border-left: 4px solid $imfm-primary;
+
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Footer
+
+.nav-footer {
+  font-size: 0.875rem;
+  align-items: flex-start;
+}
+
+.nav-footer-left {
+  max-width: 40rem;
+  text-align: left;
+}
+
+// Quarto centres stacked footer items on small screens; keep them aligned
+// with the notice above.
+@include media-breakpoint-down(md) {
+  .nav-footer-right {
+    text-align: left;
+  }
+}

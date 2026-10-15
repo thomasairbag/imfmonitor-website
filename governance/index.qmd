@@ -1,0 +1,45 @@
+---
+title: "Governance"
+dataset: governance
+toc: true
+---
+
+::: {.draft-note}
+Summary paragraph to come (Stage 5).
+:::
+
+## At a glance
+
+{{< dataset-glance >}}
+
+## Downloads
+
+{{< dataset-downloads >}}
+
+## How to cite
+
+{{< dataset-cite >}}
+
+## Figures
+
+::: {.draft-note}
+Figures to come, redrawn in R from the data (Stage 6).
+:::
+
+## Related datasets
+
+::: {.draft-note}
+Related datasets to come (Stage 5).
+:::
+
+## Publications using the data
+
+::: {.draft-note}
+List to come (Stage 5).
+:::
+
+## Version history
+
+::: {.draft-note}
+Version history to come (Stage 5).
+:::

@@ -1,0 +1,68 @@
+project:
+  type: website
+  # GitHub Pages serves this folder.
+  output-dir: docs
+  # Render only .qmd pages, so CLAUDE.md and CHANGELOG.md are never published.
+  render:
+    - "**/*.qmd"
+  resources:
+    # Tells GitHub Pages to serve the files as they are, without Jekyll.
+    - ".nojekyll"
+    # Small downloads and the legacy codebook path (plan Sections 4 and 6).
+    - "files/**"
+    - "wp-content/**"
+
+# Dataset facts live in data/datasets.yml; the shortcodes in
+# _extensions/imfmonitor/ read and display them.
+
+website:
+  title: "IMF Monitor"
+  description: "Independent research data on the International Monetary Fund"
+  # site-url: set once the GitHub Pages address is known (plan Decision 4).
+  navbar:
+    # Eight items fit on one line from 1200px; narrower screens get the menu
+    # button.
+    collapse-below: xl
+    left:
+      - text: Conditionality
+        href: conditionality/index.qmd
+      - text: Programs
+        href: programs/index.qmd
+      - text: Governance
+        href: governance/index.qmd
+      - text: Technical Assistance
+        href: technical-assistance/index.qmd
+      - text: Other Data
+        href: other-data/index.qmd
+      - text: Download Data
+        href: download-data/index.qmd
+      - text: Replication Data
+        href: replication-data/index.qmd
+      - text: About
+        href: about-us/index.qmd
+  page-footer:
+    left: >
+      IMF Monitor is an independent academic project. It is not affiliated
+      with, endorsed by, or funded by the International Monetary Fund; "IMF"
+      and "International Monetary Fund" are used only to identify the subject
+      of its research.
+    right: >
+      Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
+
+format:
+  html:
+    lang: en-GB
+    theme:
+      - default
+      - styles/custom.scss
+    include-in-header:
+      # Keeps the site out of search engines until cutover (plan Stage 8).
+      # Remove only with Thomas's approval.
+      - text: |
+          <meta name="robots" content="noindex, nofollow">
+    include-before-body:
+      - _includes/skip-link.html
+    include-after-body:
+      - _includes/copy-citation.html
+
+editor: visual

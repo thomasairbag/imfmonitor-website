@@ -1,0 +1,7 @@
+---
+title: "Replication Data"
+---
+
+::: {.draft-note}
+Replication packages, organised by publication with one DOI each, to come (Stage 5).
+:::
