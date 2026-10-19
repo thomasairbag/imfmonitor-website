@@ -46,13 +46,16 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - Shared design: `_quarto.yml` (menu, footer, theme) and `styles/custom.scss` (palette, components). `_includes/` holds the skip link and the citation copy script. The menu collapses to a button below 1200px, because eight items need that width.
 - Small public files live under `files/`. The Board minutes corpus and replication packages link to Dataverse DOIs.
 - Staging safeguards: a `noindex` robots tag on every page (remove only at cutover, with approval), and `.nojekyll` so GitHub Pages serves files as they are. `site-url` is unset until the GitHub Pages address is known.
-- Provisional until Thomas approves: the palette, the homepage introduction, the footer wording, and the text wordmark. Fonts fall back to system fonts until Source Serif 4 and Source Sans 3 are self-hosted.
+- Approved on 19 October 2026: the palette, the homepage introduction and "More data" one-liners, and the footer wording.
+- Wordmark (chosen 19 October 2026): the bar mark, `images/logo-mark.svg` in sand, beside the "IMF Monitor" title; the mark alone is the browser-tab icon, `images/favicon.png`, drawn by `R/make-favicon.R`. Don't set "IMF" apart from "Monitor", which would read like an IMF sub-brand.
+- Source Serif 4 (headings) and Source Sans 3 (text) are self-hosted in `fonts/`, unmodified from Adobe's releases, with their SIL OFL licences. `styles/fonts.css` declares them; only regular, italic, and semibold (600) exist, so use 600 for bold.
 
 ## Programs and Conditionality are separate datasets
 
 - Programs records participation in IMF lending arrangements; Conditionality records the policy conditions within them. Neither is a subset of the other.
 - Each has its own top-level page, menu item, `datasets.yml` record, at-a-glance panel, download list, citation, and version history. They cross-link; neither nests under the other.
-- The Programs file moves out of the Conditionality download folder and onto the Programs page. A codebook that documents both may be linked from both pages.
+- A new Programs version (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. A codebook that documents both may be linked from both pages.
+- Conditionality is v2.1, which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
 - Programs has no verified Dataverse DOI. Don't create, borrow, or imply one.
 
 ## Design principles (plan Section 5)
@@ -78,7 +81,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 ## Working conventions
 
-- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: the site framework (shared design, menu, homepage, and empty dataset templates) awaits Thomas's review, and the project now lives outside Dropbox in a local Git repository. Stage 1 (Facts: filling `datasets.yml`) is next. No dataset content until Thomas asks.
+- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: Thomas reviewed the site framework and chose the wordmark on 19 October 2026. Stage 1 (Facts: filling `datasets.yml`) is next. No dataset content until Thomas asks.
 - Source data stays in Dropbox (paths in `CLAUDE.local.md`). Treat it as read-only, and copy into `files/` only files Thomas has approved for publication.
 - Pages and scripts read only files inside the repository and use relative paths, so the site builds on any machine.
 - Never commit unpublished or internal files (such as coder notes), credentials, or files approaching GitHub's 100 MiB limit.

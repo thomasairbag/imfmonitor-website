@@ -1,6 +1,6 @@
 # Single source of truth for dataset facts shown on the site (plan Section 6).
-# _quarto.yml loads this file as metadata for every page, and the shortcodes in
-# _extensions/imfmonitor/ display it. Change a fact here, once.
+# The shortcodes in _extensions/imfmonitor/ read this file directly and display
+# it; don't load it with metadata-files (see CLAUDE.md). Change a fact here, once.
 #
 # Fill a field only with a verified value, and record where it came from in
 # `sources`. Leave unknown fields empty: the site then shows "To be confirmed".

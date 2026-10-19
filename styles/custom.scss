@@ -1,7 +1,9 @@
 /*-- scss:defaults --*/
 
-// Starting palette (plan Section 5). Contrast on white: text 16.7:1,
-// green 8.2:1, muted 6.3:1, amber 5.9:1; white on green 8.2:1.
+// Palette (plan Section 5; kept, 19 October 2026). Contrast on white: text
+// 16.7:1, green 8.2:1, muted 6.2:1, amber 5.9:1; white on green 8.2:1. On
+// sand: text 14.6:1, green 7.1:1, muted 5.5:1, amber 5.2:1. The rule colour
+// (1.5:1) is for decorative borders only, never for text or meaning.
 $imfm-text:    #1A1F1E;
 $imfm-primary: #24584C;
 $imfm-sand:    #F6EFE4;
@@ -18,11 +20,15 @@ $navbar-fg:    #FFFFFF;
 $footer-bg:    $imfm-sand;
 $footer-fg:    $imfm-text;
 
-// Source Serif 4 and Source Sans 3 (SIL OFL) are to be self-hosted once
-// approved. Until then these stacks fall back to system fonts.
+// Source Serif 4 and Source Sans 3 (SIL OFL), self-hosted from fonts/ and
+// declared in styles/fonts.css. System fonts remain as fallbacks.
 $font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $headings-font-family:   "Source Serif 4", Georgia, "Times New Roman", serif;
 $headings-font-weight:   600;
+// Only regular (400) and semibold (600) are hosted, so bold text uses
+// semibold rather than a browser-synthesised bold.
+$font-weight-bold:       600;
+$font-weight-bolder:     600;
 
 // Tighter menu spacing, so the wordmark and eight items fit from 1200px.
 $navbar-nav-link-padding-x: 0.4rem;
@@ -35,6 +41,16 @@ $navbar-nav-link-padding-x: 0.4rem;
   font-family: $headings-font-family;
   font-weight: 600;
   font-size: 1.25rem;
+}
+
+// Bar mark beside the title, sized to the title's cap height as in the
+// approved mock-up. Quarto's default makes the logo at least 30px tall.
+.navbar-brand .navbar-logo {
+  height: 1.375rem;
+  min-height: 0;
+  max-height: none;
+  margin-right: 0.5rem;
+  padding-right: 0;
 }
 
 .navbar-nav .nav-link {

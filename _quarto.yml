@@ -11,6 +11,8 @@ project:
     # Small downloads and the legacy codebook path (plan Sections 4 and 6).
     - "files/**"
     - "wp-content/**"
+    # Self-hosted fonts and their licences, referenced from styles/fonts.css.
+    - "fonts/**"
 
 # Dataset facts live in data/datasets.yml; the shortcodes in
 # _extensions/imfmonitor/ read and display them.
@@ -19,7 +21,13 @@ website:
   title: "IMF Monitor"
   description: "Independent research data on the International Monetary Fund"
   # site-url: set once the GitHub Pages address is known (plan Decision 4).
+  # Bar mark wordmark and tab icon (plan decision 21). R/make-favicon.R draws
+  # the icon.
+  favicon: images/favicon.png
   navbar:
+    logo: images/logo-mark.svg
+    # Decorative: the title text beside it already says "IMF Monitor".
+    logo-alt: ""
     # Eight items fit on one line from 1200px; narrower screens get the menu
     # button.
     collapse-below: xl
@@ -55,6 +63,7 @@ format:
     theme:
       - default
       - styles/custom.scss
+    css: styles/fonts.css
     include-in-header:
       # Keeps the site out of search engines until cutover (plan Stage 8).
       # Remove only with Thomas's approval.

@@ -4,8 +4,6 @@ subtitle: "Independent research data on the International Monetary Fund"
 pagetitle: "Independent research data on the International Monetary Fund"
 ---
 
-<!-- Draft introduction, adapted from the current site's description. Thomas to review. -->
-
 ::: {.lead}
 IMF Monitor makes research data on the International Monetary Fund accessible to academics, policymakers, journalists, and civil society. The data are compiled by independent researchers, not published by the IMF. They draw on IMF documents and aim to let users trace results back to their documentary sources.
 :::
