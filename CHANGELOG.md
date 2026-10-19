@@ -11,3 +11,4 @@ Nothing published yet. The site is in development and not public.
 - Fonts: Source Serif 4 and Source Sans 3 are now self-hosted, with their SIL Open Font Licences.
 - Wordmark: an original bar mark beside "IMF Monitor" in the menu bar, and the same mark as the browser-tab icon.
 - Governance and Technical Assistance pages no longer have a "Related datasets" section.
+- Replication Data page removed: replication materials are on Harvard Dataverse, linked from Home and Download Data. The menu now has seven items.

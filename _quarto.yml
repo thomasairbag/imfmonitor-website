@@ -28,7 +28,8 @@ website:
     logo: images/logo-mark.svg
     # Decorative: the title text beside it already says "IMF Monitor".
     logo-alt: ""
-    # Eight items fit on one line from 1200px; narrower screens get the menu
+    # Seven items fit on one line from 1200px. At the next breakpoint down
+    # (992px) they would only just fit, so narrower screens get the menu
     # button.
     collapse-below: xl
     left:
@@ -44,8 +45,6 @@ website:
         href: other-data/index.qmd
       - text: Download Data
         href: download-data/index.qmd
-      - text: Replication Data
-        href: replication-data/index.qmd
       - text: About
         href: about-us/index.qmd
   page-footer:

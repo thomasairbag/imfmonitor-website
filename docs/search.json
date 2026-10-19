@@ -49,95 +49,60 @@
     "text": "Version history\n\nVersion history to come (Stage 5)."
   },
   {
-    "objectID": "programs/index.html",
-    "href": "programs/index.html",
-    "title": "Programs",
+    "objectID": "other-data/index.html",
+    "href": "other-data/index.html",
+    "title": "Other Data",
+    "section": "",
+    "text": "Skip to main content\n\n\n\n\n\n\nShort entries for smaller datasets to come (Stage 5), each linking to its package or file."
+  },
+  {
+    "objectID": "governance/index.html",
+    "href": "governance/index.html",
+    "title": "Governance",
     "section": "",
     "text": "Skip to main content"
   },
   {
-    "objectID": "programs/index.html#at-a-glance",
-    "href": "programs/index.html#at-a-glance",
-    "title": "Programs",
+    "objectID": "governance/index.html#at-a-glance",
+    "href": "governance/index.html#at-a-glance",
+    "title": "Governance",
     "section": "At a glance",
     "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
   },
   {
-    "objectID": "programs/index.html#downloads",
-    "href": "programs/index.html#downloads",
-    "title": "Programs",
+    "objectID": "governance/index.html#downloads",
+    "href": "governance/index.html#downloads",
+    "title": "Governance",
     "section": "Downloads",
     "text": "Downloads\n\nFiles to be confirmed."
   },
   {
-    "objectID": "programs/index.html#how-to-cite",
-    "href": "programs/index.html#how-to-cite",
-    "title": "Programs",
+    "objectID": "governance/index.html#how-to-cite",
+    "href": "governance/index.html#how-to-cite",
+    "title": "Governance",
     "section": "How to cite",
     "text": "How to cite\n\nCitation to be confirmed."
   },
   {
-    "objectID": "programs/index.html#figures",
-    "href": "programs/index.html#figures",
-    "title": "Programs",
+    "objectID": "governance/index.html#figures",
+    "href": "governance/index.html#figures",
+    "title": "Governance",
     "section": "Figures",
     "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
   },
   {
-    "objectID": "programs/index.html#related-datasets",
-    "href": "programs/index.html#related-datasets",
-    "title": "Programs",
-    "section": "Related datasets",
-    "text": "Related datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
-  },
-  {
-    "objectID": "programs/index.html#publications-using-the-data",
-    "href": "programs/index.html#publications-using-the-data",
-    "title": "Programs",
+    "objectID": "governance/index.html#publications-using-the-data",
+    "href": "governance/index.html#publications-using-the-data",
+    "title": "Governance",
     "section": "Publications using the data",
     "text": "Publications using the data\n\nList to come (Stage 5)."
   },
   {
-    "objectID": "programs/index.html#version-history",
-    "href": "programs/index.html#version-history",
-    "title": "Programs",
+    "objectID": "governance/index.html#version-history",
+    "href": "governance/index.html#version-history",
+    "title": "Governance",
     "section": "Version history",
     "text": "Version history\n\nVersion history to come (Stage 5)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "IMF Monitor",
-    "section": "",
-    "text": "Skip to main content"
-  },
-  {
-    "objectID": "index.html#datasets",
-    "href": "index.html#datasets",
-    "title": "IMF Monitor",
-    "section": "Datasets",
-    "text": "Datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nPrograms\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nGovernance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nTechnical Assistance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
-  },
-  {
-    "objectID": "index.html#more-data",
-    "href": "index.html#more-data",
-    "title": "IMF Monitor",
-    "section": "More data",
-    "text": "More data\n\nOther Data: smaller datasets and supplementary data.\nDownload Data: every public dataset and its files in one place.\nReplication Data: data and code for published research."
-  },
-  {
-    "objectID": "download-data/index.html",
-    "href": "download-data/index.html",
-    "title": "Download Data",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\nEach public IMF Monitor dataset, with a link to its page, codebook, and files. Replication packages for individual publications are on Replication Data.\n\n\n\n\nDataset\nCoverage\nVersion\nStatus\n\n\n\n\nConditionality\nTo be confirmed\nTo be confirmed\nStatus to be confirmed\n\n\nPrograms\nTo be confirmed\nTo be confirmed\nStatus to be confirmed\n\n\nGovernance\nTo be confirmed\nTo be confirmed\nStatus to be confirmed\n\n\nTechnical Assistance\nTo be confirmed\nTo be confirmed\nStatus to be confirmed"
-  },
-  {
-    "objectID": "about-us/index.html",
-    "href": "about-us/index.html",
-    "title": "About",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nTeam, independence statement, acknowledgements, and contact for rights holders to come (Stage 5)."
   },
   {
     "objectID": "conditionality/index.html",
@@ -196,73 +161,101 @@
     "text": "Version history\n\nVersion history to come (Stage 4)."
   },
   {
-    "objectID": "governance/index.html",
-    "href": "governance/index.html",
-    "title": "Governance",
+    "objectID": "about-us/index.html",
+    "href": "about-us/index.html",
+    "title": "About",
+    "section": "",
+    "text": "Skip to main content\n\n\n\n\n\n\nTeam, independence statement, acknowledgements, and contact for rights holders to come (Stage 5)."
+  },
+  {
+    "objectID": "download-data/index.html",
+    "href": "download-data/index.html",
+    "title": "Download Data",
+    "section": "",
+    "text": "Skip to main content\nEach public IMF Monitor dataset, with a link to its page, codebook, and files."
+  },
+  {
+    "objectID": "download-data/index.html#replication-data-and-code",
+    "href": "download-data/index.html#replication-data-and-code",
+    "title": "Download Data",
+    "section": "Replication data and code",
+    "text": "Replication data and code\nReplication data, code, and documentation for published research using IMF Monitor data are in the IMF Monitor collection on Harvard Dataverse."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IMF Monitor",
     "section": "",
     "text": "Skip to main content"
   },
   {
-    "objectID": "governance/index.html#at-a-glance",
-    "href": "governance/index.html#at-a-glance",
-    "title": "Governance",
+    "objectID": "index.html#datasets",
+    "href": "index.html#datasets",
+    "title": "IMF Monitor",
+    "section": "Datasets",
+    "text": "Datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nPrograms\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nGovernance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nTechnical Assistance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
+  },
+  {
+    "objectID": "index.html#more-data",
+    "href": "index.html#more-data",
+    "title": "IMF Monitor",
+    "section": "More data",
+    "text": "More data\n\nOther Data: smaller datasets and supplementary data.\nDownload Data: every public dataset and its files in one place.\nReplication Data: data and code for published research, on Harvard Dataverse."
+  },
+  {
+    "objectID": "programs/index.html",
+    "href": "programs/index.html",
+    "title": "Programs",
+    "section": "",
+    "text": "Skip to main content"
+  },
+  {
+    "objectID": "programs/index.html#at-a-glance",
+    "href": "programs/index.html#at-a-glance",
+    "title": "Programs",
     "section": "At a glance",
     "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
   },
   {
-    "objectID": "governance/index.html#downloads",
-    "href": "governance/index.html#downloads",
-    "title": "Governance",
+    "objectID": "programs/index.html#downloads",
+    "href": "programs/index.html#downloads",
+    "title": "Programs",
     "section": "Downloads",
     "text": "Downloads\n\nFiles to be confirmed."
   },
   {
-    "objectID": "governance/index.html#how-to-cite",
-    "href": "governance/index.html#how-to-cite",
-    "title": "Governance",
+    "objectID": "programs/index.html#how-to-cite",
+    "href": "programs/index.html#how-to-cite",
+    "title": "Programs",
     "section": "How to cite",
     "text": "How to cite\n\nCitation to be confirmed."
   },
   {
-    "objectID": "governance/index.html#figures",
-    "href": "governance/index.html#figures",
-    "title": "Governance",
+    "objectID": "programs/index.html#figures",
+    "href": "programs/index.html#figures",
+    "title": "Programs",
     "section": "Figures",
     "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
   },
   {
-    "objectID": "governance/index.html#publications-using-the-data",
-    "href": "governance/index.html#publications-using-the-data",
-    "title": "Governance",
+    "objectID": "programs/index.html#related-datasets",
+    "href": "programs/index.html#related-datasets",
+    "title": "Programs",
+    "section": "Related datasets",
+    "text": "Related datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
+  },
+  {
+    "objectID": "programs/index.html#publications-using-the-data",
+    "href": "programs/index.html#publications-using-the-data",
+    "title": "Programs",
     "section": "Publications using the data",
     "text": "Publications using the data\n\nList to come (Stage 5)."
   },
   {
-    "objectID": "governance/index.html#version-history",
-    "href": "governance/index.html#version-history",
-    "title": "Governance",
+    "objectID": "programs/index.html#version-history",
+    "href": "programs/index.html#version-history",
+    "title": "Programs",
     "section": "Version history",
     "text": "Version history\n\nVersion history to come (Stage 5)."
-  },
-  {
-    "objectID": "other-data/index.html",
-    "href": "other-data/index.html",
-    "title": "Other Data",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nShort entries for smaller datasets to come (Stage 5), each linking to its package or file."
-  },
-  {
-    "objectID": "replication-data/index.html",
-    "href": "replication-data/index.html",
-    "title": "Replication Data",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nReplication packages, organised by publication with one DOI each, to come (Stage 5)."
-  },
-  {
-    "objectID": "technical-assistance/index.html#related-datasets",
-    "href": "technical-assistance/index.html#related-datasets",
-    "title": "Technical Assistance",
-    "section": "Related datasets",
-    "text": "Related datasets\n\nRelated datasets to come (Stage 5)."
   }
 ]

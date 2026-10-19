@@ -2,6 +2,10 @@
 title: "Download Data"
 ---
 
-Each public IMF Monitor dataset, with a link to its page, codebook, and files. Replication packages for individual publications are on [Replication Data](../replication-data/index.qmd).
+Each public IMF Monitor dataset, with a link to its page, codebook, and files.
 
 {{< dataset-hub >}}
+
+## Replication data and code
+
+Replication data, code, and documentation for published research using IMF Monitor data are in the [IMF Monitor collection on Harvard Dataverse](https://dataverse.harvard.edu/dataverse/imfmonitor).

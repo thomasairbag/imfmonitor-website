@@ -37,13 +37,14 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 ## Architecture (plan Sections 4–6)
 
-- Flat menu, in order: wordmark (Home) · Conditionality · Programs · Governance · Technical Assistance · Other Data · Download Data · Replication Data · About.
-- Each page is `<slug>/index.qmd`, publishing at `/<slug>/`. The slugs are `conditionality`, `programs`, `governance`, `technical-assistance`, `other-data`, `download-data`, `replication-data`, and `about-us`, plus root `index.qmd` and `404.qmd`.
+- Flat menu, in order: wordmark (Home) · Conditionality · Programs · Governance · Technical Assistance · Other Data · Download Data · About.
+- Each page is `<slug>/index.qmd`, publishing at `/<slug>/`. The slugs are `conditionality`, `programs`, `governance`, `technical-assistance`, `other-data`, `download-data`, and `about-us`, plus root `index.qmd` and `404.qmd`.
+- There is no Replication Data page (Thomas, 19 October 2026). Replication materials live on Harvard Dataverse: Home ("More data") and Download Data ("Replication data and code") link to the IMF Monitor collection, https://dataverse.harvard.edu/dataverse/imfmonitor, as the Wix site did. Don't call the collection complete.
 - Every dataset page uses one template: summary, at-a-glance panel, download list, how to cite, figures, related datasets, publications using the data, and version history. Copy an existing dataset page to start a new one. Governance and Technical Assistance have no related datasets, so their pages leave that section out.
 - `data/datasets.yml` is the single source of truth for coverage, versions, counts, files, and citations; its header documents the fields. Pages show it only through the shortcodes in `_extensions/imfmonitor/datasets.lua`: `dataset-glance`, `dataset-downloads`, `dataset-cite`, `dataset-card ID`, and `dataset-hub`. Never hard-code a fact that belongs in the file. Empty fields display "To be confirmed".
 - The shortcodes read `datasets.yml` directly. Don't load it with Quarto's `metadata-files`: that rewrites values matching file or folder names (on Windows, "Conditionality" becomes "../Conditionality").
 - Text still to be written goes in a `::: {.draft-note}` block, which shows as a dashed box. None may remain at launch. Bootstrap already uses the class name `.placeholder`, so don't use it.
-- Shared design: `_quarto.yml` (menu, footer, theme) and `styles/custom.scss` (palette, components). `_includes/` holds the skip link and the citation copy script. The menu collapses to a button below 1200px, because eight items need that width.
+- Shared design: `_quarto.yml` (menu, footer, theme) and `styles/custom.scss` (palette, components). `_includes/` holds the skip link and the citation copy script. The menu collapses to a button below 1200px: the wordmark, seven items, and search need about 950px, too tight for the 992px breakpoint.
 - Small public files live under `files/`. The Board minutes corpus and replication packages link to Dataverse DOIs.
 - Staging safeguards: a `noindex` robots tag on every page (remove only at cutover, with approval), and `.nojekyll` so GitHub Pages serves files as they are. `site-url` is unset until the GitHub Pages address is known.
 - Approved on 19 October 2026: the palette, the homepage introduction and "More data" one-liners, and the footer wording.
@@ -54,7 +55,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 - Programs records participation in IMF lending arrangements; Conditionality records the policy conditions within them. Neither is a subset of the other.
 - Each has its own top-level page, menu item, `datasets.yml` record, at-a-glance panel, download list, citation, and version history. They cross-link; neither nests under the other.
-- Programs v1.0 (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. A codebook that documents both may be linked from both pages.
+- Programs v1.0 (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook as a PDF and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. The June 2020 file stays available, under its current name, in the Programs version history. A codebook that documents both may be linked from both pages.
 - Conditionality is v2.1, which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
 - Programs has no verified Dataverse DOI. Don't create, borrow, or imply one.
 
