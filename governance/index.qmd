@@ -26,12 +26,6 @@ Summary paragraph to come (Stage 5).
 Figures to come, redrawn in R from the data (Stage 6).
 :::
 
-## Related datasets
-
-::: {.draft-note}
-Related datasets to come (Stage 5).
-:::
-
 ## Publications using the data
 
 ::: {.draft-note}

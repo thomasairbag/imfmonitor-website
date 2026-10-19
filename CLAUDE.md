@@ -39,7 +39,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 - Flat menu, in order: wordmark (Home) · Conditionality · Programs · Governance · Technical Assistance · Other Data · Download Data · Replication Data · About.
 - Each page is `<slug>/index.qmd`, publishing at `/<slug>/`. The slugs are `conditionality`, `programs`, `governance`, `technical-assistance`, `other-data`, `download-data`, `replication-data`, and `about-us`, plus root `index.qmd` and `404.qmd`.
-- Every dataset page uses one template: summary, at-a-glance panel, download list, how to cite, figures, related datasets, publications using the data, and version history. Copy an existing dataset page to start a new one.
+- Every dataset page uses one template: summary, at-a-glance panel, download list, how to cite, figures, related datasets, publications using the data, and version history. Copy an existing dataset page to start a new one. Governance and Technical Assistance have no related datasets, so their pages leave that section out.
 - `data/datasets.yml` is the single source of truth for coverage, versions, counts, files, and citations; its header documents the fields. Pages show it only through the shortcodes in `_extensions/imfmonitor/datasets.lua`: `dataset-glance`, `dataset-downloads`, `dataset-cite`, `dataset-card ID`, and `dataset-hub`. Never hard-code a fact that belongs in the file. Empty fields display "To be confirmed".
 - The shortcodes read `datasets.yml` directly. Don't load it with Quarto's `metadata-files`: that rewrites values matching file or folder names (on Windows, "Conditionality" becomes "../Conditionality").
 - Text still to be written goes in a `::: {.draft-note}` block, which shows as a dashed box. None may remain at launch. Bootstrap already uses the class name `.placeholder`, so don't use it.
@@ -54,7 +54,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 - Programs records participation in IMF lending arrangements; Conditionality records the policy conditions within them. Neither is a subset of the other.
 - Each has its own top-level page, menu item, `datasets.yml` record, at-a-glance panel, download list, citation, and version history. They cross-link; neither nests under the other.
-- A new Programs version (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. A codebook that documents both may be linked from both pages.
+- Programs v1.0 (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. A codebook that documents both may be linked from both pages.
 - Conditionality is v2.1, which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
 - Programs has no verified Dataverse DOI. Don't create, borrow, or imply one.
 
@@ -64,12 +64,13 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - One left-aligned layout used everywhere, with a collapsible menu on phones. Meet WCAG 2.2 AA.
 - Independence: no IMF seal, logo, emblem, colours, or house style, and no globe-and-magnifier imagery. Every footer carries the independence notice; About carries the full statement and a contact line for rights holders.
 - Never host copies of IMF documents; cite them by reference.
-- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data.
+- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data. The conditionality map becomes a static R map drawn from v2.1 data; the old Shiny app is not reused.
 
 ## Academic accuracy
 
 - Every published fact must trace to a named source: a data file, codebook, publication, or Thomas. If a fact is unverified, leave it out or mark it open, and ask.
 - Reproduce citations exactly as the sources give them.
+- Licence: files hosted on the site are under Creative Commons Attribution 4.0 (CC BY 4.0). A file linked by DOI shows the licence its Dataverse record states; if that differs, ask Thomas rather than restate CC BY 4.0.
 - Distinguish full public datasets from research-specific replication packages. Don't present a DOI as part of the IMF Monitor Dataverse collection until its membership is confirmed.
 
 ## Preserve existing links

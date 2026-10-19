@@ -35,13 +35,6 @@
     "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
   },
   {
-    "objectID": "technical-assistance/index.html#related-datasets",
-    "href": "technical-assistance/index.html#related-datasets",
-    "title": "Technical Assistance",
-    "section": "Related datasets",
-    "text": "Related datasets\n\nRelated datasets to come (Stage 5)."
-  },
-  {
     "objectID": "technical-assistance/index.html#publications-using-the-data",
     "href": "technical-assistance/index.html#publications-using-the-data",
     "title": "Technical Assistance",
@@ -238,13 +231,6 @@
     "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
   },
   {
-    "objectID": "governance/index.html#related-datasets",
-    "href": "governance/index.html#related-datasets",
-    "title": "Governance",
-    "section": "Related datasets",
-    "text": "Related datasets\n\nRelated datasets to come (Stage 5)."
-  },
-  {
     "objectID": "governance/index.html#publications-using-the-data",
     "href": "governance/index.html#publications-using-the-data",
     "title": "Governance",
@@ -271,5 +257,12 @@
     "title": "Replication Data",
     "section": "",
     "text": "Skip to main content\n\n\n\n\n\n\nReplication packages, organised by publication with one DOI each, to come (Stage 5)."
+  },
+  {
+    "objectID": "technical-assistance/index.html#related-datasets",
+    "href": "technical-assistance/index.html#related-datasets",
+    "title": "Technical Assistance",
+    "section": "Related datasets",
+    "text": "Related datasets\n\nRelated datasets to come (Stage 5)."
   }
 ]
