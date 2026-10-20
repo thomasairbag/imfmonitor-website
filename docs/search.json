@@ -74,7 +74,7 @@
     "href": "governance/index.html#downloads",
     "title": "Governance",
     "section": "Downloads",
-    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)\nPDF · 285 KB · January 2025\n\nTo be confirmed\n\n\n\nText corpus (IMFMonitor_ExecutiveBoardMinutes.zip)\nR data (.rds) in ZIP · 93.6 MB · January 2025\n\nTo be confirmed"
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)\nPDF · 285 KB · January 2025\n\nDownload\n\n\n\nText corpus (IMFMonitor_ExecutiveBoardMinutes.zip)\nR data (.rds) in ZIP · 93.6 MB · January 2025\n\nDownload"
   },
   {
     "objectID": "governance/index.html#how-to-cite",
@@ -123,7 +123,7 @@
     "href": "conditionality/index.html#downloads",
     "title": "Conditionality",
     "section": "Downloads",
-    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 601 KB · March 2026\n\nTo be confirmed\n\n\n\nMain dataset (IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 241 KB · March 2026\n\nTo be confirmed\n\n\n\nRaw dataset (IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 3.3 MB · March 2026\n\nTo be confirmed\n\n\n\nCode (IMFMonitor_Conditionality_Code.zip)\nStata do-file and World Bank income groups (.xls) in ZIP · 69 KB · March 2026\n\nTo be confirmed"
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 601 KB · March 2026\n\nDownload\n\n\n\nMain dataset (IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 241 KB · March 2026\n\nDownload\n\n\n\nRaw dataset (IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 3.3 MB · March 2026\n\nDownload\n\n\n\nCode (IMFMonitor_Conditionality_Code.zip)\nStata do-file and World Bank income groups (.xls) in ZIP · 69 KB · March 2026\n\nDownload"
   },
   {
     "objectID": "conditionality/index.html#how-to-cite",
@@ -158,7 +158,7 @@
     "href": "conditionality/index.html#version-history",
     "title": "Conditionality",
     "section": "Version history",
-    "text": "Version history\n\nA note on each release to come (Stage 4).\n\n\nSeptember 2017\n\n\n\n\nCodebook (v2017-09_IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 2.0 MB\n\nTo be confirmed\n\n\n\nMain dataset (v2017-09_IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 208 KB\n\nTo be confirmed\n\n\n\nRaw dataset (v2017-09_IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 4.1 MB\n\nTo be confirmed"
+    "text": "Version history\n\nA note on each release to come (Stage 4).\n\n\nSeptember 2017\n\n\n\n\nCodebook (v2017-09_IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 2.0 MB\n\nDownload\n\n\n\nMain dataset (v2017-09_IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 208 KB\n\nDownload\n\n\n\nRaw dataset (v2017-09_IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 4.1 MB\n\nDownload"
   },
   {
     "objectID": "about-us/index.html",
@@ -221,7 +221,7 @@
     "href": "programs/index.html#downloads",
     "title": "Programs",
     "section": "Downloads",
-    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Programs_Codebook.pdf)\nPDF · 414 KB · October 2026\n\nTo be confirmed\n\n\n\nRaw dataset (IMFMonitor_Programs_Raw.xlsx)\nExcel (.xlsx) · 117 KB · October 2026\n\nTo be confirmed\n\n\n\nPanel dataset (IMFMonitor_Programs_Panel.xlsx)\nExcel (.xlsx) · 912 KB · October 2026\n\nTo be confirmed\n\n\n\nScraper script (IMFMonitor_Programs_Code_00_Webscraper.R)\nR script · 70 KB · October 2026\n\nTo be confirmed\n\n\n\nPanel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)\nR script · 81 KB · October 2026\n\nTo be confirmed"
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Programs_Codebook.pdf)\nPDF · 414 KB · October 2026\n\nDownload\n\n\n\nRaw dataset (IMFMonitor_Programs_Raw.xlsx)\nExcel (.xlsx) · 117 KB · October 2026\n\nDownload\n\n\n\nPanel dataset (IMFMonitor_Programs_Panel.xlsx)\nExcel (.xlsx) · 912 KB · October 2026\n\nDownload\n\n\n\nScraper script (IMFMonitor_Programs_Code_00_Webscraper.R)\nR script · 70 KB · October 2026\n\nDownload\n\n\n\nPanel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)\nR script · 81 KB · October 2026\n\nDownload"
   },
   {
     "objectID": "programs/index.html#how-to-cite",
@@ -256,6 +256,6 @@
     "href": "programs/index.html#version-history",
     "title": "Programs",
     "section": "Version history",
-    "text": "Version history\n\nA note on each release to come (Stage 5).\n\n\nJune 2020\n\n\n\n\nPrograms dataset (v2020-06_IMFMonitor_Programs.xlsx)\nExcel (.xlsx) · 150 KB\n\nTo be confirmed"
+    "text": "Version history\n\nA note on each release to come (Stage 5).\n\n\nJune 2020\n\n\n\n\nPrograms dataset (v2020-06_IMFMonitor_Programs.xlsx)\nExcel (.xlsx) · 150 KB\n\nDownload"
   }
 ]

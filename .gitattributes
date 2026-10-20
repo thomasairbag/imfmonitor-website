@@ -1,0 +1,7 @@
+# Published downloads are stored byte for byte, without line-ending
+# conversion, so they stay identical to the originals and their Dataverse
+# copies (core.autocrlf would otherwise rewrite the .R scripts).
+files/** -text
+docs/files/** -text
+wp-content/** -text
+docs/wp-content/** -text
