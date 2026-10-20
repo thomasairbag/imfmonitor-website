@@ -99,6 +99,12 @@ $navbar-nav-link-padding-x: 0.4rem;
   font-style: italic;
 }
 
+// Bare URLs, such as DOIs in publication lists, have no spaces to wrap at;
+// let them break rather than widen the page on phones.
+a.uri {
+  overflow-wrap: anywhere;
+}
+
 // Status badges: Available, Forthcoming, Replication only
 
 .status {
@@ -244,9 +250,23 @@ $navbar-nav-link-padding-x: 0.4rem;
   padding: 0.75rem 0;
 }
 
-// File names have no spaces, so let them break rather than overflow on phones.
+// The label takes the free width and the button keeps its own, so every
+// button sits at the right on wider screens whatever the label's length; on
+// phones, where the label needs the whole line, all buttons move below it.
+// File names have no spaces, so they break rather than overflow.
 .download-label {
+  flex: 1 1 20rem;
+  min-width: 0;
   overflow-wrap: anywhere;
+}
+
+.download-item > .btn,
+.download-item > .tbc {
+  flex: none;
+}
+
+.file-description {
+  font-size: 0.9375rem;
 }
 
 .file-details {

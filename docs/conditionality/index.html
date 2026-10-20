@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-b71f50edc6a63bc41db09e738fab5c13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ae0c7f44d3938b358699abd5c32abd00.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -183,9 +183,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="draft-note">
-<p>Summary paragraph to come (Stage 4).</p>
-</div>
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+<p>The IMF Conditionality Dataset records the policy conditions attached to IMF lending programs in 1980–2019: 65,894 conditions in 134 countries. They are taken from the Letters of Intent and Memoranda of Economic and Financial Policies that borrowing governments draft with IMF staff, found in IMF Executive Board documents and Country Reports. Each condition is classified by type, from prior actions to structural benchmarks, and into one of 13 policy areas. The main dataset gives yearly indicators for 220 countries and territories; the raw dataset lists each condition. The codebook explains how the data were collected, coded, and combined.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <div class="glance">
@@ -223,6 +223,7 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Main dataset (IMFMonitor_Conditionality_Main.zip)</strong><br>
+<span class="file-description">Country-year indicators: counts of conditions by type and policy area, measures adjusted for waivers and program interruptions, and program participation.</span><br>
 <span class="file-details">Stata (.dta) in ZIP · 241 KB · March 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Main.zip" class="btn btn-primary btn-sm" aria-label="Download Main dataset (IMFMonitor_Conditionality_Main.zip)">Download</a>
@@ -230,13 +231,23 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Raw dataset (IMFMonitor_Conditionality_Raw.xlsx)</strong><br>
+<span class="file-description">One row per condition and year, with the condition’s text, type, policy area, implementation status, and source document.</span><br>
 <span class="file-details">Excel (.xlsx) · 3.3 MB · March 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Conditionality_Raw.xlsx)">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
+<strong>Reviews dataset (IMFMonitor_Reviews.xlsx)</strong><br>
+<span class="file-description">One row per program review, with the date the Executive Board concluded it and the date proposed for the next; the code uses it to adjust conditions for program interruptions.</span><br>
+<span class="file-details">Excel (.xlsx) · 230 KB · March 2026</span>
+</div>
+<a href="../files/conditionality/IMFMonitor_Reviews.xlsx" class="btn btn-primary btn-sm" aria-label="Download Reviews dataset (IMFMonitor_Reviews.xlsx)">Download</a>
+</div></li>
+<li><div class="download-item">
+<div class="download-label">
 <strong>Code (IMFMonitor_Conditionality_Code.zip)</strong><br>
+<span class="file-description">The Stata do-file that builds the main dataset from the raw dataset, the reviews dataset (IMFMonitor_Reviews.xlsx), and the June 2020 programs dataset (IMFMonitor_Programs.xlsx), with the World Bank income-group file it uses.</span><br>
 <span class="file-details">Stata do-file and World Bank income groups (.xls) in ZIP · 69 KB · March 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Code.zip" class="btn btn-primary btn-sm" aria-label="Download Code (IMFMonitor_Conditionality_Code.zip)">Download</a>
@@ -270,17 +281,41 @@ Country-year-condition (raw dataset); country-year (main dataset)
 </section>
 <section id="publications-using-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="publications-using-the-data">Publications using the data</h2>
-<div class="draft-note">
-<p>List to come (Stage 4).</p>
-</div>
+<!-- Confirmed by Thomas, 20 October 2026. Sources: the two codebooks'
+     citations and the replication records in the IMF Monitor Dataverse
+     collection; journal details checked against Crossref the same day. -->
+<p>Newest first. The current codebook asks users to cite Kentikelenis and Stubbs (2023); the first, in 2017, asked for Kentikelenis, Stubbs, and King (2016).</p>
+<ul>
+<li>Kentikelenis, A. &amp; Stubbs, T. (2023). <em>A Thousand Cuts: Social Protection in the Age of Austerity</em>. Oxford University Press. <a href="https://doi.org/10.1093/oso/9780190637736.001.0001" class="uri">https://doi.org/10.1093/oso/9780190637736.001.0001</a></li>
+<li>Reinsberg, B., Stubbs, T., &amp; Bujnoch, L. (2023). Structural adjustment, alienation, and mass protest. <em>Social Science Research</em>, 109, 102777. <a href="https://doi.org/10.1016/j.ssresearch.2022.102777" class="uri">https://doi.org/10.1016/j.ssresearch.2022.102777</a></li>
+<li>Kentikelenis, A. &amp; Stubbs, T. (2022). Austerity redux: The post-pandemic wave of budget cuts and the future of global public health. <em>Global Policy</em>, 13(1), 5–17. <a href="https://doi.org/10.1111/1758-5899.13028" class="uri">https://doi.org/10.1111/1758-5899.13028</a></li>
+<li>Reinsberg, B., Stubbs, T., &amp; Kentikelenis, A. (2022). Compliance, defiance, and the dependency trap: International Monetary Fund program interruptions and their impact on capital markets. <em>Regulation &amp; Governance</em>, 16(4), 1022–1041. <a href="https://doi.org/10.1111/rego.12422" class="uri">https://doi.org/10.1111/rego.12422</a></li>
+<li>Reinsberg, B., Stubbs, T., &amp; Kentikelenis, A. (2022). Unimplementable by design? Understanding (non-)compliance with International Monetary Fund policy conditionality. <em>Governance</em>, 35(3), 689–715. <a href="https://doi.org/10.1111/gove.12605" class="uri">https://doi.org/10.1111/gove.12605</a></li>
+<li>Reinsberg, B., Kentikelenis, A., &amp; Stubbs, T. (2021). Creating crony capitalism: Neoliberal globalization and the fueling of corruption. <em>Socio-Economic Review</em>, 19(2), 607–634. <a href="https://doi.org/10.1093/ser/mwz039" class="uri">https://doi.org/10.1093/ser/mwz039</a></li>
+<li>Reinsberg, B., Stubbs, T., &amp; Kentikelenis, A. (2020). Taxing the people, not trade: The International Monetary Fund and the structure of taxation in developing countries. <em>Studies in Comparative International Development</em>, 55(3), 278–304. <a href="https://doi.org/10.1007/s12116-020-09307-4" class="uri">https://doi.org/10.1007/s12116-020-09307-4</a></li>
+<li>Reinsberg, B., Stubbs, T., Kentikelenis, A., &amp; King, L. (2020). Bad governance: How privatization increases corruption in the developing world. <em>Regulation &amp; Governance</em>, 14(4), 698–717. <a href="https://doi.org/10.1111/rego.12265" class="uri">https://doi.org/10.1111/rego.12265</a></li>
+<li>Stubbs, T., Reinsberg, B., Kentikelenis, A., &amp; King, L. (2020). How to evaluate the effects of IMF conditionality: An extension of quantitative approaches and an empirical application to public education spending. <em>Review of International Organizations</em>, 15(1), 29–73. <a href="https://doi.org/10.1007/s11558-018-9332-5" class="uri">https://doi.org/10.1007/s11558-018-9332-5</a></li>
+<li>Reinsberg, B., Kentikelenis, A., Stubbs, T., &amp; King, L. (2019). The world system and the hollowing out of state capacity: How structural adjustment programs affect bureaucratic quality in developing countries. <em>American Journal of Sociology</em>, 124(4), 1222–1257. <a href="https://doi.org/10.1086/701703" class="uri">https://doi.org/10.1086/701703</a></li>
+<li>Reinsberg, B., Stubbs, T., Kentikelenis, A., &amp; King, L. (2019). The political economy of labor market deregulation during IMF interventions. <em>International Interactions</em>, 45(3), 532–559. <a href="https://doi.org/10.1080/03050629.2019.1582531" class="uri">https://doi.org/10.1080/03050629.2019.1582531</a></li>
+<li>Stubbs, T., Kentikelenis, A., Stuckler, D., McKee, M., &amp; King, L. (2017). The impact of IMF conditionality on government health expenditure: A cross-national analysis of 16 West African nations. <em>Social Science &amp; Medicine</em>, 174, 220–227. <a href="https://doi.org/10.1016/j.socscimed.2016.12.016" class="uri">https://doi.org/10.1016/j.socscimed.2016.12.016</a></li>
+<li>Kentikelenis, A., Stubbs, T., &amp; King, L. (2016). IMF conditionality and development policy space, 1985–2014. <em>Review of International Political Economy</em>, 23(4), 543–582. <a href="https://doi.org/10.1080/09692290.2016.1174953" class="uri">https://doi.org/10.1080/09692290.2016.1174953</a></li>
+<li>Stubbs, T., Kentikelenis, A., &amp; King, L. (2016). Catalyzing aid? The IMF and donor behavior in aid allocation. <em>World Development</em>, 78, 511–528. <a href="https://doi.org/10.1016/j.worlddev.2015.10.010" class="uri">https://doi.org/10.1016/j.worlddev.2015.10.010</a></li>
+</ul>
 </section>
 <section id="version-history" class="level2">
 <h2 class="anchored" data-anchor-id="version-history">Version history</h2>
-<div class="draft-note">
-<p>A note on each release to come (Stage 4).</p>
-</div>
 <section class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted anchored" data-anchor-id="">September 2017</h3>
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">March 2026 (v2.1)</h3>
+<p>Adds 21 indicators of IMF program participation to the main dataset: the number of months a program was in force in each year, and several yes-or-no measures of whether one was in force, each for all, concessional, and non-concessional programs. The codebook gains sections on these indicators and on the programs dataset. All other variables, and the raw dataset, are unchanged from July 2023.</p>
+<p>Current release: its files are under <a href="#downloads">Downloads</a>.</p>
+</section>
+<section class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">July 2023 (v2.0)</h3>
+<p>Extends coverage from 1980–2014 to 1980–2019, and from 216 to 220 countries and territories, with 65,894 conditions in all. It also revises the coding of some conditions from 1980–2014: for example, structural performance criteria in 2009 are no longer recoded as structural benchmarks, and conditions from previously embargoed documents are added. The codebook’s section on dataset updates lists each change. This release’s files are not offered separately; its raw dataset is identical to that of March 2026.</p>
+</section>
+<section class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">September 2017 (v1.0)</h3>
+<p>First release, covering 1980–2014 for 216 countries and territories, with 58,406 conditions in the main dataset. Its codebook asks users to cite Kentikelenis, Stubbs, and King (2016).</p>
 <div class="downloads">
 <ul>
 <li><div class="download-item">

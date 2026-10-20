@@ -20,6 +20,10 @@ Nothing published yet. The site is in development and not public.
 - Downloads lists only the current release; files of earlier releases (Conditionality September 2017, Programs June 2020) appear under Version history. The Reviews dataset moves from Conditionality to Other Data.
 - Files of earlier releases are named with their release date, for example `v2017-09_IMFMonitor_Conditionality_Raw.xlsx` (formerly `v1.0_…`) and `v2020-06_IMFMonitor_Programs.xlsx` (formerly `IMFMonitor_Programs.xlsx`).
 - Footer: one centred block, with the reuse sentence and contact above the independence notice.
+- Conditionality page drafted in full as the model dataset page: a summary, a description of each file in the download list, notes on each release in Version history, and the publications the codebooks ask users to cite. Figures follow at Stage 6. Numbers in running text now come from `data/datasets.yml`.
+- Phone layout: long links such as DOIs wrap instead of widening the page.
+- Download buttons sit consistently at the right of each file on wider screens, and below it on phones.
+- Conditionality: the Reviews dataset is back in the download list, because the code needs it; 14 publications listed; the second release is dated July 2023.
 - Downloads: the Conditionality (March 2026 and September 2017), Programs (October 2026 and June 2020), and Governance files are now on the site under `files/`, each byte-identical to its original, and every Download button on those pages works. The Conditionality and Programs codebooks are offered as PDFs for the first time.
 - Download lists show "To be confirmed" instead of a Download button until a file is approved for publication.
 - Phone layout: long file names and DOI links wrap, and the Download Data table scrolls within its box instead of widening the page.

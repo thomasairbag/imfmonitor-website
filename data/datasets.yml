@@ -9,7 +9,11 @@
 #   id        page folder, e.g. conditionality -> /conditionality/
 #   name      display name
 #   tagline   one-line description for dataset cards
-#   coverage  period and countries covered
+#   coverage  period and countries covered, as the at-a-glance panel shows it
+#   period    years covered, for running text
+#   counts    named numbers for running text (e.g. counts.conditions), shown
+#             with {{< dataset-value counts.NAME >}}, so prose never
+#             hard-codes them
 #   version   release date, as month and year (e.g. "March 2026"). Every
 #             dataset is versioned by release date, not by number.
 #   unit      unit of observation
@@ -18,16 +22,22 @@
 #             exactly as the dataset's codebook gives it
 #   files     list of downloads; each has label, href (path under files/ or a
 #             DOI URL), kind (codebook | data | code | archive), format, size,
-#             and version (its release date). Downloads lists the current
+#             version (its release date), and optionally description (one
+#             line on what the file holds, shown under its name). Downloads lists the current
 #             release, codebooks first; files of kind archive appear under
 #             Version history instead, grouped by version. Current files keep
 #             their plain names (IMFMonitor_...). A superseded release's files
 #             take the prefix vYYYY-MM_ from its release date, e.g.
 #             v2017-09_IMFMonitor_Conditionality_Raw.xlsx for September 2017;
-#             the render warns if an archive label or href breaks this. Leave href empty
-#             until the file is approved for publication: the list then shows
-#             "To be confirmed" instead of a Download button. Sizes use
-#             decimal units (1 MB = 1,000,000 bytes).
+#             the render warns if an archive label or href breaks this. Leave
+#             href empty until the file is approved for publication: the list
+#             then shows "To be confirmed" instead of a Download button. Sizes
+#             use decimal units (1 MB = 1,000,000 bytes).
+#   history   Version history, newest first: one entry per release, each with
+#             version (its release date), former (the old version number, if it
+#             had one), and note (what changed, in Markdown). The page shows the
+#             current release's entry with a pointer to Downloads, and an earlier
+#             release's entry with its archive files.
 #   sources   list: which file, codebook, publication, or person each fact
 #             above comes from
 
@@ -36,6 +46,12 @@ datasets:
     name: "Conditionality"
     tagline:
     coverage: "1980–2019; conditions in 134 countries"
+    period: "1980–2019"
+    counts:
+      conditions: "65,894"
+      countries: "134"
+      panel: "220"
+      policy_areas: "13"
     version: "March 2026"
     unit: "Country-year-condition (raw dataset); country-year (main dataset)"
     status: "available"
@@ -49,18 +65,28 @@ datasets:
         version: "March 2026"
       - label: "Main dataset (IMFMonitor_Conditionality_Main.zip)"
         href: "files/conditionality/IMFMonitor_Conditionality_Main.zip"
+        description: "Country-year indicators: counts of conditions by type and policy area, measures adjusted for waivers and program interruptions, and program participation."
         kind: "data"
         format: "Stata (.dta) in ZIP"
         size: "241 KB"
         version: "March 2026"
       - label: "Raw dataset (IMFMonitor_Conditionality_Raw.xlsx)"
         href: "files/conditionality/IMFMonitor_Conditionality_Raw.xlsx"
+        description: "One row per condition and year, with the condition's text, type, policy area, implementation status, and source document."
         kind: "data"
         format: "Excel (.xlsx)"
         size: "3.3 MB"
         version: "March 2026"
+      - label: "Reviews dataset (IMFMonitor_Reviews.xlsx)"
+        href: "files/conditionality/IMFMonitor_Reviews.xlsx"
+        description: "One row per program review, with the date the Executive Board concluded it and the date proposed for the next; the code uses it to adjust conditions for program interruptions."
+        kind: "data"
+        format: "Excel (.xlsx)"
+        size: "230 KB"
+        version: "March 2026"
       - label: "Code (IMFMonitor_Conditionality_Code.zip)"
         href: "files/conditionality/IMFMonitor_Conditionality_Code.zip"
+        description: "The Stata do-file that builds the main dataset from the raw dataset, the reviews dataset (IMFMonitor_Reviews.xlsx), and the June 2020 programs dataset (IMFMonitor_Programs.xlsx), with the World Bank income-group file it uses."
         kind: "code"
         format: "Stata do-file and World Bank income groups (.xls) in ZIP"
         size: "69 KB"
@@ -83,16 +109,30 @@ datasets:
         format: "Excel (.xlsx)"
         size: "4.1 MB"
         version: "September 2017"
+    history:
+      - version: "March 2026"
+        former: "v2.1"
+        note: "Adds 21 indicators of IMF program participation to the main dataset: the number of months a program was in force in each year, and several yes-or-no measures of whether one was in force, each for all, concessional, and non-concessional programs. The codebook gains sections on these indicators and on the programs dataset. All other variables, and the raw dataset, are unchanged from July 2023."
+      - version: "July 2023"
+        former: "v2.0"
+        note: "Extends coverage from 1980–2014 to 1980–2019, and from 216 to 220 countries and territories, with 65,894 conditions in all. It also revises the coding of some conditions from 1980–2014: for example, structural performance criteria in 2009 are no longer recoded as structural benchmarks, and conditions from previously embargoed documents are added. The codebook's section on dataset updates lists each change. This release's files are not offered separately; its raw dataset is identical to that of March 2026."
+      - version: "September 2017"
+        former: "v1.0"
+        note: "First release, covering 1980–2014 for 216 countries and territories, with 58,406 conditions in the main dataset. Its codebook asks users to cite Kentikelenis, Stubbs, and King (2016)."
     sources:
       - "Files: the public download on imfmonitor.org (the Wix file share, backed up 15 October 2026; byte-identical to the project's v2.1 and v1.0 folders, checked 20 October 2026). Sizes are the files' byte counts. The codebook is published as a PDF made from IMFMonitor_Conditionality_Codebook.docx (Thomas Stubbs, 20 October 2026), exported with Word on 20 October 2026 (32 pages, 600,691 bytes)."
       - "coverage: IMFMonitor_Conditionality_Main.dta (years 1980–2019; 220 country codes, 8,800 country-years) and IMFMonitor_Conditionality_Raw.xlsx (conditions for 134 country codes); codebook title 'IMF Conditionality Dataset, 1980-2019'."
       - "version: Thomas Stubbs, 20 October 2026 (versions are release dates). The current files, formerly labelled v2.1, were published on imfmonitor.org on 27 March 2026 (Wix file share, 'Mar 27, 2026'; file dates of the main dataset, code, and codebook). The raw and reviews files' notes sheets still read 'Version: June 2020'."
       - "unit: codebook, 'Variable List for the Raw Dataset' (country-year-condition) and 'Transforming the Data' (country-year indicators in the main dataset)."
-      - "IMFMonitor_Reviews.xlsx, part of the same download on imfmonitor.org, is listed on the Other Data page, not here (Thomas Stubbs, 20 October 2026)."
+      - "IMFMonitor_Reviews.xlsx is part of the Conditionality download because the code needs it (Thomas Stubbs, 20 October 2026); the public copy, byte-identical to the Wix download. Description: the codebook's reviews variable list (Review Date, Review Next Date) and Step 4 (interruptions); the do-file imports it to build the interruption-discounted indicators."
       - "status: publicly downloadable from imfmonitor.org/download-data (checked 20 October 2026)."
+      - "File descriptions: codebook, 'Variable List for the Raw Dataset' and 'Transforming the Data'; IMFMonitor_Conditionality_Code.do, which imports IMFMonitor_Conditionality_Raw.xlsx, IMFMonitor_Reviews.xlsx, IMFMonitor_Programs.xlsx, and Merge/WBINCOME_static.xls and saves IMFMonitor_Conditionality_Main.dta."
       - "citation: codebook, 'Citation' section, worded and italicised as given there (Thomas Stubbs, 20 October 2026: use the codebook wording)."
-      - "Headline count (for page text): BA1TOT in IMFMonitor_Conditionality_Main.dta sums to 65,894."
+      - "period and counts: BA1TOT in IMFMonitor_Conditionality_Main.dta sums to 65,894 (conditions), all of them in the 134 countries with a non-zero total; the raw dataset has the same 134 country codes (countries); the main dataset has 220 country codes, which include territories such as American Samoa and Puerto Rico (panel); the codebook classifies conditions into 13 mutually exclusive policy areas (policy_areas)."
       - "Archive files: v1.0 codebook title page ('Version: September 2017', 'IMF Conditionality 1980–2014'). Published under the release-date prefix v2017-09_ (Thomas Stubbs, 20 October 2026); imfmonitor.org offered them as v1.0_IMFMonitor_Conditionality_*. Contents unchanged."
+      - "history, March 2026: the main dataset gains 21 variables (IMFm, IMFnn, IMF6n, IMF33, IMF44, IMF55, IMF66, and the con- and non- versions of each) and loses none; every common variable has identical values in the v2.0 and v2.1 main datasets, and the raw datasets are byte-identical (checked 20 October 2026). The 2026 codebook adds 'Program Participation Indicators' and 'Variable List for the Programs Dataset', which the July 2023 codebook PDF lacks."
+      - "history, July 2023: dated by its codebook PDF (created 22 July 2023, just after A Thousand Cuts), as Thomas Stubbs asked on 20 October 2026; the data files' own notes sheets say 'Version: June 2020', and the release may have been public then; the v2.0 main dataset (1980–2019, 220 country codes, BA1TOT 65,894); the codebook's 'Dataset Updates and Discrepancies' section."
+      - "history, September 2017: the v1.0 codebook ('Version: September 2017'; 'How to cite the dataset': Kentikelenis, Stubbs, and King 2016); the v1.0 main dataset (INETDataset_Main.dta: 1980–2014, 216 country codes, BA1TOT 58,406)."
 
   - id: programs
     name: "Programs"
