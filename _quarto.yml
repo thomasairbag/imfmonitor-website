@@ -53,7 +53,11 @@ website:
       with, endorsed by, or funded by the International Monetary Fund; "IMF"
       and "International Monetary Fund" are used only to identify the subject
       of its research.
-    right: >
+    # The site's only licence statement; dataset pages carry none (Thomas,
+    # 20 October 2026).
+    right: |
+      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+
       Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
 
 format:

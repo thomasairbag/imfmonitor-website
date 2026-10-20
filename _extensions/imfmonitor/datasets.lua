@@ -20,12 +20,12 @@ local STATUS_LABELS = {
   ["replication-only"] = "Replication only",
 }
 
+-- Versions are release dates, so there is no separate "Last updated" row.
+-- Licences are stated once, in the footer, not per dataset.
 local GLANCE_FIELDS = {
   { "coverage", "Coverage" },
   { "version", "Version" },
   { "unit", "Unit of observation" },
-  { "updated", "Last updated" },
-  { "licence", "Licence" },
 }
 
 local function classes(...)
@@ -160,8 +160,13 @@ local function downloads(args, kwargs, meta)
     for _, key in ipairs({ "format", "size", "version" }) do
       if not is_empty(f[key]) then table.insert(details, stringify(f[key])) end
     end
-    local button = pandoc.Link({ pandoc.Str("Download") }, from_root(href), "",
-      pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, { ["aria-label"] = "Download " .. stringify(label) }))
+    -- A file not yet approved for publication has no href: say so rather
+    -- than link to the site root.
+    local button = tbc()
+    if href ~= "" then
+      button = pandoc.Link({ pandoc.Str("Download") }, from_root(href), "",
+        pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, { ["aria-label"] = "Download " .. stringify(label) }))
+    end
     local text = { pandoc.Strong(label) }
     if #details > 0 then
       table.insert(text, pandoc.LineBreak())

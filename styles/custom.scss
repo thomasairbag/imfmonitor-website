@@ -132,6 +132,8 @@ $navbar-nav-link-padding-x: 0.4rem;
   border-style: dashed;
   font-weight: 400;
   font-style: italic;
+  // Longer than the other badges; on phones it would widen the hub table.
+  white-space: normal;
 }
 
 // Dataset cards (Home, related datasets, Other Data)
@@ -209,6 +211,13 @@ $navbar-nav-link-padding-x: 0.4rem;
   }
 }
 
+// Download Data table: on phones its four columns need more than the text
+// column's width, so it scrolls inside its box rather than widening the page.
+
+.dataset-hub {
+  overflow-x: auto;
+}
+
 // Download list
 
 .downloads {
@@ -235,6 +244,11 @@ $navbar-nav-link-padding-x: 0.4rem;
   padding: 0.75rem 0;
 }
 
+// File names have no spaces, so let them break rather than overflow on phones.
+.download-label {
+  overflow-wrap: anywhere;
+}
+
 .file-details {
   color: $imfm-muted;
   font-size: 0.875rem;
@@ -247,6 +261,8 @@ $navbar-nav-link-padding-x: 0.4rem;
   padding: 1rem 1.25rem;
   background: $imfm-sand;
   border-left: 4px solid $imfm-primary;
+  // DOI URLs would otherwise overflow on phones.
+  overflow-wrap: anywhere;
 
   p {
     margin-bottom: 0.75rem;

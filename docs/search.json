@@ -11,7 +11,7 @@
     "href": "technical-assistance/index.html#at-a-glance",
     "title": "Technical Assistance",
     "section": "At a glance",
-    "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
+    "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
   },
   {
     "objectID": "technical-assistance/index.html#downloads",
@@ -67,21 +67,21 @@
     "href": "governance/index.html#at-a-glance",
     "title": "Governance",
     "section": "At a glance",
-    "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
+    "text": "At a glance\n\n\nCoverage\n\n1995–2015; 142 countries\n\nVersion\n\nJanuary 2025\n\nUnit of observation\n\nMeeting (meeting-level data) and speech (speech-level data)\n\nStatus\n\nAvailable"
   },
   {
     "objectID": "governance/index.html#downloads",
     "href": "governance/index.html#downloads",
     "title": "Governance",
     "section": "Downloads",
-    "text": "Downloads\n\nFiles to be confirmed."
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)\nPDF · 285 KB · January 2025\n\nTo be confirmed\n\n\n\nMeeting-level data (IMFEBM_Meeting_Nov2024_V1.rds), on Harvard Dataverse\nR data (.rds) · 92 KB · January 2025\n\nDownload\n\n\n\nSpeech-level data (IMFEBM_Speeches_Nov2024_V1.rds), on Harvard Dataverse\nR data (.rds) · 94.1 MB · January 2025\n\nDownload"
   },
   {
     "objectID": "governance/index.html#how-to-cite",
     "href": "governance/index.html#how-to-cite",
     "title": "Governance",
     "section": "How to cite",
-    "text": "How to cite\n\nCitation to be confirmed."
+    "text": "How to cite\n\nForster, T., Honig, D. & Kentikelenis, A. (2025). Formal governance matters: when, how, and why states act on the IMF Executive Board. Review of International Political Economy. https://dx.doi.org/10.1080/09692290.2024.2441136\nCopy citation"
   },
   {
     "objectID": "governance/index.html#figures",
@@ -116,21 +116,21 @@
     "href": "conditionality/index.html#at-a-glance",
     "title": "Conditionality",
     "section": "At a glance",
-    "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
+    "text": "At a glance\n\n\nCoverage\n\n1980–2019; conditions in 134 countries\n\nVersion\n\nMarch 2026\n\nUnit of observation\n\nCountry-year-condition (raw dataset); country-year (main dataset)\n\nStatus\n\nAvailable"
   },
   {
     "objectID": "conditionality/index.html#downloads",
     "href": "conditionality/index.html#downloads",
     "title": "Conditionality",
     "section": "Downloads",
-    "text": "Downloads\n\nFiles to be confirmed."
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Conditionality_Codebook.pdf)\nPDF · March 2026\n\nTo be confirmed\n\n\n\nMain dataset (IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 241 KB · March 2026\n\nTo be confirmed\n\n\n\nRaw dataset (IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 3.3 MB · March 2026\n\nTo be confirmed\n\n\n\nReviews dataset (IMFMonitor_Reviews.xlsx)\nExcel (.xlsx) · 230 KB · March 2026\n\nTo be confirmed\n\n\n\nCode (IMFMonitor_Conditionality_Code.zip)\nStata do-file and World Bank income groups (.xls) in ZIP · 69 KB · March 2026\n\nTo be confirmed\n\n\n\nCodebook (v1.0_IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 2.0 MB · September 2017\n\nTo be confirmed\n\n\n\nMain dataset (v1.0_IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 208 KB · September 2017\n\nTo be confirmed\n\n\n\nRaw dataset (v1.0_IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 4.1 MB · September 2017\n\nTo be confirmed"
   },
   {
     "objectID": "conditionality/index.html#how-to-cite",
     "href": "conditionality/index.html#how-to-cite",
     "title": "Conditionality",
     "section": "How to cite",
-    "text": "How to cite\n\nCitation to be confirmed."
+    "text": "How to cite\n\nKentikelenis, A. & Stubbs, T. (2023). A Thousand Cuts: Social Protection in the Age of Austerity. Oxford University Press.\nCopy citation"
   },
   {
     "objectID": "conditionality/index.html#figures",
@@ -144,7 +144,7 @@
     "href": "conditionality/index.html#related-datasets",
     "title": "Conditionality",
     "section": "Related datasets",
-    "text": "Related datasets\n\n\nPrograms\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
+    "text": "Related datasets\n\n\nPrograms\nTo be confirmed\nCoverage: 1952–2025; 202 independent states\nAvailable"
   },
   {
     "objectID": "conditionality/index.html#publications-using-the-data",
@@ -193,7 +193,7 @@
     "href": "index.html#datasets",
     "title": "IMF Monitor",
     "section": "Datasets",
-    "text": "Datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nPrograms\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nGovernance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed\n\n\nTechnical Assistance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
+    "text": "Datasets\n\n\nConditionality\nTo be confirmed\nCoverage: 1980–2019; conditions in 134 countries\nAvailable\n\n\nPrograms\nTo be confirmed\nCoverage: 1952–2025; 202 independent states\nAvailable\n\n\nGovernance\nTo be confirmed\nCoverage: 1995–2015; 142 countries\nAvailable\n\n\nTechnical Assistance\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
   },
   {
     "objectID": "index.html#more-data",
@@ -214,21 +214,21 @@
     "href": "programs/index.html#at-a-glance",
     "title": "Programs",
     "section": "At a glance",
-    "text": "At a glance\n\n\nCoverage\n\nTo be confirmed\n\nVersion\n\nTo be confirmed\n\nUnit of observation\n\nTo be confirmed\n\nLast updated\n\nTo be confirmed\n\nLicence\n\nTo be confirmed\n\nStatus\n\nStatus to be confirmed"
+    "text": "At a glance\n\n\nCoverage\n\n1952–2025; 202 independent states\n\nVersion\n\nOctober 2026\n\nUnit of observation\n\nArrangement or outright purchase (raw dataset); country-year (panel dataset)\n\nStatus\n\nAvailable"
   },
   {
     "objectID": "programs/index.html#downloads",
     "href": "programs/index.html#downloads",
     "title": "Programs",
     "section": "Downloads",
-    "text": "Downloads\n\nFiles to be confirmed."
+    "text": "Downloads\n\n\n\n\nCodebook (IMFMonitor_Programs_Codebook.pdf)\nPDF · October 2026\n\nTo be confirmed\n\n\n\nRaw dataset (IMFMonitor_Programs_Raw.xlsx)\nExcel (.xlsx) · 117 KB · October 2026\n\nTo be confirmed\n\n\n\nPanel dataset (IMFMonitor_Programs_Panel.xlsx)\nExcel (.xlsx) · 912 KB · October 2026\n\nTo be confirmed\n\n\n\nScraper script (IMFMonitor_Programs_Code_00_Webscraper.R)\nR script · 70 KB · October 2026\n\nTo be confirmed\n\n\n\nPanel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)\nR script · 81 KB · October 2026\n\nTo be confirmed\n\n\n\nPrograms dataset (IMFMonitor_Programs.xlsx)\nExcel (.xlsx) · 150 KB · June 2020\n\nTo be confirmed"
   },
   {
     "objectID": "programs/index.html#how-to-cite",
     "href": "programs/index.html#how-to-cite",
     "title": "Programs",
     "section": "How to cite",
-    "text": "How to cite\n\nCitation to be confirmed."
+    "text": "How to cite\n\nStubbs, T. (2026). IMF Programs Dataset, 1952–2025 (Version: October 2026). IMF Monitor. https://doi.org/10.7910/DVN/V4V1BA\nCopy citation"
   },
   {
     "objectID": "programs/index.html#figures",
@@ -242,7 +242,7 @@
     "href": "programs/index.html#related-datasets",
     "title": "Programs",
     "section": "Related datasets",
-    "text": "Related datasets\n\n\nConditionality\nTo be confirmed\nCoverage: To be confirmed\nStatus to be confirmed"
+    "text": "Related datasets\n\n\nConditionality\nTo be confirmed\nCoverage: 1980–2019; conditions in 134 countries\nAvailable"
   },
   {
     "objectID": "programs/index.html#publications-using-the-data",

@@ -47,7 +47,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - Shared design: `_quarto.yml` (menu, footer, theme) and `styles/custom.scss` (palette, components). `_includes/` holds the skip link and the citation copy script. The menu collapses to a button below 1200px: the wordmark, seven items, and search need about 950px, too tight for the 992px breakpoint.
 - Small public files live under `files/`. The Board minutes corpus and replication packages link to Dataverse DOIs.
 - Staging safeguards: a `noindex` robots tag on every page (remove only at cutover, with approval), and `.nojekyll` so GitHub Pages serves files as they are. `site-url` is unset until the GitHub Pages address is known.
-- Approved on 19 October 2026: the palette, the homepage introduction and "More data" one-liners, and the footer wording.
+- Approved on 19 October 2026: the palette, the homepage introduction and "More data" one-liners, and the footer wording. The footer's reuse sentence was added on 20 October 2026.
 - Wordmark (chosen 19 October 2026): the bar mark, `images/logo-mark.svg` in sand, beside the "IMF Monitor" title; the mark alone is the browser-tab icon, `images/favicon.png`, drawn by `R/make-favicon.R`. Don't set "IMF" apart from "Monitor", which would read like an IMF sub-brand.
 - Source Serif 4 (headings) and Source Sans 3 (text) are self-hosted in `fonts/`, unmodified from Adobe's releases, with their SIL OFL licences. `styles/fonts.css` declares them; only regular, italic, and semibold (600) exist, so use 600 for bold.
 
@@ -55,9 +55,9 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 - Programs records participation in IMF lending arrangements; Conditionality records the policy conditions within them. Neither is a subset of the other.
 - Each has its own top-level page, menu item, `datasets.yml` record, at-a-glance panel, download list, citation, and version history. They cross-link; neither nests under the other.
-- Programs v1.0 (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook as a PDF and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. The June 2020 file stays available, under its current name, in the Programs version history. A codebook that documents both may be linked from both pages.
-- Conditionality is v2.1, which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
-- Programs has no verified Dataverse DOI. Don't create, borrow, or imply one.
+- The October 2026 Programs release (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook as a PDF and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. The June 2020 file stays available, under its current name, in the Programs version history. A codebook that documents both may be linked from both pages.
+- The current Conditionality release is March 2026 (labelled v2.1 until 20 October 2026), which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
+- Programs has a Dataverse record that Thomas deposited: doi:10.7910/DVN/V4V1BA, in the IMF Monitor collection, published 13 October 2026, with files identical to the October 2026 release. The Programs citation uses it (Thomas, 20 October 2026).
 
 ## Design principles (plan Section 5)
 
@@ -65,14 +65,15 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - One left-aligned layout used everywhere, with a collapsible menu on phones. Meet WCAG 2.2 AA.
 - Independence: no IMF seal, logo, emblem, colours, or house style, and no globe-and-magnifier imagery. Every footer carries the independence notice; About carries the full statement and a contact line for rights holders.
 - Never host copies of IMF documents; cite them by reference.
-- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data. The conditionality map becomes a static R map drawn from v2.1 data; the old Shiny app is not reused.
+- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data. The conditionality map becomes a static R map drawn from the March 2026 data; the old Shiny app is not reused.
 
 ## Academic accuracy
 
 - Every published fact must trace to a named source: a data file, codebook, publication, or Thomas. If a fact is unverified, leave it out or mark it open, and ask.
-- Reproduce citations exactly as the sources give them.
-- Licence: files hosted on the site are under Creative Commons Attribution 4.0 (CC BY 4.0). A file linked by DOI shows the licence its Dataverse record states; if that differs, ask Thomas rather than restate CC BY 4.0.
-- Distinguish full public datasets from research-specific replication packages. Don't present a DOI as part of the IMF Monitor Dataverse collection until its membership is confirmed.
+- Reproduce citations exactly as the sources give them. A dataset's citation is the one in its codebook, with the codebook's wording and italics (Thomas, 20 October 2026).
+- Every dataset is versioned by release date, as month and year (for example "March 2026"), not by number (Thomas, 20 October 2026). Old numbers (v1.0, v2.0, v2.1) survive only in file names and version histories. Dataverse numbers its records itself (V1, V1.1); leave those as they are.
+- Licence: one sentence in the footer covers the whole site: "You may reuse IMF Monitor data provided you cite it (CC BY 4.0)." Dataset pages, `datasets.yml`, and download lists state no licence (Thomas, 20 October 2026). The Dataverse records carry CC0 1.0; leave them as they are.
+- Distinguish full public datasets from research-specific replication packages. Don't present a DOI as part of the IMF Monitor Dataverse collection until its membership is confirmed. Checked 20 October 2026: DPV99L, GNYXU1, 8BSKWO, and V4V1BA are in the collection; 7N7LCH (Board minutes) and KVVFV1 (social spending floors) are not.
 
 ## Preserve existing links
 
@@ -83,7 +84,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 ## Working conventions
 
-- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: Thomas reviewed the site framework and chose the wordmark on 19 October 2026. Stage 1 (Facts: filling `datasets.yml`) is next. No dataset content until Thomas asks.
+- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: Thomas reviewed the site framework and chose the wordmark on 19 October 2026. Stage 1 (Facts) was done on 20 October 2026: `datasets.yml` holds the verified facts, and Thomas settled the questions it raised (plan Section 8, decisions 25–30). Still open: the items listed under Stages 4–6 in Section 8, the Technical Assistance facts (decision 9), and approval to copy files into `files/`. No dataset content until Thomas asks.
 - Source data stays in Dropbox (paths in `CLAUDE.local.md`). Treat it as read-only, and copy into `files/` only files Thomas has approved for publication.
 - Pages and scripts read only files inside the repository and use relative paths, so the site builds on any machine.
 - Never commit unpublished or internal files (such as coder notes), credentials, or files approaching GitHub's 100 MiB limit.
@@ -97,7 +98,7 @@ Before reporting a change as done:
 1. Render the whole site with no errors or warnings. Quarto prints warnings as `(W)` lines.
 2. Preview the affected pages at 375px, 1200px, and a wide desktop. In the Claude app, start the `site` server in `.claude/launch.json` (it serves `docs/` at http://localhost:4321), and add `?v=2` to addresses to skip the browser cache. To check filled-in components, render a scratch copy with sample `datasets.yml` values; never put sample values in the real file.
 3. Check that every internal link and download resolves to a file in `docs/`, and that the legacy addresses still exist there.
-4. List any new external links for Thomas to check; Harvard Dataverse blocks automated access.
+4. List any new external links for Thomas to check. Harvard Dataverse blocks scripted requests but opens in the Claude app's built-in browser, where its API also works from a Dataverse page.
 5. Check alt text, heading order, and colour contrast for new content.
 
 Say what was checked and what was not. The full staging checklist comes at Stage 7.
