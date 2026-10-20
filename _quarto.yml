@@ -47,18 +47,17 @@ website:
         href: download-data/index.qmd
       - text: About
         href: about-us/index.qmd
+  # One centred block (Thomas, 20 October 2026): the reuse sentence, the
+  # site's only licence statement, then the independence notice that every
+  # page must carry, styled as smaller print in custom.scss.
   page-footer:
-    left: >
+    center: |
+      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
+
       IMF Monitor is an independent academic project. It is not affiliated
       with, endorsed by, or funded by the International Monetary Fund; "IMF"
       and "International Monetary Fund" are used only to identify the subject
       of its research.
-    # The site's only licence statement; dataset pages carry none (Thomas,
-    # 20 October 2026).
-    right: |
-      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
-
-      Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
 
 format:
   html:

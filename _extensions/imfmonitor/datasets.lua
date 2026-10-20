@@ -1,13 +1,16 @@
 -- Shortcodes that display dataset facts from data/datasets.yml.
 --
 --   {{< dataset-glance >}}      at-a-glance panel
---   {{< dataset-downloads >}}   download list, codebooks first
+--   {{< dataset-downloads >}}   download list for the current release,
+--                               codebooks first
+--   {{< dataset-archive >}}     files of earlier releases, by release date
+--                               (Version history)
 --   {{< dataset-cite >}}        citation box with a copy button
 --   {{< dataset-card ID >}}     summary card linking to the dataset's page
 --   {{< dataset-hub >}}         one table row per dataset (Download Data)
 --
--- glance, downloads, and cite use the ID given as their first argument, or
--- else the page's `dataset` metadata. Empty fields show "To be confirmed",
+-- glance, downloads, archive, and cite use the ID given as their first
+-- argument, or else the page's `dataset` metadata. Empty fields show "To be confirmed",
 -- so nothing appears that the data file does not state.
 
 local stringify = pandoc.utils.stringify
@@ -135,29 +138,20 @@ local function glance(args, kwargs, meta)
   return pandoc.Div({ pandoc.DefinitionList(items) }, classes("glance"))
 end
 
-local function downloads(args, kwargs, meta)
-  local d = page_dataset(args, meta)
-  if d == nil then return pandoc.Blocks({}) end
-  local files = d.files or {}
-  if #files == 0 then
-    return pandoc.Div({ pandoc.Para({ pandoc.Span({ pandoc.Str("Files " .. TBC:lower() .. ".") }, classes("tbc")) }) },
-      classes("downloads"))
-  end
+local function kind(f)
+  return stringify(f.kind or "")
+end
 
-  local ordered = {}
-  for _, f in ipairs(files) do
-    if stringify(f.kind or "") == "codebook" then table.insert(ordered, f) end
-  end
-  for _, f in ipairs(files) do
-    if stringify(f.kind or "") ~= "codebook" then table.insert(ordered, f) end
-  end
-
+-- A list of files, each with its details and a Download button. The archive
+-- leaves out the version, which its heading already gives.
+local function file_list(files, show_version)
+  local detail_keys = show_version and { "format", "size", "version" } or { "format", "size" }
   local items = {}
-  for _, f in ipairs(ordered) do
+  for _, f in ipairs(files) do
     local href = stringify(f.href or "")
     local label = is_empty(f.label) and pandoc.Inlines({ pandoc.Str(href) }) or inlines(f.label)
     local details = {}
-    for _, key in ipairs({ "format", "size", "version" }) do
+    for _, key in ipairs(detail_keys) do
       if not is_empty(f[key]) then table.insert(details, stringify(f[key])) end
     end
     -- A file not yet approved for publication has no href: say so rather
@@ -180,6 +174,76 @@ local function downloads(args, kwargs, meta)
     })
   end
   return pandoc.Div({ pandoc.BulletList(items) }, classes("downloads"))
+end
+
+-- Files of the current release; earlier releases go under Version history.
+local function downloads(args, kwargs, meta)
+  local d = page_dataset(args, meta)
+  if d == nil then return pandoc.Blocks({}) end
+  local ordered = {}
+  for _, f in ipairs(d.files or {}) do
+    if kind(f) == "codebook" then table.insert(ordered, f) end
+  end
+  for _, f in ipairs(d.files or {}) do
+    if kind(f) ~= "codebook" and kind(f) ~= "archive" then table.insert(ordered, f) end
+  end
+  if #ordered == 0 then
+    return pandoc.Div({ pandoc.Para({ pandoc.Span({ pandoc.Str("Files " .. TBC:lower() .. ".") }, classes("tbc")) }) },
+      classes("downloads"))
+  end
+  return file_list(ordered, true)
+end
+
+local MONTHS = {
+  January = "01", February = "02", March = "03", April = "04", May = "05", June = "06",
+  July = "07", August = "08", September = "09", October = "10", November = "11", December = "12",
+}
+
+-- A superseded release's files are named vYYYY-MM_IMFMonitor_... after its
+-- release date (Thomas, 20 October 2026). Warn when an archive entry's label
+-- or href doesn't carry the prefix that matches its version.
+local function check_archive_name(d, f, version)
+  local month, year = version:match("^(%a+) (%d%d%d%d)$")
+  local mm = month and MONTHS[month]
+  local where = stringify(d.id) .. " in data/datasets.yml"
+  if mm == nil then
+    quarto.log.warning("imfmonitor: archive file version '" .. version .. "' for " .. where ..
+      " is not a release date such as 'September 2017'")
+    return
+  end
+  local prefix = "v" .. year .. "-" .. mm .. "_IMFMonitor_"
+  for _, key in ipairs({ "label", "href" }) do
+    local value = stringify(f[key] or "")
+    if value ~= "" and not value:find(prefix, 1, true) then
+      quarto.log.warning("imfmonitor: archive file " .. key .. " '" .. value .. "' for " .. where ..
+        " should use the file name prefix " .. prefix)
+    end
+  end
+end
+
+-- Files of earlier releases, grouped under each release date in the order
+-- they appear in datasets.yml. Nothing at all if there are none.
+local function archive(args, kwargs, meta)
+  local d = page_dataset(args, meta)
+  if d == nil then return pandoc.Blocks({}) end
+  local versions, groups = {}, {}
+  for _, f in ipairs(d.files or {}) do
+    if kind(f) == "archive" then
+      local v = is_empty(f.version) and TBC or stringify(f.version)
+      check_archive_name(d, f, v)
+      if groups[v] == nil then
+        groups[v] = {}
+        table.insert(versions, v)
+      end
+      table.insert(groups[v], f)
+    end
+  end
+  local blocks = pandoc.Blocks({})
+  for _, v in ipairs(versions) do
+    blocks:insert(pandoc.Header(3, { pandoc.Str(v) }, classes("unnumbered", "unlisted")))
+    blocks:insert(file_list(groups[v], false))
+  end
+  return blocks
 end
 
 local function cite(args, kwargs, meta)
@@ -235,6 +299,7 @@ end
 return {
   ["dataset-glance"] = glance,
   ["dataset-downloads"] = downloads,
+  ["dataset-archive"] = archive,
   ["dataset-cite"] = cite,
   ["dataset-card"] = card,
   ["dataset-hub"] = hub,

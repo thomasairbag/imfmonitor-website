@@ -16,6 +16,9 @@ Nothing published yet. The site is in development and not public.
 - Versions are now release dates (Conditionality March 2026, Programs October 2026, Governance January 2025) instead of numbers. The at-a-glance panel drops its separate "Last updated" row.
 - Citations follow each dataset's codebook exactly. Programs cites its Harvard Dataverse record (doi:10.7910/DVN/V4V1BA).
 - Licences: one footer sentence covers the whole site ("You may reuse IMF Monitor data provided you cite it (CC BY 4.0)"); dataset pages no longer have a licence row.
-- Governance links its meeting- and speech-level data to Harvard Dataverse (doi:10.7910/DVN/7N7LCH).
+- Governance offers its codebook and text corpus for direct download, as the Wix site did.
+- Downloads lists only the current release; files of earlier releases (Conditionality September 2017, Programs June 2020) appear under Version history. The Reviews dataset moves from Conditionality to Other Data.
+- Files of earlier releases are named with their release date, for example `v2017-09_IMFMonitor_Conditionality_Raw.xlsx` (formerly `v1.0_…`) and `v2020-06_IMFMonitor_Programs.xlsx` (formerly `IMFMonitor_Programs.xlsx`).
+- Footer: one centred block, with the reuse sentence and contact above the independence notice.
 - Download lists show "To be confirmed" instead of a Download button until a file is approved for publication.
 - Phone layout: long file names and DOI links wrap, and the Download Data table scrolls within its box instead of widening the page.

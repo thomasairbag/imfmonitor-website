@@ -18,10 +18,16 @@
 #             exactly as the dataset's codebook gives it
 #   files     list of downloads; each has label, href (path under files/ or a
 #             DOI URL), kind (codebook | data | code | archive), format, size,
-#             and version (its release date). Codebooks are listed first
-#             automatically. Leave href empty until the file is approved for
-#             publication: the list then shows "To be confirmed" instead of a
-#             Download button. Sizes use decimal units (1 MB = 1,000,000 bytes).
+#             and version (its release date). Downloads lists the current
+#             release, codebooks first; files of kind archive appear under
+#             Version history instead, grouped by version. Current files keep
+#             their plain names (IMFMonitor_...). A superseded release's files
+#             take the prefix vYYYY-MM_ from its release date, e.g.
+#             v2017-09_IMFMonitor_Conditionality_Raw.xlsx for September 2017;
+#             the render warns if an archive label or href breaks this. Leave href empty
+#             until the file is approved for publication: the list then shows
+#             "To be confirmed" instead of a Download button. Sizes use
+#             decimal units (1 MB = 1,000,000 bytes).
 #   sources   list: which file, codebook, publication, or person each fact
 #             above comes from
 
@@ -39,7 +45,7 @@ datasets:
         href:
         kind: "codebook"
         format: "PDF"
-        size:
+        size: "601 KB"
         version: "March 2026"
       - label: "Main dataset (IMFMonitor_Conditionality_Main.zip)"
         href:
@@ -53,45 +59,40 @@ datasets:
         format: "Excel (.xlsx)"
         size: "3.3 MB"
         version: "March 2026"
-      - label: "Reviews dataset (IMFMonitor_Reviews.xlsx)"
-        href:
-        kind: "data"
-        format: "Excel (.xlsx)"
-        size: "230 KB"
-        version: "March 2026"
       - label: "Code (IMFMonitor_Conditionality_Code.zip)"
         href:
         kind: "code"
         format: "Stata do-file and World Bank income groups (.xls) in ZIP"
         size: "69 KB"
         version: "March 2026"
-      - label: "Codebook (v1.0_IMFMonitor_Conditionality_Codebook.pdf)"
+      - label: "Codebook (v2017-09_IMFMonitor_Conditionality_Codebook.pdf)"
         href:
         kind: "archive"
         format: "PDF"
         size: "2.0 MB"
         version: "September 2017"
-      - label: "Main dataset (v1.0_IMFMonitor_Conditionality_Main.zip)"
+      - label: "Main dataset (v2017-09_IMFMonitor_Conditionality_Main.zip)"
         href:
         kind: "archive"
         format: "Stata (.dta) in ZIP"
         size: "208 KB"
         version: "September 2017"
-      - label: "Raw dataset (v1.0_IMFMonitor_Conditionality_Raw.xlsx)"
+      - label: "Raw dataset (v2017-09_IMFMonitor_Conditionality_Raw.xlsx)"
         href:
         kind: "archive"
         format: "Excel (.xlsx)"
         size: "4.1 MB"
         version: "September 2017"
     sources:
-      - "Files: the public download on imfmonitor.org (the Wix file share, backed up 15 October 2026; byte-identical to the project's v2.1 and v1.0 folders, checked 20 October 2026). Sizes are the files' byte counts. The codebook is published as a PDF made from IMFMonitor_Conditionality_Codebook.docx (Thomas Stubbs, 20 October 2026); the PDF has not been made yet."
+      - "Files: the public download on imfmonitor.org (the Wix file share, backed up 15 October 2026; byte-identical to the project's v2.1 and v1.0 folders, checked 20 October 2026). Sizes are the files' byte counts. The codebook is published as a PDF made from IMFMonitor_Conditionality_Codebook.docx (Thomas Stubbs, 20 October 2026), exported with Word on 20 October 2026 (32 pages, 600,691 bytes)."
       - "coverage: IMFMonitor_Conditionality_Main.dta (years 1980–2019; 220 country codes, 8,800 country-years) and IMFMonitor_Conditionality_Raw.xlsx (conditions for 134 country codes); codebook title 'IMF Conditionality Dataset, 1980-2019'."
       - "version: Thomas Stubbs, 20 October 2026 (versions are release dates). The current files, formerly labelled v2.1, were published on imfmonitor.org on 27 March 2026 (Wix file share, 'Mar 27, 2026'; file dates of the main dataset, code, and codebook). The raw and reviews files' notes sheets still read 'Version: June 2020'."
-      - "unit: codebook, 'Variable List for the Raw Dataset' (country-year-condition) and 'Transforming the Data' (country-year indicators in the main dataset); the reviews dataset is country-arrangement-review."
+      - "unit: codebook, 'Variable List for the Raw Dataset' (country-year-condition) and 'Transforming the Data' (country-year indicators in the main dataset)."
+      - "IMFMonitor_Reviews.xlsx, part of the same download on imfmonitor.org, is listed on the Other Data page, not here (Thomas Stubbs, 20 October 2026)."
       - "status: publicly downloadable from imfmonitor.org/download-data (checked 20 October 2026)."
       - "citation: codebook, 'Citation' section, worded and italicised as given there (Thomas Stubbs, 20 October 2026: use the codebook wording)."
       - "Headline count (for page text): BA1TOT in IMFMonitor_Conditionality_Main.dta sums to 65,894."
-      - "Archive files: v1.0 codebook title page ('Version: September 2017', 'IMF Conditionality 1980–2014')."
+      - "Archive files: v1.0 codebook title page ('Version: September 2017', 'IMF Conditionality 1980–2014'). Published under the release-date prefix v2017-09_ (Thomas Stubbs, 20 October 2026); imfmonitor.org offered them as v1.0_IMFMonitor_Conditionality_*. Contents unchanged."
 
   - id: programs
     name: "Programs"
@@ -106,7 +107,7 @@ datasets:
         href:
         kind: "codebook"
         format: "PDF"
-        size:
+        size: "414 KB"
         version: "October 2026"
       - label: "Raw dataset (IMFMonitor_Programs_Raw.xlsx)"
         href:
@@ -132,20 +133,20 @@ datasets:
         format: "R script"
         size: "81 KB"
         version: "October 2026"
-      - label: "Programs dataset (IMFMonitor_Programs.xlsx)"
+      - label: "Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)"
         href:
         kind: "archive"
         format: "Excel (.xlsx)"
         size: "150 KB"
         version: "June 2020"
     sources:
-      - "Files: Thomas Stubbs, 19 October 2026 (the raw and panel datasets, the codebook as a PDF, and the two build scripts; the June 2020 file stays in the version history). Sizes are the files' byte counts, checked 20 October 2026; the codebook PDF has not been made yet."
+      - "Files: Thomas Stubbs, 19 October 2026 (the raw and panel datasets, the codebook as a PDF, and the two build scripts; the June 2020 file stays in the version history). Sizes are the files' byte counts, checked 20 October 2026. The codebook PDF was exported from IMFMonitor_Programs_Codebook.docx with Word on 20 October 2026 (14 pages, 413,689 bytes)."
       - "coverage: Programs codebook, Step 3 and Section 3 (panel of 202 independent states, 1952–2025, 12,155 country-years), matching the Country_Year sheet of IMFMonitor_Programs_Panel.xlsx."
       - "version: Programs codebook ('Version: October 2026'); the files were built on 7 and 9 October 2026 from IMF data as of 30 September 2026 (Run_Metadata and Summary sheets)."
       - "unit: Programs codebook, Sections 2 and 3 (raw: one row per arrangement or outright purchase per IMF member, 1,693 rows; panel: one row per independent state per year)."
       - "status: Thomas Stubbs, 20 October 2026."
       - "citation: Programs codebook, 'How to cite this dataset', worded and italicised as given there. The DOI is Harvard Dataverse doi:10.7910/DVN/V4V1BA, deposited by Thomas Stubbs on 11 October 2026 and published on 13 October 2026 in the IMF Monitor collection; its five files are byte-identical to this release (checked 20 October 2026). Thomas Stubbs, 20 October 2026: use it."
-      - "June 2020 file: notes sheet ('IMF Programs Dataset, 1980-2019', 'Version: June 2020'); byte-identical to the copy in the Conditionality download on imfmonitor.org."
+      - "June 2020 file: notes sheet ('IMF Programs Dataset, 1980-2019', 'Version: June 2020'); byte-identical to IMFMonitor_Programs.xlsx in the Conditionality download on imfmonitor.org, published here as v2020-06_IMFMonitor_Programs.xlsx (Thomas Stubbs, 20 October 2026). Contents unchanged."
 
   - id: governance
     name: "Governance"
@@ -162,22 +163,17 @@ datasets:
         format: "PDF"
         size: "285 KB"
         version: "January 2025"
-      - label: "Meeting-level data (IMFEBM_Meeting_Nov2024_V1.rds), on Harvard Dataverse"
-        href: "https://doi.org/10.7910/DVN/7N7LCH"
+      - label: "Text corpus (IMFMonitor_ExecutiveBoardMinutes.zip)"
+        href:
         kind: "data"
-        format: "R data (.rds)"
-        size: "92 KB"
-        version: "January 2025"
-      - label: "Speech-level data (IMFEBM_Speeches_Nov2024_V1.rds), on Harvard Dataverse"
-        href: "https://doi.org/10.7910/DVN/7N7LCH"
-        kind: "data"
-        format: "R data (.rds)"
-        size: "94.1 MB"
+        format: "R data (.rds) in ZIP"
+        size: "93.6 MB"
         version: "January 2025"
     sources:
-      - "Files: Harvard Dataverse doi:10.7910/DVN/7N7LCH ('Replication Data for: Formal governance matters', version 1.1, 12 files, in the Harvard Dataverse collection rather than the IMF Monitor collection), checked by MD5 on 20 October 2026. Its codebook and speech-level file are byte-identical to the codebook and IMFMonitor_ExecutiveBoardMinutes.rds offered on imfmonitor.org; the imfmonitor.org download lacked the meeting-level file. Sizes are the files' byte counts."
+      - "Files: the public download on imfmonitor.org (the Wix file share's 'IMF Executive Board Minutes Dataset' folder, backed up 15 October 2026; byte-identical to the project's Board minutes folder). Hosted on the site like the other datasets' files, not linked to Dataverse (Thomas Stubbs, 20 October 2026). Sizes are the files' byte counts."
+      - "The zip holds IMFMonitor_ExecutiveBoardMinutes.rds, the speech-level file. It and the codebook are byte-identical to IMFEBM_Speeches_Nov2024_V1.rds and Codebook_IMFEBM_November24.pdf on Harvard Dataverse doi:10.7910/DVN/7N7LCH ('Replication Data for: Formal governance matters', in the Harvard Dataverse collection, not the IMF Monitor collection), checked by MD5 on 20 October 2026. The meeting-level file the codebook describes is on Dataverse but not in this download."
       - "coverage: codebook, pp. 1 and 5 (1995–2015; 'All 142 countries included in our sample'); the speech-level file has 142 country codes in meeting_id and discussion dates from 11 January 1995 to 14 December 2015."
-      - "version: the Dataverse record's first publication, 17 January 2025."
+      - "version: first public release of these files, on Harvard Dataverse on 17 January 2025; the same files went up on imfmonitor.org on 2 May 2025."
       - "unit: codebook, p. 5 (Component 1, meeting-level data; Component 2, speech-level data)."
       - "status: publicly downloadable from imfmonitor.org/download-data and Harvard Dataverse (checked 20 October 2026)."
       - "citation: codebook, 'Citation' section, worded and italicised as given there (Thomas Stubbs, 20 October 2026: use the codebook wording)."
