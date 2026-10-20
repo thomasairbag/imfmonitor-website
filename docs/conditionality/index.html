@@ -196,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 </dd>
 <dt>Version</dt>
 <dd>
-March 2026
+October 2026
 </dd>
 <dt>Unit of observation</dt>
 <dd>
@@ -216,15 +216,15 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Codebook (IMFMonitor_Conditionality_Codebook.pdf)</strong><br>
-<span class="file-details">PDF · 601 KB · March 2026</span>
+<span class="file-details">PDF · 586 KB · October 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (IMFMonitor_Conditionality_Codebook.pdf)">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Main dataset (IMFMonitor_Conditionality_Main.zip)</strong><br>
-<span class="file-description">Country-year indicators: counts of conditions by type and policy area, measures adjusted for waivers and program interruptions, and program participation.</span><br>
-<span class="file-details">Stata (.dta) in ZIP · 241 KB · March 2026</span>
+<span class="file-description">Country-year indicators: counts of conditions by type and policy area, and measures adjusted for waivers and program interruptions.</span><br>
+<span class="file-details">Stata (.dta) in ZIP · 234 KB · October 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Main.zip" class="btn btn-primary btn-sm" aria-label="Download Main dataset (IMFMonitor_Conditionality_Main.zip)">Download</a>
 </div></li>
@@ -232,7 +232,7 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <div class="download-label">
 <strong>Raw dataset (IMFMonitor_Conditionality_Raw.xlsx)</strong><br>
 <span class="file-description">One row per condition and year, with the condition’s text, type, policy area, implementation status, and source document.</span><br>
-<span class="file-details">Excel (.xlsx) · 3.3 MB · March 2026</span>
+<span class="file-details">Excel (.xlsx) · 3.3 MB · October 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Conditionality_Raw.xlsx)">Download</a>
 </div></li>
@@ -240,15 +240,15 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <div class="download-label">
 <strong>Reviews dataset (IMFMonitor_Reviews.xlsx)</strong><br>
 <span class="file-description">One row per program review, with the date the Executive Board concluded it and the date proposed for the next; the code uses it to adjust conditions for program interruptions.</span><br>
-<span class="file-details">Excel (.xlsx) · 230 KB · March 2026</span>
+<span class="file-details">Excel (.xlsx) · 230 KB · October 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Reviews.xlsx" class="btn btn-primary btn-sm" aria-label="Download Reviews dataset (IMFMonitor_Reviews.xlsx)">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Code (IMFMonitor_Conditionality_Code.zip)</strong><br>
-<span class="file-description">The Stata do-file that builds the main dataset from the raw dataset, the reviews dataset (IMFMonitor_Reviews.xlsx), and the June 2020 programs dataset (IMFMonitor_Programs.xlsx), with the World Bank income-group file it uses.</span><br>
-<span class="file-details">Stata do-file and World Bank income groups (.xls) in ZIP · 69 KB · March 2026</span>
+<span class="file-description">The Stata do-file that builds the main dataset from the raw dataset and the reviews dataset (IMFMonitor_Reviews.xlsx), with the World Bank income-group file it uses.</span><br>
+<span class="file-details">Stata do-file and World Bank income groups (.xls) in ZIP · 68 KB · October 2026</span>
 </div>
 <a href="../files/conditionality/IMFMonitor_Conditionality_Code.zip" class="btn btn-primary btn-sm" aria-label="Download Code (IMFMonitor_Conditionality_Code.zip)">Download</a>
 </div></li>
@@ -305,13 +305,44 @@ Country-year-condition (raw dataset); country-year (main dataset)
 <section id="version-history" class="level2">
 <h2 class="anchored" data-anchor-id="version-history">Version history</h2>
 <section class="level3 unnumbered unlisted">
-<h3 class="unnumbered unlisted anchored" data-anchor-id="">March 2026 (v2.1)</h3>
-<p>Adds 21 indicators of IMF program participation to the main dataset: the number of months a program was in force in each year, and several yes-or-no measures of whether one was in force, each for all, concessional, and non-concessional programs. The codebook gains sections on these indicators and on the programs dataset. All other variables, and the raw dataset, are unchanged from July 2023.</p>
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">October 2026</h3>
+<p>Removes the 21 program participation indicators added in March 2026: program participation is now recorded in the <a href="../programs/index.html">Programs</a> dataset. The data are otherwise unchanged, and the main and raw datasets are identical to those of July 2023. The codebook drops its sections on program participation and the programs dataset, and the code no longer needs the programs file.</p>
 <p>Current release: its files are under <a href="#downloads">Downloads</a>.</p>
 </section>
 <section class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">March 2026 (v2.1)</h3>
+<p>Adds 21 indicators of IMF program participation to the main dataset: the number of months a program was in force in each year, and several yes-or-no measures of whether one was in force, each for all, concessional, and non-concessional programs. The codebook gains sections on these indicators and on the programs dataset, and a note on grouping the policy areas into broader categories. All other variables, and the raw dataset, are unchanged from July 2023.</p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Codebook (v2026-03_IMFMonitor_Conditionality_Codebook.pdf)</strong><br>
+<span class="file-details">PDF · 601 KB</span>
+</div>
+<a href="../files/conditionality/v2026-03_IMFMonitor_Conditionality_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (v2026-03_IMFMonitor_Conditionality_Codebook.pdf)">Download</a>
+</div></li>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Main dataset (v2026-03_IMFMonitor_Conditionality_Main.zip)</strong><br>
+<span class="file-description">Includes the 21 program participation indicators.</span><br>
+<span class="file-details">Stata (.dta) in ZIP · 241 KB</span>
+</div>
+<a href="../files/conditionality/v2026-03_IMFMonitor_Conditionality_Main.zip" class="btn btn-primary btn-sm" aria-label="Download Main dataset (v2026-03_IMFMonitor_Conditionality_Main.zip)">Download</a>
+</div></li>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Code (v2026-03_IMFMonitor_Conditionality_Code.zip)</strong><br>
+<span class="file-description">Also needs the June 2020 programs dataset, under its original name IMFMonitor_Programs.xlsx; the Programs page’s version history has it as v2020-06_IMFMonitor_Programs.xlsx.</span><br>
+<span class="file-details">Stata do-file and World Bank income groups (.xls) in ZIP · 69 KB</span>
+</div>
+<a href="../files/conditionality/v2026-03_IMFMonitor_Conditionality_Code.zip" class="btn btn-primary btn-sm" aria-label="Download Code (v2026-03_IMFMonitor_Conditionality_Code.zip)">Download</a>
+</div></li>
+</ul>
+</div>
+</section>
+<section class="level3 unnumbered unlisted">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="">July 2023 (v2.0)</h3>
-<p>Extends coverage from 1980–2014 to 1980–2019, and from 216 to 220 countries and territories, with 65,894 conditions in all. It also revises the coding of some conditions from 1980–2014: for example, structural performance criteria in 2009 are no longer recoded as structural benchmarks, and conditions from previously embargoed documents are added. The codebook’s section on dataset updates lists each change. This release’s files are not offered separately; its raw dataset is identical to that of March 2026.</p>
+<p>Extends coverage from 1980–2014 to 1980–2019, and from 216 to 220 countries and territories, with 65,894 conditions in all. It also revises the coding of some conditions from 1980–2014: for example, structural performance criteria in 2009 are no longer recoded as structural benchmarks, and conditions from previously embargoed documents are added. The codebook’s section on dataset updates lists each change. This release’s files are not offered separately: its main and raw datasets are identical to those of October 2026.</p>
 </section>
 <section class="level3 unnumbered unlisted">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="">September 2017 (v1.0)</h3>

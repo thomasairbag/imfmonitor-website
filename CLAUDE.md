@@ -60,7 +60,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - Programs records participation in IMF lending arrangements; Conditionality records the policy conditions within them. Neither is a subset of the other.
 - Each has its own top-level page, menu item, `datasets.yml` record, at-a-glance panel, download list, citation, and version history. They cross-link; neither nests under the other.
 - The October 2026 Programs release (`IMFMonitor_Programs_Raw.xlsx` and `IMFMonitor_Programs_Panel.xlsx`, with the Programs codebook as a PDF and the two build scripts) replaces the June 2020 `IMFMonitor_Programs.xlsx`, which sat in the Conditionality download folder, and is published on the Programs page. The June 2020 file stays available in the Programs version history, as `v2020-06_IMFMonitor_Programs.xlsx`. A codebook that documents both may be linked from both pages.
-- The current Conditionality release is March 2026 (labelled v2.1 until 20 October 2026), which still contains program data. A later release will remove it; say nothing about that release on the site until it happens.
+- The current Conditionality release is October 2026 (Thomas, 20 October 2026). It drops the 21 program participation indicators that March 2026 (v2.1) added, so program participation lives only in the Programs dataset; its data equal July 2023 (v2.0) exactly. March 2026 stays in Version history with its files (`v2026-03_…`). The release is archived in Dropbox at `IMFMonitor/TO_SORT/IMFMonitor_Conditionality_2026-10/`.
 - Programs has a Dataverse record that Thomas deposited: doi:10.7910/DVN/V4V1BA, in the IMF Monitor collection, published 13 October 2026, with files identical to the October 2026 release. The Programs citation uses it (Thomas, 20 October 2026).
 
 ## Design principles (plan Section 5)
@@ -69,7 +69,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - One left-aligned layout used everywhere, with a collapsible menu on phones. Meet WCAG 2.2 AA.
 - Independence: no IMF seal, logo, emblem, colours, or house style, and no globe-and-magnifier imagery. Every footer carries the independence notice; About carries the full statement and a contact line for rights holders.
 - Never host copies of IMF documents; cite them by reference.
-- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data. The conditionality map becomes a static R map drawn from the March 2026 data; the old Shiny app is not reused.
+- Reuse an image only once its provenance and rights are confirmed. Redraw figures in R from authorised data. The conditionality map becomes a static R map drawn from the current Conditionality data; the old Shiny app is not reused.
 
 ## Academic accuracy
 
@@ -88,7 +88,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 
 ## Working conventions
 
-- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: Thomas reviewed the site framework and chose the wordmark on 19 October 2026. Stage 1 (Facts) was done on 20 October 2026: `datasets.yml` holds the verified facts, and Thomas settled the questions it raised (plan Section 8, decisions 25–30). The approved Conditionality, Programs, and Governance files were copied into `files/` on 20 October 2026, so every download on those pages works. Still open: the items listed under Stages 4–6 in Section 8, and the Technical Assistance facts (decision 9). No dataset content until Thomas asks.
+- Stages follow plan Section 7, each ending with something Thomas can inspect and an explicit go-ahead. Current position: Thomas reviewed the site framework and chose the wordmark on 19 October 2026. Stage 1 (Facts) was done on 20 October 2026. Stage 4 (the Conditionality model page) was built and approved the same day, together with the October 2026 Conditionality release. Next is Stage 5: carry the template over to Programs, Governance, Technical Assistance, Other Data, Download Data, About, and Home. Still open: the items under Stages 4–6 in plan Section 8, the Technical Assistance facts (decision 9), and the legacy codebook address (decision 14).
 - Source data stays in Dropbox (paths in `CLAUDE.local.md`). Treat it as read-only, and copy into `files/` only files Thomas has approved for publication.
 - Pages and scripts read only files inside the repository and use relative paths, so the site builds on any machine.
 - Never commit unpublished or internal files (such as coder notes), credentials, or files approaching GitHub's 100 MiB limit. The one agreed exception is the Board minutes corpus, `IMFMonitor_ExecutiveBoardMinutes.zip` (89.3 MiB; Thomas, 20 October 2026). GitHub warns about it on push but accepts it. Ask before adding any other file over 50 MiB.
