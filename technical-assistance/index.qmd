@@ -4,9 +4,10 @@ dataset: technical-assistance
 toc: true
 ---
 
-::: {.draft-note}
-Summary paragraph to come (Stage 5).
-:::
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+
+The IMF Technical Assistance Dataset records the IMF's technical assistance to member countries in {{< dataset-value period >}}: {{< dataset-value counts.missions >}} short-term missions and {{< dataset-value counts.advisors >}} resident advisor assignments in {{< dataset-value counts.countries >}} countries. It is compiled from IMF archival documents: annual technical assistance reports issued as Executive Board documents, and Secretary's Circulars listing staff assignments. For each mission, it records the country, purpose, IMF department, staff, dates, and source document. A country-year panel counts missions and mission-months, overall and by department. The dataset will be released once the working paper that introduces it is published.
 
 ## At a glance
 
@@ -28,14 +29,13 @@ Figures to come, redrawn in R from the data (Stage 6).
 
 ## Publications using the data
 
-::: {.draft-note}
-List to come (Stage 5).
-:::
+<!-- Source: the working paper's title page, dated 21 October 2026. Thomas,
+     21 October 2026: cite it until the dataset is released. -->
+
+The working paper that introduces the dataset:
+
+- Goes, I. & Stubbs, T. (2026). *Embedded Expertise: The Political Economy of IMF Technical Assistance, 1964–1989*. Working paper.
 
 ## Version history
-
-::: {.draft-note}
-A note on each release to come (Stage 5).
-:::
 
 {{< dataset-history >}}

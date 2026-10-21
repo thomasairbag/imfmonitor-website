@@ -13,7 +13,9 @@
 --
 -- glance, downloads, history, and cite use the ID given as their first
 -- argument, or else the page's `dataset` metadata. Empty fields show "To be
--- confirmed", so nothing appears that the data file does not state.
+-- confirmed", so nothing appears that the data file does not state. For a
+-- forthcoming dataset, the version, downloads, and history say "Not yet
+-- released".
 
 local stringify = pandoc.utils.stringify
 
@@ -45,6 +47,18 @@ local function tbc()
   return pandoc.Span({ pandoc.Str(TBC) }, classes("tbc"))
 end
 
+-- A forthcoming dataset has no files or releases yet; say so rather than
+-- show "To be confirmed" or an empty section.
+local NOT_RELEASED = "Not yet released."
+
+local function is_forthcoming(d)
+  return not is_empty(d.status) and stringify(d.status) == "forthcoming"
+end
+
+local function not_released()
+  return pandoc.Para({ pandoc.Span({ pandoc.Str(NOT_RELEASED) }, classes("tbc")) })
+end
+
 -- A metadata value as inlines, keeping any Markdown formatting.
 local function inlines(v)
   local kind = pandoc.utils.type(v)
@@ -56,6 +70,14 @@ end
 local function value_or_tbc(v)
   if is_empty(v) then return pandoc.Inlines({ tbc() }) end
   return inlines(v)
+end
+
+-- The version, or "Not yet released" for a forthcoming dataset without one.
+local function version_or_status(d)
+  if is_empty(d.version) and is_forthcoming(d) then
+    return pandoc.Inlines({ pandoc.Span({ pandoc.Str(NOT_RELEASED:sub(1, -2)) }, classes("tbc")) })
+  end
+  return value_or_tbc(d.version)
 end
 
 -- The file is read here rather than through Quarto's `metadata-files`,
@@ -130,7 +152,7 @@ local function glance(args, kwargs, meta)
   for _, field in ipairs(GLANCE_FIELDS) do
     table.insert(items, {
       { pandoc.Str(field[2]) },
-      { { pandoc.Plain(value_or_tbc(d[field[1]])) } },
+      { { pandoc.Plain(field[1] == "version" and version_or_status(d) or value_or_tbc(d[field[1]])) } },
     })
   end
   table.insert(items, {
@@ -194,6 +216,7 @@ local function downloads(args, kwargs, meta)
     if kind(f) ~= "codebook" and kind(f) ~= "archive" then table.insert(ordered, f) end
   end
   if #ordered == 0 then
+    if is_forthcoming(d) then return pandoc.Div({ not_released() }, classes("downloads")) end
     return pandoc.Div({ pandoc.Para({ pandoc.Span({ pandoc.Str("Files " .. TBC:lower() .. ".") }, classes("tbc")) }) },
       classes("downloads"))
   end
@@ -285,6 +308,7 @@ local function history(args, kwargs, meta)
       blocks:insert(file_list(groups[v], false))
     end
   end
+  if #blocks == 0 and is_forthcoming(d) then blocks:insert(not_released()) end
   return blocks
 end
 
@@ -357,7 +381,7 @@ local function hub(args, kwargs, meta)
     table.insert(rows, {
       cell({ pandoc.Link(inlines(d.name), page_href(d)) }),
       cell(value_or_tbc(d.coverage)),
-      cell(value_or_tbc(d.version)),
+      cell(version_or_status(d)),
       cell({ status_badge(d) }),
     })
   end

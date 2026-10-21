@@ -17,7 +17,9 @@
 #   version   release date, as month and year (e.g. "March 2026"). Every
 #             dataset is versioned by release date, not by number.
 #   unit      unit of observation
-#   status    available | forthcoming | replication-only
+#   status    available | forthcoming | replication-only. A forthcoming
+#             dataset with no version or files shows "Not yet released" as
+#             its version and under Downloads and Version history.
 #   citation  recommended citation, in Markdown (italics with *...*), worded
 #             exactly as the dataset's codebook gives it
 #   files     list of downloads; each has label, href (path under files/ or a
@@ -286,11 +288,20 @@ datasets:
   - id: technical-assistance
     name: "Technical Assistance"
     tagline:
-    coverage:
+    coverage: "1964–1989; 161 countries"
+    period: "1964–1989"
+    counts:
+      missions: "2,511"
+      advisors: "1,215"
+      countries: "161"
     version:
-    unit:
-    status:
-    citation:
+    unit: "Country-mission (raw dataset); country-year (panel dataset)"
+    status: "forthcoming"
+    citation: "Goes, I. & Stubbs, T. (2026). *Embedded Expertise: The Political Economy of IMF Technical Assistance, 1964–1989*. Working paper."
     files: []
     sources:
-      - "No source files: the backups hold no Technical Assistance data, and release status, coverage, count, and citation await Thomas Stubbs."
+      - "status: Thomas Stubbs, 21 October 2026. The 1964–1989 dataset is complete but not yet released; it will be published once the working paper that introduces it is published, with no date given. version and files stay empty until then."
+      - "period and counts: the authors' unreleased raw dataset, checked 21 October 2026. Its missions start between January 1964 and December 1989: 2,511 short-term technical assistance missions (missions) and 1,215 resident advisor assignments (advisors), in 161 countries (countries). It also lists 261 Resident Representatives, which the codebook keeps for completeness but does not count as technical assistance. The working paper (section 4.1) reports the same 161 countries and the same totals by department."
+      - "unit: the dataset's draft codebook, 'Variable list for the raw dataset' (country-mission) and 'Transforming the dataset' (country-year panel)."
+      - "Sources of the data, in the summary: the draft codebook, 'Assembling the dataset' (annual consolidated technical assistance reports issued as Executive Board Documents, and Secretary's Circulars listing personnel assignments)."
+      - "citation: the working paper's title page (Iasmin Goes and Thomas Stubbs, dated 21 October 2026). Thomas Stubbs, 21 October 2026: cite the working paper until the dataset is released. The codebook gives no citation. This replaces the citation on the Wix page (Goes and Stubbs, 2026, 'Legitimacy by expertise … 1964-1990', working paper), an earlier title."
