@@ -4,9 +4,10 @@ dataset: governance
 toc: true
 ---
 
-::: {.draft-note}
-Summary paragraph to come (Stage 5).
-:::
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+
+The IMF Executive Board Minutes Dataset is a text corpus of the IMF Executive Board's discussions of individual countries in {{< dataset-value period >}}. It covers {{< dataset-value counts.meetings >}} meetings on {{< dataset-value counts.countries >}} low- and middle-income countries, mostly on lending and economic surveillance, with more than {{< dataset-value counts.words >}} words of comments from Board members. For each meeting, it identifies everyone who attended and gives the full text of each comment from the Board's minutes, with the speaker's position, country, and constituency, and whether the comment was a written statement. The codebook explains how the Executive Board works and defines each variable.
 
 ## At a glance
 
@@ -28,14 +29,13 @@ Figures to come, redrawn in R from the data (Stage 6).
 
 ## Publications using the data
 
-::: {.draft-note}
-List to come (Stage 5).
-:::
+<!-- Source: the codebook's citation; journal details checked against
+     Crossref on 20 October 2026. -->
+
+The codebook asks users to cite Forster, Honig, and Kentikelenis (2025).
+
+- Forster, T., Honig, D., & Kentikelenis, A. (2025). Formal governance matters: When, how, and why states act on the IMF Executive Board. *Review of International Political Economy*, 32(3), 818–846. <https://doi.org/10.1080/09692290.2024.2441136>
 
 ## Version history
-
-::: {.draft-note}
-A note on each release to come (Stage 5).
-:::
 
 {{< dataset-history >}}

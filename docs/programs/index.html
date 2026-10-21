@@ -183,9 +183,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="draft-note">
-<p>Summary paragraph to come (Stage 5).</p>
-</div>
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+<p>The IMF Programs Dataset records participation in IMF lending programs in 1952–2025. The raw dataset lists 1,693 arrangements and outright purchases for 162 IMF members, with their facilities, dates, and amounts. Most come from the IMF’s History of Lending Commitments page; the other 102 come from IMF press releases, Executive Board documents, and other IMF publications. The panel dataset turns 1,428 of these arrangements into yearly indicators for 202 independent states: months under a program, and whether one was in force, for all, concessional, and non-concessional programs. The codebook explains how the data were collected and built.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <div class="glance">
@@ -223,6 +223,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Raw dataset (IMFMonitor_Programs_Raw.xlsx)</strong><br>
+<span class="file-description">One row per arrangement or outright purchase, with the IMF member, facility, approval and expiration dates, and amounts agreed, drawn, and outstanding, from IMF data as of 30 September 2026. A note on each row added from other IMF sources gives its evidence. Further sheets list the members queried and log the download.</span><br>
 <span class="file-details">Excel (.xlsx) · 117 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Programs_Raw.xlsx)">Download</a>
@@ -230,6 +231,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Panel dataset (IMFMonitor_Programs_Panel.xlsx)</strong><br>
+<span class="file-description">One row per independent state per year, whether an IMF member or not: the months under an IMF program, and whether a program was in force at all or for at least three, four, five, or six months, for all, concessional, and non-concessional programs. Rapid disbursements and outright purchases are left out. Further sheets document the country list, state dates, facility groups, and checks.</span><br>
 <span class="file-details">Excel (.xlsx) · 912 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Panel.xlsx" class="btn btn-primary btn-sm" aria-label="Download Panel dataset (IMFMonitor_Programs_Panel.xlsx)">Download</a>
@@ -237,6 +239,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)</strong><br>
+<span class="file-description">Downloads each member’s arrangements from the IMF’s History of Lending Commitments page, adds the arrangements and purchases the page does not show, and writes the raw dataset. It is provided for transparency: it takes the latest data the IMF offers, so a run today gives an updated dataset that may differ from this release, which used IMF data as of 30 September 2026.</span><br>
 <span class="file-details">R script · 70 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Code_00_Webscraper.R" class="btn btn-primary btn-sm" aria-label="Download Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)">Download</a>
@@ -244,6 +247,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)</strong><br>
+<span class="file-description">Builds the panel dataset from the raw dataset, using state dates set out in the script and the World Bank’s country list, which it downloads when run.</span><br>
 <span class="file-details">R script · 81 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Code_01_BuildPanel.R" class="btn btn-primary btn-sm" aria-label="Download Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)">Download</a>
@@ -277,22 +281,32 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 </section>
 <section id="publications-using-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="publications-using-the-data">Publications using the data</h2>
-<div class="draft-note">
-<p>List to come (Stage 5).</p>
-</div>
+<!-- Sources: the Programs codebook's "Related reference" and the June 2020
+     file's notes sheet, which asks users to cite the same book. The IMF
+     Monitor Dataverse collection's replication records were checked on
+     21 October 2026; none says where its program data came from. Thomas,
+     21 October 2026: list this one for now; he will add others later. -->
+<p>The codebook gives Kentikelenis and Stubbs (2023) as a related reference, and the June 2020 file asked users to cite it.</p>
+<ul>
+<li>Kentikelenis, A. &amp; Stubbs, T. (2023). <em>A Thousand Cuts: Social Protection in the Age of Austerity</em>. Oxford University Press. <a href="https://doi.org/10.1093/oso/9780190637736.001.0001" class="uri">https://doi.org/10.1093/oso/9780190637736.001.0001</a></li>
+</ul>
 </section>
 <section id="version-history" class="level2">
 <h2 class="anchored" data-anchor-id="version-history">Version history</h2>
-<div class="draft-note">
-<p>A note on each release to come (Stage 5).</p>
-</div>
+<section class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">October 2026</h3>
+<p>Replaces the hand-coded June 2020 file with a dataset built by two R scripts from the IMF’s History of Lending Commitments page, with 102 arrangements and outright purchases that the page does not show added from other IMF sources. Coverage extends from 1980–2019 to 1952–2025, and a new panel dataset gives yearly program participation indicators for every independent state. The dataset has its own codebook. The indicators have the same names as the 21 in the March 2026 <a href="../conditionality/index.html">Conditionality</a> release, but are built from the new data and count months differently: a program in force from March to September of one year now counts as seven months, not six.</p>
+<p>Current release: its files are under <a href="#downloads">Downloads</a>.</p>
+</section>
 <section class="level3 unnumbered unlisted">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="">June 2020</h3>
+<p>Coded by hand from IMF documents: 1,284 arrangements in 144 countries, approved from April 1978 to December 2019. It was offered with the March 2026 Conditionality release, whose codebook lists its variables.</p>
 <div class="downloads">
 <ul>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)</strong><br>
+<span class="file-description">One row per arrangement, with its type, approval date, duration, amount, augmentations, expiration date, and source documents. The March 2026 Conditionality code reads it under its original name, IMFMonitor_Programs.xlsx.</span><br>
 <span class="file-details">Excel (.xlsx) · 150 KB</span>
 </div>
 <a href="../files/programs/v2020-06_IMFMonitor_Programs.xlsx" class="btn btn-primary btn-sm" aria-label="Download Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)">Download</a>

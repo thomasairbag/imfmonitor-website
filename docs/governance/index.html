@@ -182,9 +182,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="draft-note">
-<p>Summary paragraph to come (Stage 5).</p>
-</div>
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+<p>The IMF Executive Board Minutes Dataset is a text corpus of the IMF Executive Board’s discussions of individual countries in 1995–2015. It covers 3,111 meetings on 142 low- and middle-income countries, mostly on lending and economic surveillance, with more than 38 million words of comments from Board members. For each meeting, it identifies everyone who attended and gives the full text of each comment from the Board’s minutes, with the speaker’s position, country, and constituency, and whether the comment was a written statement. The codebook explains how the Executive Board works and defines each variable.</p>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <div class="glance">
@@ -215,6 +215,7 @@ Meeting (meeting-level data) and speech (speech-level data)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Codebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)</strong><br>
+<span class="file-description">Also lists the meetings missing from the corpus, and sets out ethical considerations for its use.</span><br>
 <span class="file-details">PDF · 285 KB · January 2025</span>
 </div>
 <a href="../files/governance/IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)">Download</a>
@@ -222,9 +223,18 @@ Meeting (meeting-level data) and speech (speech-level data)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Text corpus (IMFMonitor_ExecutiveBoardMinutes.zip)</strong><br>
+<span class="file-description">The speech-level data, as IMFMonitor_ExecutiveBoardMinutes.rds (the codebook’s IMFEBM_Speeches_Nov2024_V1.rds): one row per speech, or per attendee who did not speak, with the full text, the speaker’s name, position, country, and constituency, and the meeting’s identifier and date.</span><br>
 <span class="file-details">R data (.rds) in ZIP · 93.6 MB · January 2025</span>
 </div>
 <a href="../files/governance/IMFMonitor_ExecutiveBoardMinutes.zip" class="btn btn-primary btn-sm" aria-label="Download Text corpus (IMFMonitor_ExecutiveBoardMinutes.zip)">Download</a>
+</div></li>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Meeting-level data (IMFEBM_Meeting_Nov2024_V1.rds)</strong><br>
+<span class="file-description">One row per meeting, with its date, minutes number, topic, and the country under discussion, with its constituency and whether it is an emerging, low-income, or small economy. It also lists the meetings held in restricted session or without discussion, which have no text. Links to the speech-level data through meeting_id.</span><br>
+<span class="file-details">R data (.rds) · 92 KB · January 2025</span>
+</div>
+<a href="../files/governance/IMFEBM_Meeting_Nov2024_V1.rds" class="btn btn-primary btn-sm" aria-label="Download Meeting-level data (IMFEBM_Meeting_Nov2024_V1.rds)">Download</a>
 </div></li>
 </ul>
 </div>
@@ -244,17 +254,22 @@ Meeting (meeting-level data) and speech (speech-level data)
 </section>
 <section id="publications-using-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="publications-using-the-data">Publications using the data</h2>
-<div class="draft-note">
-<p>List to come (Stage 5).</p>
-</div>
+<!-- Source: the codebook's citation; journal details checked against
+     Crossref on 20 October 2026. -->
+<p>The codebook asks users to cite Forster, Honig, and Kentikelenis (2025).</p>
+<ul>
+<li>Forster, T., Honig, D., &amp; Kentikelenis, A. (2025). Formal governance matters: When, how, and why states act on the IMF Executive Board. <em>Review of International Political Economy</em>, 32(3), 818–846. <a href="https://doi.org/10.1080/09692290.2024.2441136" class="uri">https://doi.org/10.1080/09692290.2024.2441136</a></li>
+</ul>
 </section>
 <section id="version-history" class="level2">
 <h2 class="anchored" data-anchor-id="version-history">Version history</h2>
-<div class="draft-note">
-<p>A note on each release to come (Stage 5).</p>
-</div>
+<section class="level3 unnumbered unlisted">
+<h3 class="unnumbered unlisted anchored" data-anchor-id="">January 2025</h3>
+<p>The codebook and the meeting- and speech-level data were published on Harvard Dataverse in January 2025, with the replication data for Forster, Honig, and Kentikelenis (2025). imfmonitor.org offered the codebook and speech-level data from May 2025.</p>
+<p>Current release: its files are under <a href="#downloads">Downloads</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

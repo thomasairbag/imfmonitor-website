@@ -4,9 +4,10 @@ dataset: programs
 toc: true
 ---
 
-::: {.draft-note}
-Summary paragraph to come (Stage 5).
-:::
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. -->
+
+The IMF Programs Dataset records participation in IMF lending programs in {{< dataset-value period >}}. The raw dataset lists {{< dataset-value counts.arrangements >}} arrangements and outright purchases for {{< dataset-value counts.members >}} IMF members, with their facilities, dates, and amounts. Most come from the IMF's History of Lending Commitments page; the other {{< dataset-value counts.added >}} come from IMF press releases, Executive Board documents, and other IMF publications. The panel dataset turns {{< dataset-value counts.panel_arrangements >}} of these arrangements into yearly indicators for {{< dataset-value counts.states >}} independent states: months under a program, and whether one was in force, for all, concessional, and non-concessional programs. The codebook explains how the data were collected and built.
 
 ## At a glance
 
@@ -34,14 +35,16 @@ Figures to come, redrawn in R from the data (Stage 6).
 
 ## Publications using the data
 
-::: {.draft-note}
-List to come (Stage 5).
-:::
+<!-- Sources: the Programs codebook's "Related reference" and the June 2020
+     file's notes sheet, which asks users to cite the same book. The IMF
+     Monitor Dataverse collection's replication records were checked on
+     21 October 2026; none says where its program data came from. Thomas,
+     21 October 2026: list this one for now; he will add others later. -->
+
+The codebook gives Kentikelenis and Stubbs (2023) as a related reference, and the June 2020 file asked users to cite it.
+
+- Kentikelenis, A. & Stubbs, T. (2023). *A Thousand Cuts: Social Protection in the Age of Austerity*. Oxford University Press. <https://doi.org/10.1093/oso/9780190637736.001.0001>
 
 ## Version history
-
-::: {.draft-note}
-A note on each release to come (Stage 5).
-:::
 
 {{< dataset-history >}}
