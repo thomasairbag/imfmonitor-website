@@ -249,7 +249,6 @@ datasets:
     files:
       - label: "Codebook (IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf)"
         href: "files/governance/IMFMonitor_ExecutiveBoardMinutes_Codebook.pdf"
-        description: "Also lists the meetings missing from the corpus, and sets out ethical considerations for its use."
         kind: "codebook"
         format: "PDF"
         size: "285 KB"
@@ -261,9 +260,9 @@ datasets:
         format: "R data (.rds) in ZIP"
         size: "93.6 MB"
         version: "January 2025"
-      - label: "Meeting-level data (IMFEBM_Meeting_Nov2024_V1.rds)"
-        href: "files/governance/IMFEBM_Meeting_Nov2024_V1.rds"
-        description: "One row per meeting, with its date, minutes number, topic, and the country under discussion, with its constituency and whether it is an emerging, low-income, or small economy. It also lists the meetings held in restricted session or without discussion, which have no text. Links to the speech-level data through meeting_id."
+      - label: "Meeting-level data (IMFMonitor_ExecutiveBoardMeetings.rds)"
+        href: "files/governance/IMFMonitor_ExecutiveBoardMeetings.rds"
+        description: "The codebook's IMFEBM_Meeting_Nov2024_V1.rds: one row per meeting, with its date, minutes number, topic, and the country under discussion, with its constituency and whether it is an emerging, low-income, or small economy. It also lists the meetings held in restricted session or without discussion, which have no text. Links to the speech-level data through meeting_id."
         kind: "data"
         format: "R data (.rds)"
         size: "92 KB"
@@ -274,14 +273,14 @@ datasets:
     sources:
       - "Files: the public download on imfmonitor.org (the Wix file share's 'IMF Executive Board Minutes Dataset' folder, backed up 15 October 2026; byte-identical to the project's Board minutes folder). Hosted on the site like the other datasets' files, not linked to Dataverse (Thomas Stubbs, 20 October 2026). Sizes are the files' byte counts."
       - "The zip holds IMFMonitor_ExecutiveBoardMinutes.rds, the speech-level file. It and the codebook are byte-identical to IMFEBM_Speeches_Nov2024_V1.rds and Codebook_IMFEBM_November24.pdf on Harvard Dataverse doi:10.7910/DVN/7N7LCH ('Replication Data for: Formal governance matters', in the Harvard Dataverse collection, not the IMF Monitor collection), checked by MD5 on 20 October 2026."
-      - "Meeting-level file: IMFEBM_Meeting_Nov2024_V1.rds, downloaded from Harvard Dataverse doi:10.7910/DVN/7N7LCH on 21 October 2026 with Thomas Stubbs's approval (decision 12), under its Dataverse name, which the codebook uses. Its MD5 (81344199ecb8c6684527e70abe258b4b) and size (91,564 bytes) match the record's. Contents unchanged. It has 3,177 rows and the codebook's 23 meeting-level variables: 3,111 meetings with discussion and transcripts, 23 in restricted session, and 43 without discussion (codebook, p. 5). Every meeting_id in the speech-level file appears in it."
+      - "Meeting-level file: IMFEBM_Meeting_Nov2024_V1.rds, downloaded from Harvard Dataverse doi:10.7910/DVN/7N7LCH on 21 October 2026 with Thomas Stubbs's approval (decision 12). It is published as IMFMonitor_ExecutiveBoardMeetings.rds, the name Thomas Stubbs chose on 21 October 2026; the codebook uses the Dataverse name. Its MD5 (81344199ecb8c6684527e70abe258b4b) and size (91,564 bytes) match the record's. Contents unchanged. It has 3,177 rows and the codebook's 23 meeting-level variables: 3,111 meetings with discussion and transcripts, 23 in restricted session, and 43 without discussion (codebook, p. 5). Every meeting_id in the speech-level file appears in it."
       - "coverage: codebook, pp. 1 and 5 (1995–2015; 'All 142 countries included in our sample'); the speech-level file has 142 country codes in meeting_id and discussion dates from 11 January 1995 to 14 December 2015."
       - "version: first public release of these files, on Harvard Dataverse on 17 January 2025; the same files went up on imfmonitor.org on 2 May 2025."
       - "unit: codebook, p. 5 (Component 1, meeting-level data; Component 2, speech-level data)."
       - "status: publicly downloadable from imfmonitor.org/download-data and Harvard Dataverse (checked 20 October 2026)."
       - "citation: codebook, 'Citation' section, worded and italicised as given there (Thomas Stubbs, 20 October 2026: use the codebook wording)."
       - "period and counts: the speech-level file, checked 21 October 2026: 3,111 distinct meeting_id values (meetings), as the codebook states (pp. 1, 2, and 5); 142 country prefixes in meeting_id (countries), as the codebook states on p. 5 (p. 7 says 141); discussion dates from 11 January 1995 to 14 December 2015 (period). The codebook gives 'more than 38 million words' (p. 1): the non-duplicate speeches of state representatives (sp_position ED, AED, TAED, SeniorAdvisor, Advisor, or Assistant; c_dupl 0) have 38,510,299 words by stringi's word count (words). 'Low- and middle-income countries' and 'primarily on the topics of lending and economic surveillance': codebook, pp. 1 and 7."
-      - "File descriptions: codebook, p. 5 (Component 1, meeting-level data), pp. 5–6 (Component 2, speech-level data: 164,263 observations, including attendees who did not speak), and pp. 8–11 (missing archival documents; ethical considerations). The speech-level file's 15 variables are the codebook's speech-level variables."
+      - "File descriptions: codebook, p. 5 (Component 1, meeting-level data) and pp. 5–6 (Component 2, speech-level data: 164,263 observations, including attendees who did not speak). The speech-level file's 15 variables are the codebook's speech-level variables."
       - "history, January 2025: Harvard Dataverse doi:10.7910/DVN/7N7LCH (versions 1.0 and 1.1 both released 17 January 2025), which holds the same codebook and meeting- and speech-level files (MD5, 20 and 21 October 2026); the Wix file share's 'IMF Executive Board Minutes Dataset' folder, dated 2 May 2025, which held the codebook and speech-level file."
 
   - id: technical-assistance
