@@ -36,3 +36,4 @@ Nothing published yet. The site is in development and not public.
 - Links to Harvard Dataverse records show a "Harvard Dataverse" button instead of "Download", because they open the record's page rather than a file.
 - Download Data is no longer in the menu or linked from Home, since each dataset's page has its files. The page stays at its old address for existing links: its table now goes straight to each dataset's Downloads section, and it points to Other Data and the Harvard Dataverse collection. The menu has six items.
 - The full menu now shows on screens from 992px wide, such as laptops; narrower screens keep the menu button (previously below 1200px).
+- About page drafted: a short introduction, the full independence statement with a contact line for rights holders, the five team members with photos and profile links, the funders as text (INET, the Centre for Business Research, the Cambridge-INET Institute, and the ESRC), and contact details.

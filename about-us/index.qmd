@@ -1,7 +1,121 @@
 ---
 title: "About"
+toc: true
+toc-depth: 2
 ---
 
-::: {.draft-note}
-Team, independence statement, acknowledgements, and contact for rights holders to come (Stage 5).
+<!-- Sources: the team, links, and contact address are those on the Wix
+     About page (20 October 2026), confirmed current by Thomas on 21 October
+     2026; the photos are web-sized copies of the Wix originals, used with
+     their subjects' agreement. Funding: the Conditionality and Board minutes
+     codebooks, the Wix Technical Assistance page, and Thomas (plan decision
+     15). The independence wording was approved by Thomas on 21 October 2026. -->
+
+IMF Monitor publishes research data on the International Monetary Fund: the conditions in its lending, its programs, its Executive Board, and its technical assistance. It began in 2017 with the first release of the [Conditionality](../conditionality/index.qmd) dataset, and is directed by Thomas Stubbs at Royal Holloway, University of London.
+
+## Independence
+
+IMF Monitor is an independent academic project. It is not affiliated with, endorsed by, or funded by the International Monetary Fund, and its datasets are not official IMF data. "IMF" and "International Monetary Fund" are used only to identify the subject of its research, and the site uses no IMF seal, logo, or other mark.
+
+If you hold rights in anything on this site, or have a concern about how a name or mark is used, please contact Thomas Stubbs at [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk) so that it can be addressed.
+
+## Team
+
+<!-- The project director first, then the collaborators by surname, with
+     Al Mahmud under M (Thomas, 21 October 2026). The photos have empty alt
+     text because each sits beside the person's name, which a screen reader
+     would otherwise announce twice. -->
+
+::: {.team}
+::: {.team-member}
+![](../images/team/stubbs.jpg){.team-photo width="120" height="120"}
+
+::: {.team-text}
+### Thomas Stubbs {.unnumbered .unlisted}
+
+[Project Director]{.team-role}\
+Professor of Global Political Economy\
+Royal Holloway, University of London
+
+::: {.team-links}
+[[]{.bi .bi-envelope aria-hidden="true"} Email](mailto:thomas.stubbs@rhul.ac.uk) [[]{.bi .bi-globe2 aria-hidden="true"} Website](https://www.tstubbs.net/) [[]{.bi .bi-bluesky aria-hidden="true"} Bluesky](https://bsky.app/profile/thomstubbs.bsky.social) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/thomas-stubbs-50a769253/)
 :::
+:::
+:::
+
+::: {.team-member}
+![](../images/team/goes.jpg){.team-photo width="120" height="120"}
+
+::: {.team-text}
+### Iasmin Goes {.unnumbered .unlisted}
+
+[Project Collaborator]{.team-role}\
+Senior Researcher\
+Central European University
+
+::: {.team-links}
+[[]{.bi .bi-globe2 aria-hidden="true"} Website](https://www.iasmingoes.com/) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/iasmin-goes/)
+:::
+:::
+:::
+
+::: {.team-member}
+![](../images/team/kentikelenis.jpg){.team-photo width="120" height="120"}
+
+::: {.team-text}
+### Alexandros Kentikelenis {.unnumbered .unlisted}
+
+[Project Collaborator]{.team-role}\
+Professor of Political Economy & Sociology\
+Bocconi University
+
+::: {.team-links}
+[[]{.bi .bi-globe2 aria-hidden="true"} Website](https://www.kentikelenis.net/) [[]{.bi .bi-bluesky aria-hidden="true"} Bluesky](https://bsky.app/profile/akentikelenis.bsky.social) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/alexandros-kentikelenis/)
+:::
+:::
+:::
+
+::: {.team-member}
+![](../images/team/mahmud.jpg){.team-photo width="120" height="120"}
+
+::: {.team-text}
+### Abdullah Al Mahmud {.unnumbered .unlisted}
+
+[Project Collaborator]{.team-role}\
+Doctoral Researcher\
+University of Glasgow
+
+::: {.team-links}
+[[]{.bi .bi-globe2 aria-hidden="true"} University profile](https://www.gla.ac.uk/pgrs/abdullahalmahmud/) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/zohaan-abdullah-al-mahmud/)
+:::
+:::
+:::
+
+::: {.team-member}
+![](../images/team/reinsberg.jpg){.team-photo width="120" height="120"}
+
+::: {.team-text}
+### Bernhard Reinsberg {.unnumbered .unlisted}
+
+[Project Collaborator]{.team-role}\
+Professor of International Political Economy & Development\
+University of Glasgow
+
+::: {.team-links}
+[[]{.bi .bi-globe2 aria-hidden="true"} Website](https://bernhardreinsberg.wordpress.com/) [[]{.bi .bi-twitter-x aria-hidden="true"} X](https://x.com/b_reinsberg) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/bernhard-reinsberg-789350397/)
+:::
+:::
+:::
+:::
+
+## Funding
+
+- The Institute for New Economic Thinking (INET) supported the [Conditionality](../conditionality/index.qmd) dataset with grant INO13-00020.
+- The Centre for Business Research at Cambridge Judge Business School funded updates to the Conditionality dataset through a Cambridge Political Economy Society Trust (CPEST) grant.
+- The Cambridge-INET Institute (now the Janeway Institute) at the University of Cambridge provided seed funding for the Executive Board minutes data, published here as the [Governance](../governance/index.qmd) dataset.
+- The Economic and Social Research Council (ESRC), part of UK Research and Innovation, funded the [Technical Assistance](../technical-assistance/index.qmd) dataset through grant [ES/V012916/1](https://gtr.ukri.org/projects?ref=ES%2FV012916%2F1).
+
+## Contact
+
+Thomas Stubbs, [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)\
+Department of Politics & International Relations, Royal Holloway, Egham, TW20 0EX, United Kingdom

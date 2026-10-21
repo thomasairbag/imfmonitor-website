@@ -181,6 +181,65 @@ a.uri {
   font-weight: 600;
 }
 
+// Team (About): photo beside name, role, position, and links; two columns
+// where they fit, one on phones.
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  // The paragraph Pandoc wraps around the photo.
+  > p:first-child {
+    flex: none;
+    margin: 0;
+  }
+}
+
+.team-photo {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-text {
+  min-width: 0;
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.team-role {
+  font-weight: 600;
+}
+
+.team-links {
+  a {
+    display: inline-block;
+    margin-right: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .bi {
+    margin-right: 0.25rem;
+  }
+}
+
 // At-a-glance panel
 
 .glance {

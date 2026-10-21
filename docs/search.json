@@ -207,7 +207,35 @@
     "href": "about-us/index.html",
     "title": "About",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nTeam, independence statement, acknowledgements, and contact for rights holders to come (Stage 5)."
+    "text": "Skip to main content\nIMF Monitor publishes research data on the International Monetary Fund: the conditions in its lending, its programs, its Executive Board, and its technical assistance. It began in 2017 with the first release of the Conditionality dataset, and is directed by Thomas Stubbs at Royal Holloway, University of London."
+  },
+  {
+    "objectID": "about-us/index.html#independence",
+    "href": "about-us/index.html#independence",
+    "title": "About",
+    "section": "Independence",
+    "text": "Independence\nIMF Monitor is an independent academic project. It is not affiliated with, endorsed by, or funded by the International Monetary Fund, and its datasets are not official IMF data. “IMF” and “International Monetary Fund” are used only to identify the subject of its research, and the site uses no IMF seal, logo, or other mark.\nIf you hold rights in anything on this site, or have a concern about how a name or mark is used, please contact Thomas Stubbs at thomas.stubbs@rhul.ac.uk so that it can be addressed."
+  },
+  {
+    "objectID": "about-us/index.html#team",
+    "href": "about-us/index.html#team",
+    "title": "About",
+    "section": "Team",
+    "text": "Team\n\n\n\n\n\nThomas Stubbs\nProject Director\nProfessor of Global Political Economy\nRoyal Holloway, University of London\n\n Email  Website  Bluesky  LinkedIn\n\n\n\n\n\n\nIasmin Goes\nProject Collaborator\nSenior Researcher\nCentral European University\n\n Website  LinkedIn\n\n\n\n\n\n\nAlexandros Kentikelenis\nProject Collaborator\nProfessor of Political Economy & Sociology\nBocconi University\n\n Website  Bluesky  LinkedIn\n\n\n\n\n\n\nAbdullah Al Mahmud\nProject Collaborator\nDoctoral Researcher\nUniversity of Glasgow\n\n University profile  LinkedIn\n\n\n\n\n\n\nBernhard Reinsberg\nProject Collaborator\nProfessor of International Political Economy & Development\nUniversity of Glasgow\n\n Website  X  LinkedIn"
+  },
+  {
+    "objectID": "about-us/index.html#funding",
+    "href": "about-us/index.html#funding",
+    "title": "About",
+    "section": "Funding",
+    "text": "Funding\n\nThe Institute for New Economic Thinking (INET) supported the Conditionality dataset with grant INO13-00020.\nThe Centre for Business Research at Cambridge Judge Business School funded updates to the Conditionality dataset through a Cambridge Political Economy Society Trust (CPEST) grant.\nThe Cambridge-INET Institute (now the Janeway Institute) at the University of Cambridge provided seed funding for the Executive Board minutes data, published here as the Governance dataset.\nThe Economic and Social Research Council (ESRC), part of UK Research and Innovation, funded the Technical Assistance dataset through grant ES/V012916/1."
+  },
+  {
+    "objectID": "about-us/index.html#contact",
+    "href": "about-us/index.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nThomas Stubbs, thomas.stubbs@rhul.ac.uk\nDepartment of Politics & International Relations, Royal Holloway, Egham, TW20 0EX, United Kingdom"
   },
   {
     "objectID": "download-data/index.html",
