@@ -4,4 +4,4 @@ title: "Page not found"
 
 This page does not exist. It may have moved when the site was rebuilt.
 
-Go to the [home page](index.qmd) or to [Download Data](download-data/index.qmd).
+Go to the [home page](index.qmd), which links to every dataset.

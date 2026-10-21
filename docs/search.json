@@ -214,14 +214,7 @@
     "href": "download-data/index.html",
     "title": "Download Data",
     "section": "",
-    "text": "Skip to main content\nEach public IMF Monitor dataset, with a link to its page, codebook, and files."
-  },
-  {
-    "objectID": "download-data/index.html#replication-data-and-code",
-    "href": "download-data/index.html#replication-data-and-code",
-    "title": "Download Data",
-    "section": "Replication data and code",
-    "text": "Replication data and code\nReplication data, code, and documentation for published research using IMF Monitor data are in the IMF Monitor collection on Harvard Dataverse."
+    "text": "Skip to main content\n\n\n\n\n\n\nEach IMF Monitor dataset’s files are on its own page, under Downloads, with its codebook, citation, and earlier releases.\n\n\n\n\nDataset\nCoverage\nVersion\nStatus\n\n\n\n\nConditionality\n1980–2019; conditions in 134 countries\nOctober 2026\nAvailable\n\n\nPrograms\n1952–2025; 202 independent states\nOctober 2026\nAvailable\n\n\nGovernance\n1995–2015; 142 countries\nJanuary 2025\nAvailable\n\n\nTechnical Assistance\n1964–1989; 161 countries\nNot yet released\nForthcoming\n\n\n\n\nOther Data has the program reviews dataset and replication data for four publications. Replication data and code for further published research are in the IMF Monitor collection on Harvard Dataverse."
   },
   {
     "objectID": "index.html",
@@ -242,7 +235,7 @@
     "href": "index.html#more-data",
     "title": "IMF Monitor",
     "section": "More data",
-    "text": "More data\n\nOther Data: smaller datasets and supplementary data.\nDownload Data: every public dataset and its files in one place.\nReplication Data: data and code for published research, on Harvard Dataverse."
+    "text": "More data\n\nOther Data: smaller datasets and supplementary data.\nReplication Data: data and code for published research, on Harvard Dataverse."
   },
   {
     "objectID": "programs/index.html",

@@ -28,10 +28,10 @@ website:
     logo: images/logo-mark.svg
     # Decorative: the title text beside it already says "IMF Monitor".
     logo-alt: ""
-    # Seven items fit on one line from 1200px. At the next breakpoint down
-    # (992px) they would only just fit, so narrower screens get the menu
-    # button.
-    collapse-below: xl
+    # The six items fit on one line from 992px, with about 60px to spare
+    # (measured 21 October 2026), so laptop screens show the full menu and
+    # narrower ones get the menu button (Thomas, 21 October 2026).
+    collapse-below: lg
     left:
       - text: Conditionality
         href: conditionality/index.qmd
@@ -43,8 +43,8 @@ website:
         href: technical-assistance/index.qmd
       - text: Other Data
         href: other-data/index.qmd
-      - text: Download Data
-        href: download-data/index.qmd
+      # Download Data is not in the menu: each dataset's page has its files,
+      # and download-data/ only keeps the Wix address working (decision 45).
       - text: About
         href: about-us/index.qmd
   # One centred block (Thomas, 20 October 2026): the reuse sentence, the

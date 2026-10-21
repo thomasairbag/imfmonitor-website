@@ -12,7 +12,8 @@
 --   {{< dataset-entry ID >}}    coverage, status, files, and citation for a
 --                               short entry on another page (Other Data)
 --   {{< dataset-hub >}}         one table row per dataset with a page of
---                               its own (Download Data)
+--                               its own, linking to its Downloads (Download
+--                               Data)
 --
 -- glance, downloads, history, and cite use the ID given as their first
 -- argument, or else the page's `dataset` metadata. Empty fields show "To be
@@ -411,6 +412,8 @@ local function entry(args, kwargs, meta)
   return pandoc.Div(blocks, classes("dataset-entry"))
 end
 
+-- Download Data keeps the Wix site's address for old links, so each row goes
+-- straight to the dataset's Downloads section.
 local function hub(args, kwargs, meta)
   local function cell(content) return { pandoc.Plain(content) } end
   local headers = {
@@ -424,7 +427,7 @@ local function hub(args, kwargs, meta)
     -- Short entries on other pages (Other Data) are not listed.
     if is_empty(d.page) then
       table.insert(rows, {
-        cell({ pandoc.Link(inlines(d.name), page_href(d)) }),
+        cell({ pandoc.Link(inlines(d.name), page_href(d) .. "#downloads") }),
         cell(value_or_tbc(d.coverage)),
         cell(version_or_status(d)),
         cell({ status_badge(d) }),
