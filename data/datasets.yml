@@ -6,8 +6,12 @@
 # `sources`. Leave unknown fields empty: the site then shows "To be confirmed".
 # Quote every text value: YAML reads a leading * or & as an alias or anchor.
 #
-#   id        page folder, e.g. conditionality -> /conditionality/
+#   id        page folder, e.g. conditionality -> /conditionality/; for an
+#             entry with `page`, the anchor of its section on that page
 #   name      display name
+#   page      only for an entry without a page of its own: the page that
+#             shows it (other-data). Links then go to that page's #id
+#             section, and the Download Data table leaves the entry out.
 #   tagline   one-line description for dataset cards
 #   coverage  period and countries covered, as the at-a-glance panel shows it
 #   period    years covered, for running text
@@ -305,3 +309,118 @@ datasets:
       - "unit: the dataset's draft codebook, 'Variable list for the raw dataset' (country-mission) and 'Transforming the dataset' (country-year panel)."
       - "Sources of the data, in the summary: the draft codebook, 'Assembling the dataset' (annual consolidated technical assistance reports issued as Executive Board Documents, and Secretary's Circulars listing personnel assignments)."
       - "citation: the working paper's title page (Iasmin Goes and Thomas Stubbs, dated 21 October 2026). Thomas Stubbs, 21 October 2026: cite the working paper until the dataset is released. The codebook gives no citation. This replaces the citation on the Wix page (Goes and Stubbs, 2026, 'Legitimacy by expertise … 1964-1990', working paper), an earlier title."
+
+  # Other Data (plan Section 3): short entries on one page, newest
+  # publication first after the reviews dataset. Replication packages link
+  # to their Harvard Dataverse DOIs (CLAUDE.md); their citation is the
+  # publication's (Thomas Stubbs, 21 October 2026), in the style of the
+  # Conditionality page's publications list, checked against Crossref.
+
+  - id: reviews
+    name: "Program reviews"
+    page: "other-data"
+    tagline:
+    coverage: "1980–2015; 133 countries"
+    period: "1980–2015"
+    counts:
+      programs: "762"
+      countries: "133"
+    status: "available"
+    citation: "Kentikelenis, A. & Stubbs, T. (2023). *A Thousand Cuts: Social Protection in the Age of Austerity*. Oxford University Press."
+    files:
+      - label: "Reviews dataset (IMFMonitor_Reviews.xlsx)"
+        href: "files/conditionality/IMFMonitor_Reviews.xlsx"
+        kind: "data"
+        format: "Excel (.xlsx)"
+        size: "230 KB"
+    sources:
+      - "File: IMFMonitor_Reviews.xlsx, the copy in the Conditionality download (Thomas Stubbs, 20 October 2026: the Conditionality code needs it, and Other Data may list it too). One file, listed on both pages. Size: 230,263 bytes."
+      - "coverage and period: the file's Notes sheet ('IMF Reviews Dataset, 1980-2015'). Its Board dates run from 26 April 1978 to 29 July 2015; Thomas Stubbs, 21 October 2026: arrangements approved in 1978 and 1979 are included only because they ran into 1980, so the file does not hold every review of those years. The Conditionality codebook (Step 4) says 'between the years 1978 and 2015'."
+      - "counts: the Dataset sheet, checked 21 October 2026. It has 2,631 rows (decision 11: the codebook's 2,632 counts the sheet's header row as well). By the codebook's rule ('Review Number': the approval meeting is coded 0), 762 rows are approvals (programs) and 1,869 are reviews; arrangements approved together in one Board document are one row ('Arrangement Parallel'). Kosovo's April 2012 Stand-By Arrangement (EBM/12/40) is coded under the arrangement fields of its July 2010 one, so the file has 761 distinct arrangement identifiers. 133 country codes (countries)."
+      - "status: publicly downloadable as part of the Conditionality release (see that record)."
+      - "citation: the file's Notes sheet ('When using the data, please cite …'), as worded there, with the title italicised as in the Conditionality codebook."
+      - "Text on the Other Data page: the Conditionality codebook, Step 4 ('Extracting the Review Dates') and 'Variable List for the Reviews Dataset'; the October 2026 Conditionality do-file imports the file."
+
+  - id: greening
+    name: "*Greening the International Monetary Fund*"
+    page: "other-data"
+    tagline:
+    coverage: "2020–2024"
+    period: "2020–2024"
+    counts:
+      rsf_conditions: "247"
+      rsf_arrangements: "21"
+      programs: "100"
+    status: "replication-only"
+    citation: "Kentikelenis, A. & Stubbs, T. (2025). *Greening the International Monetary Fund*. Cambridge University Press. <https://doi.org/10.1017/9781009697491>"
+    files:
+      - label: "Replication data and code (doi:10.7910/DVN/8BSKWO)"
+        href: "https://doi.org/10.7910/DVN/8BSKWO"
+        kind: "data"
+        format: "One ZIP file (GREENBOOK_Replication.zip): Excel workbooks, a Stata dataset, Stata code, and figures"
+        size: "2.0 MB"
+    sources:
+      - "File: Harvard Dataverse doi:10.7910/DVN/8BSKWO ('Replication Data for: Greening the International Monetary Fund', Kentikelenis and Stubbs, version 1.0, IMF Monitor collection), whose one file is byte-identical (MD5) to GREENBOOK_Replication.zip in the Wix 'Other Data & Supplementary Statistical Code' folder (checked 20 October 2026). Size: 2,049,006 bytes. Description: the zip's contents."
+      - "coverage, period, and counts: the package's workbooks, checked 21 October 2026. GREENBOOK_Ch2_RSFConditions.xlsx has 247 conditions (rsf_conditions) in 21 Resilience and Sustainability Facility arrangements in 21 countries (rsf_arrangements), approved from 14 November 2022 to 11 December 2024. GREENBOOK_Ch3_Programs.xlsx lists 100 IMF lending arrangements (programs) approved from 23 March 2020 to 19 December 2024, with ND-GAIN climate vulnerability ranks. GREENBOOK_Ch3_GreenPolicies.xlsx codes programs' fossil fuel, renewable energy, carbon pricing, subsidy, and tariff measures."
+      - "citation: Crossref record for doi:10.1017/9781009697491 (Cambridge University Press; published online 10 October 2025, in print 30 November 2025). Decision 13, Thomas Stubbs, 21 October 2026: no series name."
+
+  - id: tax-advice
+    name: "Tax advice"
+    page: "other-data"
+    tagline:
+    coverage: "2022–2024; 125 countries"
+    period: "2022–2024"
+    counts:
+      proposals: "1,049"
+      countries: "125"
+    status: "replication-only"
+    citation: "Kentikelenis, A. & Stubbs, T. (2025). Progressive rhetoric, regressive reality: The IMF's tax advice to 125 countries, 2022–2024. *Global Policy*, 16(4), 731–738. <https://doi.org/10.1111/1758-5899.70052>"
+    files:
+      - label: "Replication data and code (doi:10.7910/DVN/GNYXU1)"
+        href: "https://doi.org/10.7910/DVN/GNYXU1"
+        kind: "data"
+        format: "Five files: Excel and Stata data, Stata and R code, and World Bank country boundaries"
+    sources:
+      - "File: Harvard Dataverse doi:10.7910/DVN/GNYXU1 ('Replication Data for: Progressive rhetoric, regressive reality: The IMF's tax advice to 125 countries, 2022-2024', Kentikelenis and Stubbs, version 1.0, IMF Monitor collection). Its five files match IVTAX_Replication.zip in the Wix 'Other Data & Supplementary Statistical Code' folder (MD5, 20 October 2026); Dataverse bundles the four shapefile parts into one zipped shapefile."
+      - "coverage, period, and counts: the article's abstract ('1049 tax reform proposals', '125 countries between 2022 and 2024'). IVTAX_Data.xlsx, checked 21 October 2026, agrees: 1,053 rows, four of them for reports with no tax measure, for 125 country codes, from 185 Article IV reports published from 26 January 2022 to 8 March 2024. Each measure is quoted with its rationale and classified by tax type and as progressive, regressive, neutral, or unclassifiable."
+      - "citation: Crossref record for doi:10.1111/1758-5899.70052 (Global Policy 16(4), 731–738, published online 10 July 2025)."
+
+  - id: social-spending-floors
+    name: "Social spending floors"
+    page: "other-data"
+    tagline:
+    coverage: "Loans approved in 2020–2022; 27 countries"
+    period: "2020–2022"
+    counts:
+      loans: "27"
+    status: "replication-only"
+    citation: "Kentikelenis, A. & Stubbs, T. (2024). Social protection and the International Monetary Fund: Promise versus performance. *Globalization and Health*, 20, 41. <https://doi.org/10.1186/s12992-024-01045-9>"
+    files:
+      - label: "Replication data and code (doi:10.7910/DVN/KVVFV1)"
+        href: "https://doi.org/10.7910/DVN/KVVFV1"
+        description: "SSF_Data.xlsx holds the floors, targets, and outcomes. The Stata dataset (325 MB) holds the country-year fiscal and debt data the code uses."
+        kind: "data"
+        format: "Four files: Excel and Stata data, Stata code, and the article's tables in Excel"
+    sources:
+      - "File: Harvard Dataverse doi:10.7910/DVN/KVVFV1 ('Replication Data for: Social protection and the International Monetary Fund: Promise versus performance', Kentikelenis and Stubbs, version 1.0). It is in the general Harvard Dataverse collection, not the IMF Monitor collection, so the page doesn't call it part of that collection. Its four files are byte-identical (MD5) to SSF_Replication.zip in the Wix 'Other Data & Supplementary Statistical Code' folder (20 October 2026), which is byte-identical to the copy in Thomas Stubbs's Dropbox, Research/- Completed/SSF (21 October 2026). SSF_Dataset.dta is 325,216,784 bytes."
+      - "coverage, period, and counts: the published article (Globalization and Health 20:41, p. 4 and Table 1: 'we collected relevant documentation for 27 long-term loans that were approved in the 2020-2022 period and then collected all available data from their reviews as of 31 August 2023'), Extended Credit Facility and Extended Fund Facility loans only. SSF_Data.xlsx has the same 27 loans, one per country, approved from 23 March 2020 to 16 December 2022. The abstract's '21 loans' are those with budget balance data for at least two years (p. 5, Table 2). Checked 21 October 2026 at Thomas Stubbs's request."
+      - "citation: Crossref record for doi:10.1186/s12992-024-01045-9 (Globalization and Health 20, article 41, published 8 May 2024)."
+
+  - id: thousand-cuts
+    name: "*A Thousand Cuts*"
+    page: "other-data"
+    tagline:
+    coverage: "1980–2019"
+    period: "1980–2019"
+    status: "replication-only"
+    citation: "Kentikelenis, A. & Stubbs, T. (2023). *A Thousand Cuts: Social Protection in the Age of Austerity*. Oxford University Press. <https://doi.org/10.1093/oso/9780190637736.001.0001>"
+    files:
+      - label: "Replication data and code (doi:10.7910/DVN/DPV99L)"
+        href: "https://doi.org/10.7910/DVN/DPV99L"
+        kind: "data"
+        format: "60 files: Stata datasets and code, Excel tables and codebook, figures, and map files"
+    sources:
+      - "Entry added at Thomas Stubbs's request, 21 October 2026 (the Wix 'Other Data & Supplementary Statistical Code' folder offered this package)."
+      - "File: Harvard Dataverse doi:10.7910/DVN/DPV99L ('Replication Data for: A Thousand Cuts: Social Protection in the Age of Austerity', Kentikelenis and Stubbs, version 1.0, IMF Monitor collection). Its 60 files match the 64 in IMFBOOK_Replication.zip from the Wix folder (MD5, 20 October 2026); Dataverse bundles the five shapefile parts into one zipped shapefile."
+      - "coverage and period: IMFBOOK_Dataset.dta, checked 21 October 2026 (years 1980–2019, 8,720 country-years, 218 country codes, 99 variables); its codebook gives each variable's source. The package holds Stata code for chapters 2 to 7, Excel tables for chapters 2 and 4, and 45 figures."
+      - "citation: as on the Conditionality page's publications list (Crossref, 20 October 2026)."

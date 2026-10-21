@@ -1,7 +1,44 @@
 ---
 title: "Other Data"
+toc: true
 ---
 
-::: {.draft-note}
-Short entries for smaller datasets to come (Stage 5), each linking to its package or file.
-:::
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. Each
+     heading's anchor is its record's id, which links to it use. -->
+
+The program reviews dataset, and the data and code behind four publications by IMF Monitor researchers. The reviews dataset downloads from this site. The replication packages, listed newest first, are on Harvard Dataverse.
+
+## Program reviews {#reviews}
+
+The dates of IMF Executive Board meetings for {{< dataset-value reviews counts.programs >}} IMF programs in {{< dataset-value reviews counts.countries >}} countries, {{< dataset-value reviews period >}}: the meeting that approved each program, the meetings that concluded its reviews, and the date proposed for each next review. Programs approved in 1978 and 1979 are included only if they ran into 1980. The [Conditionality](../conditionality/index.qmd) code uses the dataset to adjust conditions for program interruptions, and the [Conditionality codebook](../conditionality/index.qmd#downloads) describes its variables.
+
+{{< dataset-entry reviews >}}
+
+## *Greening the International Monetary Fund* {#greening}
+
+Data and code for *Greening the International Monetary Fund*, on climate in IMF lending: the {{< dataset-value greening counts.rsf_conditions >}} conditions in {{< dataset-value greening counts.rsf_arrangements >}} Resilience and Sustainability Facility arrangements approved from November 2022 to December 2024, and {{< dataset-value greening counts.programs >}} IMF lending arrangements approved in {{< dataset-value greening period >}}, with each country's climate vulnerability. A further workbook records how programs treated fossil fuels, renewable energy, carbon pricing, and energy subsidies.
+
+{{< dataset-entry greening >}}
+
+## Tax advice {#tax-advice}
+
+Data and code for an article on the IMF's tax advice: {{< dataset-value tax-advice counts.proposals >}} tax reform proposals to {{< dataset-value tax-advice counts.countries >}} countries in IMF Article IV reports, {{< dataset-value tax-advice period >}}. Each proposal is quoted with its rationale and classified by type of tax and by whether it is progressive or regressive.
+
+{{< dataset-entry tax-advice >}}
+
+## Social spending floors {#social-spending-floors}
+
+Data and code for an article on social spending in IMF lending: the social spending floors and budget balance targets in {{< dataset-value social-spending-floors counts.loans >}} Extended Credit Facility and Extended Fund Facility loans approved in {{< dataset-value social-spending-floors period >}}. They give each floor's definition, the quarterly targets and outcomes reported in the loan documents and reviews up to 31 August 2023, and projected government spending.
+
+{{< dataset-entry social-spending-floors >}}
+
+## *A Thousand Cuts* {#thousand-cuts}
+
+Data and code for *A Thousand Cuts*, the book that the [Conditionality](../conditionality/index.qmd) codebook asks users to cite: a country-year dataset for {{< dataset-value thousand-cuts period >}} with its codebook, and the Stata code, tables, and figures for the book's chapters.
+
+{{< dataset-entry thousand-cuts >}}
+
+## More replication data
+
+Replication data and code for further publications using IMF Monitor data are in the [IMF Monitor collection on Harvard Dataverse](https://dataverse.harvard.edu/dataverse/imfmonitor).

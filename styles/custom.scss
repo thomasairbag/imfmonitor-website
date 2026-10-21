@@ -293,6 +293,16 @@ a.uri {
   }
 }
 
+// Other Data entries: the "How to cite" label, which follows the file list,
+// sits close to the box it labels.
+.dataset-entry .downloads + p {
+  margin-bottom: 0.375rem;
+}
+
+.dataset-entry .cite-box {
+  margin-top: 0;
+}
+
 // Footer
 
 // One centred block: the reuse and contact line, then the independence

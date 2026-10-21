@@ -9,7 +9,10 @@
 --                               counts.conditions
 --   {{< dataset-cite >}}        citation box with a copy button
 --   {{< dataset-card ID >}}     summary card linking to the dataset's page
---   {{< dataset-hub >}}         one table row per dataset (Download Data)
+--   {{< dataset-entry ID >}}    coverage, status, files, and citation for a
+--                               short entry on another page (Other Data)
+--   {{< dataset-hub >}}         one table row per dataset with a page of
+--                               its own (Download Data)
 --
 -- glance, downloads, history, and cite use the ID given as their first
 -- argument, or else the page's `dataset` metadata. Empty fields show "To be
@@ -110,7 +113,12 @@ local function from_root(path)
   return offset .. "/" .. path:gsub("^/", "")
 end
 
+-- An entry without a page of its own (`page` in datasets.yml) is a section
+-- of that page, anchored by its id.
 local function page_href(d)
+  if not is_empty(d.page) then
+    return from_root(stringify(d.page) .. "/index.qmd") .. "#" .. stringify(d.id)
+  end
   return from_root(stringify(d.id) .. "/index.qmd")
 end
 
@@ -166,6 +174,12 @@ local function kind(f)
   return stringify(f.kind or "")
 end
 
+-- Files on the site download directly. A Harvard Dataverse DOI opens the
+-- record's landing page, not a file, so its button names the repository.
+local function is_dataverse(href)
+  return href:match("^https://doi%.org/10%.7910/") ~= nil
+end
+
 -- A list of files, each with its details and a Download button. The archive
 -- leaves out the version, which its heading already gives.
 local function file_list(files, show_version)
@@ -182,8 +196,12 @@ local function file_list(files, show_version)
     -- than link to the site root.
     local button = tbc()
     if href ~= "" then
-      button = pandoc.Link({ pandoc.Str("Download") }, from_root(href), "",
-        pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, { ["aria-label"] = "Download " .. stringify(label) }))
+      local text, aria = "Download", "Download " .. stringify(label)
+      if is_dataverse(href) then
+        text, aria = "Harvard Dataverse", stringify(label) .. " on Harvard Dataverse"
+      end
+      button = pandoc.Link({ pandoc.Str(text) }, from_root(href), "",
+        pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, { ["aria-label"] = aria }))
     end
     local text = { pandoc.Strong(label) }
     if not is_empty(f.description) then
@@ -368,6 +386,31 @@ local function card(args, kwargs, meta)
   }, classes("dataset-card"))
 end
 
+-- A short entry on another page: the page gives its heading (anchored by
+-- the record's id) and text; this adds coverage and status, the files, and
+-- the citation.
+local function entry(args, kwargs, meta)
+  local d = page_dataset(args, meta)
+  if d == nil then return pandoc.Blocks({}) end
+  local line = { pandoc.Span({ pandoc.Str("Coverage:") }, classes("card-label")), pandoc.Space() }
+  for _, inline in ipairs(value_or_tbc(d.coverage)) do table.insert(line, inline) end
+  table.insert(line, pandoc.Space())
+  table.insert(line, status_badge(d))
+  local blocks = pandoc.Blocks({ pandoc.Para(line) })
+  local files = {}
+  for _, f in ipairs(d.files or {}) do
+    if kind(f) ~= "archive" then table.insert(files, f) end
+  end
+  if #files > 0 then
+    blocks:insert(file_list(files, false))
+  else
+    blocks:insert(pandoc.Para({ pandoc.Span({ pandoc.Str("Files " .. TBC:lower() .. ".") }, classes("tbc")) }))
+  end
+  blocks:insert(pandoc.Para({ pandoc.Span({ pandoc.Str("How to cite") }, classes("card-label")) }))
+  blocks:insert(cite({ d.id }, kwargs, meta))
+  return pandoc.Div(blocks, classes("dataset-entry"))
+end
+
 local function hub(args, kwargs, meta)
   local function cell(content) return { pandoc.Plain(content) } end
   local headers = {
@@ -378,12 +421,15 @@ local function hub(args, kwargs, meta)
   }
   local rows = {}
   for _, d in ipairs(all_datasets()) do
-    table.insert(rows, {
-      cell({ pandoc.Link(inlines(d.name), page_href(d)) }),
-      cell(value_or_tbc(d.coverage)),
-      cell(version_or_status(d)),
-      cell({ status_badge(d) }),
-    })
+    -- Short entries on other pages (Other Data) are not listed.
+    if is_empty(d.page) then
+      table.insert(rows, {
+        cell({ pandoc.Link(inlines(d.name), page_href(d)) }),
+        cell(value_or_tbc(d.coverage)),
+        cell(version_or_status(d)),
+        cell({ status_badge(d) }),
+      })
+    end
   end
   local aligns = { pandoc.AlignDefault, pandoc.AlignDefault, pandoc.AlignDefault, pandoc.AlignDefault }
   local simple = pandoc.SimpleTable({}, aligns, { 0, 0, 0, 0 }, headers, rows)
@@ -397,5 +443,6 @@ return {
   ["dataset-value"] = value,
   ["dataset-cite"] = cite,
   ["dataset-card"] = card,
+  ["dataset-entry"] = entry,
   ["dataset-hub"] = hub,
 }

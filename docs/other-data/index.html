@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ae0c7f44d3938b358699abd5c32abd00.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c327add3970ef1bc36bd8aaefbd5bf0a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles/fonts.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -137,7 +137,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#reviews" id="toc-reviews" class="nav-link active" data-scroll-target="#reviews">Program reviews</a></li>
+  <li><a href="#greening" id="toc-greening" class="nav-link" data-scroll-target="#greening"><em>Greening the International Monetary Fund</em></a></li>
+  <li><a href="#tax-advice" id="toc-tax-advice" class="nav-link" data-scroll-target="#tax-advice">Tax advice</a></li>
+  <li><a href="#social-spending-floors" id="toc-social-spending-floors" class="nav-link" data-scroll-target="#social-spending-floors">Social spending floors</a></li>
+  <li><a href="#thousand-cuts" id="toc-thousand-cuts" class="nav-link" data-scroll-target="#thousand-cuts"><em>A Thousand Cuts</em></a></li>
+  <li><a href="#more-replication-data" id="toc-more-replication-data" class="nav-link" data-scroll-target="#more-replication-data">More replication data</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <a class="visually-hidden-focusable skip-link" href="#quarto-document-content">Skip to main content</a>
@@ -169,11 +182,132 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="draft-note">
-<p>Short entries for smaller datasets to come (Stage 5), each linking to its package or file.</p>
+<!-- Every number in this text comes from data/datasets.yml through
+     dataset-value; the sources there name the file behind each one. Each
+     heading's anchor is its record's id, which links to it use. -->
+<p>The program reviews dataset, and the data and code behind four publications by IMF Monitor researchers. The reviews dataset downloads from this site. The replication packages, listed newest first, are on Harvard Dataverse.</p>
+<section id="reviews" class="level2">
+<h2 class="anchored" data-anchor-id="reviews">Program reviews</h2>
+<p>The dates of IMF Executive Board meetings for 762 IMF programs in 133 countries, 1980–2015: the meeting that approved each program, the meetings that concluded its reviews, and the date proposed for each next review. Programs approved in 1978 and 1979 are included only if they ran into 1980. The <a href="../conditionality/index.html">Conditionality</a> code uses the dataset to adjust conditions for program interruptions, and the <a href="../conditionality/index.html#downloads">Conditionality codebook</a> describes its variables.</p>
+<div class="dataset-entry">
+<p><span class="card-label">Coverage:</span> 1980–2015; 133 countries <span class="status status-available">Available</span></p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Reviews dataset (IMFMonitor_Reviews.xlsx)</strong><br>
+<span class="file-details">Excel (.xlsx) · 230 KB</span>
 </div>
+<a href="../files/conditionality/IMFMonitor_Reviews.xlsx" class="btn btn-primary btn-sm" aria-label="Download Reviews dataset (IMFMonitor_Reviews.xlsx)">Download</a>
+</div></li>
+</ul>
+</div>
+<p><span class="card-label">How to cite</span></p>
+<div class="cite-box">
+<p>Kentikelenis, A. &amp; Stubbs, T. (2023). <em>A Thousand Cuts: Social Protection in the Age of Austerity</em>. Oxford University Press.</p>
+<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>
+</div>
+</div>
+</section>
+<section id="greening" class="level2">
+<h2 class="anchored" data-anchor-id="greening"><em>Greening the International Monetary Fund</em></h2>
+<p>Data and code for <em>Greening the International Monetary Fund</em>, on climate in IMF lending: the 247 conditions in 21 Resilience and Sustainability Facility arrangements approved from November 2022 to December 2024, and 100 IMF lending arrangements approved in 2020–2024, with each country’s climate vulnerability. A further workbook records how programs treated fossil fuels, renewable energy, carbon pricing, and energy subsidies.</p>
+<div class="dataset-entry">
+<p><span class="card-label">Coverage:</span> 2020–2024 <span class="status status-replication-only">Replication only</span></p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Replication data and code (doi:10.7910/DVN/8BSKWO)</strong><br>
+<span class="file-details">One ZIP file (GREENBOOK_Replication.zip): Excel workbooks, a Stata dataset, Stata code, and figures · 2.0 MB</span>
+</div>
+<a href="https://doi.org/10.7910/DVN/8BSKWO" class="btn btn-primary btn-sm" aria-label="Replication data and code (doi:10.7910/DVN/8BSKWO) on Harvard Dataverse">Harvard Dataverse</a>
+</div></li>
+</ul>
+</div>
+<p><span class="card-label">How to cite</span></p>
+<div class="cite-box">
+<p>Kentikelenis, A. &amp; Stubbs, T. (2025). <em>Greening the International Monetary Fund</em>. Cambridge University Press. <a href="https://doi.org/10.1017/9781009697491" class="uri">https://doi.org/10.1017/9781009697491</a></p>
+<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>
+</div>
+</div>
+</section>
+<section id="tax-advice" class="level2">
+<h2 class="anchored" data-anchor-id="tax-advice">Tax advice</h2>
+<p>Data and code for an article on the IMF’s tax advice: 1,049 tax reform proposals to 125 countries in IMF Article IV reports, 2022–2024. Each proposal is quoted with its rationale and classified by type of tax and by whether it is progressive or regressive.</p>
+<div class="dataset-entry">
+<p><span class="card-label">Coverage:</span> 2022–2024; 125 countries <span class="status status-replication-only">Replication only</span></p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Replication data and code (doi:10.7910/DVN/GNYXU1)</strong><br>
+<span class="file-details">Five files: Excel and Stata data, Stata and R code, and World Bank country boundaries</span>
+</div>
+<a href="https://doi.org/10.7910/DVN/GNYXU1" class="btn btn-primary btn-sm" aria-label="Replication data and code (doi:10.7910/DVN/GNYXU1) on Harvard Dataverse">Harvard Dataverse</a>
+</div></li>
+</ul>
+</div>
+<p><span class="card-label">How to cite</span></p>
+<div class="cite-box">
+<p>Kentikelenis, A. &amp; Stubbs, T. (2025). Progressive rhetoric, regressive reality: The IMF’s tax advice to 125 countries, 2022–2024. <em>Global Policy</em>, 16(4), 731–738. <a href="https://doi.org/10.1111/1758-5899.70052" class="uri">https://doi.org/10.1111/1758-5899.70052</a></p>
+<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>
+</div>
+</div>
+</section>
+<section id="social-spending-floors" class="level2">
+<h2 class="anchored" data-anchor-id="social-spending-floors">Social spending floors</h2>
+<p>Data and code for an article on social spending in IMF lending: the social spending floors and budget balance targets in 27 Extended Credit Facility and Extended Fund Facility loans approved in 2020–2022. They give each floor’s definition, the quarterly targets and outcomes reported in the loan documents and reviews up to 31 August 2023, and projected government spending.</p>
+<div class="dataset-entry">
+<p><span class="card-label">Coverage:</span> Loans approved in 2020–2022; 27 countries <span class="status status-replication-only">Replication only</span></p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Replication data and code (doi:10.7910/DVN/KVVFV1)</strong><br>
+<span class="file-description">SSF_Data.xlsx holds the floors, targets, and outcomes. The Stata dataset (325 MB) holds the country-year fiscal and debt data the code uses.</span><br>
+<span class="file-details">Four files: Excel and Stata data, Stata code, and the article’s tables in Excel</span>
+</div>
+<a href="https://doi.org/10.7910/DVN/KVVFV1" class="btn btn-primary btn-sm" aria-label="Replication data and code (doi:10.7910/DVN/KVVFV1) on Harvard Dataverse">Harvard Dataverse</a>
+</div></li>
+</ul>
+</div>
+<p><span class="card-label">How to cite</span></p>
+<div class="cite-box">
+<p>Kentikelenis, A. &amp; Stubbs, T. (2024). Social protection and the International Monetary Fund: Promise versus performance. <em>Globalization and Health</em>, 20, 41. <a href="https://doi.org/10.1186/s12992-024-01045-9" class="uri">https://doi.org/10.1186/s12992-024-01045-9</a></p>
+<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>
+</div>
+</div>
+</section>
+<section id="thousand-cuts" class="level2">
+<h2 class="anchored" data-anchor-id="thousand-cuts"><em>A Thousand Cuts</em></h2>
+<p>Data and code for <em>A Thousand Cuts</em>, the book that the <a href="../conditionality/index.html">Conditionality</a> codebook asks users to cite: a country-year dataset for 1980–2019 with its codebook, and the Stata code, tables, and figures for the book’s chapters.</p>
+<div class="dataset-entry">
+<p><span class="card-label">Coverage:</span> 1980–2019 <span class="status status-replication-only">Replication only</span></p>
+<div class="downloads">
+<ul>
+<li><div class="download-item">
+<div class="download-label">
+<strong>Replication data and code (doi:10.7910/DVN/DPV99L)</strong><br>
+<span class="file-details">60 files: Stata datasets and code, Excel tables and codebook, figures, and map files</span>
+</div>
+<a href="https://doi.org/10.7910/DVN/DPV99L" class="btn btn-primary btn-sm" aria-label="Replication data and code (doi:10.7910/DVN/DPV99L) on Harvard Dataverse">Harvard Dataverse</a>
+</div></li>
+</ul>
+</div>
+<p><span class="card-label">How to cite</span></p>
+<div class="cite-box">
+<p>Kentikelenis, A. &amp; Stubbs, T. (2023). <em>A Thousand Cuts: Social Protection in the Age of Austerity</em>. Oxford University Press. <a href="https://doi.org/10.1093/oso/9780190637736.001.0001" class="uri">https://doi.org/10.1093/oso/9780190637736.001.0001</a></p>
+<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>
+</div>
+</div>
+</section>
+<section id="more-replication-data" class="level2">
+<h2 class="anchored" data-anchor-id="more-replication-data">More replication data</h2>
+<p>Replication data and code for further publications using IMF Monitor data are in the <a href="https://dataverse.harvard.edu/dataverse/imfmonitor">IMF Monitor collection on Harvard Dataverse</a>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>

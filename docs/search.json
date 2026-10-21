@@ -53,7 +53,49 @@
     "href": "other-data/index.html",
     "title": "Other Data",
     "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nShort entries for smaller datasets to come (Stage 5), each linking to its package or file."
+    "text": "Skip to main content\nThe program reviews dataset, and the data and code behind four publications by IMF Monitor researchers. The reviews dataset downloads from this site. The replication packages, listed newest first, are on Harvard Dataverse."
+  },
+  {
+    "objectID": "other-data/index.html#reviews",
+    "href": "other-data/index.html#reviews",
+    "title": "Other Data",
+    "section": "Program reviews",
+    "text": "Program reviews\nThe dates of IMF Executive Board meetings for 762 IMF programs in 133 countries, 1980–2015: the meeting that approved each program, the meetings that concluded its reviews, and the date proposed for each next review. Programs approved in 1978 and 1979 are included only if they ran into 1980. The Conditionality code uses the dataset to adjust conditions for program interruptions, and the Conditionality codebook describes its variables.\n\nCoverage: 1980–2015; 133 countries Available\n\n\n\n\nReviews dataset (IMFMonitor_Reviews.xlsx)\nExcel (.xlsx) · 230 KB\n\nDownload\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2023). A Thousand Cuts: Social Protection in the Age of Austerity. Oxford University Press.\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#greening",
+    "href": "other-data/index.html#greening",
+    "title": "Other Data",
+    "section": "Greening the International Monetary Fund",
+    "text": "Greening the International Monetary Fund\nData and code for Greening the International Monetary Fund, on climate in IMF lending: the 247 conditions in 21 Resilience and Sustainability Facility arrangements approved from November 2022 to December 2024, and 100 IMF lending arrangements approved in 2020–2024, with each country’s climate vulnerability. A further workbook records how programs treated fossil fuels, renewable energy, carbon pricing, and energy subsidies.\n\nCoverage: 2020–2024 Replication only\n\n\n\n\nReplication data and code (doi:10.7910/DVN/8BSKWO)\nOne ZIP file (GREENBOOK_Replication.zip): Excel workbooks, a Stata dataset, Stata code, and figures · 2.0 MB\n\nHarvard Dataverse\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2025). Greening the International Monetary Fund. Cambridge University Press. https://doi.org/10.1017/9781009697491\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#tax-advice",
+    "href": "other-data/index.html#tax-advice",
+    "title": "Other Data",
+    "section": "Tax advice",
+    "text": "Tax advice\nData and code for an article on the IMF’s tax advice: 1,049 tax reform proposals to 125 countries in IMF Article IV reports, 2022–2024. Each proposal is quoted with its rationale and classified by type of tax and by whether it is progressive or regressive.\n\nCoverage: 2022–2024; 125 countries Replication only\n\n\n\n\nReplication data and code (doi:10.7910/DVN/GNYXU1)\nFive files: Excel and Stata data, Stata and R code, and World Bank country boundaries\n\nHarvard Dataverse\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2025). Progressive rhetoric, regressive reality: The IMF’s tax advice to 125 countries, 2022–2024. Global Policy, 16(4), 731–738. https://doi.org/10.1111/1758-5899.70052\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#social-spending-floors",
+    "href": "other-data/index.html#social-spending-floors",
+    "title": "Other Data",
+    "section": "Social spending floors",
+    "text": "Social spending floors\nData and code for an article on social spending in IMF lending: the social spending floors and budget balance targets in 27 Extended Credit Facility and Extended Fund Facility loans approved in 2020–2022. They give each floor’s definition, the quarterly targets and outcomes reported in the loan documents and reviews up to 31 August 2023, and projected government spending.\n\nCoverage: Loans approved in 2020–2022; 27 countries Replication only\n\n\n\n\nReplication data and code (doi:10.7910/DVN/KVVFV1)\nSSF_Data.xlsx holds the floors, targets, and outcomes. The Stata dataset (325 MB) holds the country-year fiscal and debt data the code uses.\nFour files: Excel and Stata data, Stata code, and the article’s tables in Excel\n\nHarvard Dataverse\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2024). Social protection and the International Monetary Fund: Promise versus performance. Globalization and Health, 20, 41. https://doi.org/10.1186/s12992-024-01045-9\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#thousand-cuts",
+    "href": "other-data/index.html#thousand-cuts",
+    "title": "Other Data",
+    "section": "A Thousand Cuts",
+    "text": "A Thousand Cuts\nData and code for A Thousand Cuts, the book that the Conditionality codebook asks users to cite: a country-year dataset for 1980–2019 with its codebook, and the Stata code, tables, and figures for the book’s chapters.\n\nCoverage: 1980–2019 Replication only\n\n\n\n\nReplication data and code (doi:10.7910/DVN/DPV99L)\n60 files: Stata datasets and code, Excel tables and codebook, figures, and map files\n\nHarvard Dataverse\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2023). A Thousand Cuts: Social Protection in the Age of Austerity. Oxford University Press. https://doi.org/10.1093/oso/9780190637736.001.0001\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#more-replication-data",
+    "href": "other-data/index.html#more-replication-data",
+    "title": "Other Data",
+    "section": "More replication data",
+    "text": "More replication data\nReplication data and code for further publications using IMF Monitor data are in the IMF Monitor collection on Harvard Dataverse."
   },
   {
     "objectID": "governance/index.html",
