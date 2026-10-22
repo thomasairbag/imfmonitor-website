@@ -364,9 +364,9 @@ a.uri {
 
 // Footer
 
-// One centred block: the reuse and contact line, then the independence
-// notice as smaller print. Quarto's empty left and right slots are removed so
-// the block sits in the middle of the page.
+// One centred block: the reuse and contact line, then the one-line
+// independence note as smaller print. Quarto's empty left and right slots are
+// removed so the block sits in the middle of the page.
 
 .nav-footer {
   font-size: 0.875rem;
@@ -383,9 +383,11 @@ a.uri {
   margin: 0 auto;
   text-align: center;
 
+  // em, not rem: Quarto already shrinks footer text to 0.825em, so a rem size
+  // would make the note larger than the line above it.
   p:last-child {
     margin-bottom: 0;
     color: $imfm-muted;
-    font-size: 0.8125rem;
+    font-size: 0.9em;
   }
 }

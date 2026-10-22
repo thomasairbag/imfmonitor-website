@@ -2,9 +2,6 @@
 title: "Conditionality"
 dataset: conditionality
 toc: true
-# Retired 2017 page (plan Section 4, URL map). Test on staging.
-aliases:
-  - /imf-conditionality.html
 ---
 
 <!-- Every number in this text comes from data/datasets.yml through
