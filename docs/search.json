@@ -186,7 +186,7 @@
     "href": "conditionality/index.html#related-datasets",
     "title": "Conditionality",
     "section": "Related datasets",
-    "text": "Related datasets\n\n\nPrograms\nTo be confirmed\nCoverage: 1952–2025; 202 independent states\nAvailable"
+    "text": "Related datasets\n\n\nPrograms\nParticipation in IMF lending arrangements, by arrangement and as a yearly country panel.\nCoverage: 1952–2025; 202 independent states\nAvailable"
   },
   {
     "objectID": "conditionality/index.html#publications-using-the-data",
@@ -256,14 +256,14 @@
     "href": "index.html#datasets",
     "title": "IMF Monitor",
     "section": "Datasets",
-    "text": "Datasets\n\n\nConditionality\nTo be confirmed\nCoverage: 1980–2019; conditions in 134 countries\nAvailable\n\n\nPrograms\nTo be confirmed\nCoverage: 1952–2025; 202 independent states\nAvailable\n\n\nGovernance\nTo be confirmed\nCoverage: 1995–2015; 142 countries\nAvailable\n\n\nTechnical Assistance\nTo be confirmed\nCoverage: 1964–1989; 161 countries\nForthcoming"
+    "text": "Datasets\n\n\nConditionality\nPolicy conditions attached to IMF lending programs, classified by type and policy area.\nCoverage: 1980–2019; conditions in 134 countries\nAvailable\n\n\nPrograms\nParticipation in IMF lending arrangements, by arrangement and as a yearly country panel.\nCoverage: 1952–2025; 202 independent states\nAvailable\n\n\nGovernance\nIMF Executive Board discussions of individual countries, with the full text of each comment.\nCoverage: 1995–2015; 142 countries\nAvailable\n\n\nTechnical Assistance\nIMF technical assistance missions and resident advisors, by country and IMF department.\nCoverage: 1964–1989; 161 countries\nForthcoming"
   },
   {
     "objectID": "index.html#more-data",
     "href": "index.html#more-data",
     "title": "IMF Monitor",
     "section": "More data",
-    "text": "More data\n\nOther Data: smaller datasets and supplementary data.\nReplication Data: data and code for published research, on Harvard Dataverse."
+    "text": "More data\n\nOther Data: the program reviews dataset, and data and code for selected publications.\nReplication Data: data and code for further publications, in the IMF Monitor collection on Harvard Dataverse."
   },
   {
     "objectID": "programs/index.html",
@@ -305,7 +305,7 @@
     "href": "programs/index.html#related-datasets",
     "title": "Programs",
     "section": "Related datasets",
-    "text": "Related datasets\n\n\nConditionality\nTo be confirmed\nCoverage: 1980–2019; conditions in 134 countries\nAvailable"
+    "text": "Related datasets\n\n\nConditionality\nPolicy conditions attached to IMF lending programs, classified by type and policy area.\nCoverage: 1980–2019; conditions in 134 countries\nAvailable"
   },
   {
     "objectID": "programs/index.html#publications-using-the-data",

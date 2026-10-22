@@ -50,7 +50,7 @@
 datasets:
   - id: conditionality
     name: "Conditionality"
-    tagline:
+    tagline: "Policy conditions attached to IMF lending programs, classified by type and policy area."
     coverage: "1980–2019; conditions in 134 countries"
     period: "1980–2019"
     counts:
@@ -163,10 +163,11 @@ datasets:
       - "history, March 2026: the main dataset gains 21 variables (IMFm, IMFnn, IMF6n, IMF33, IMF44, IMF55, IMF66, and the con- and non- versions of each) and loses none; every common variable has identical values in the v2.0 and v2.1 main datasets, and the raw datasets are byte-identical (checked 20 October 2026). The 2026 codebook adds 'Program Participation Indicators' and 'Variable List for the Programs Dataset', which the July 2023 codebook PDF lacks. It also adds a note grouping the 13 policy areas into broader categories used in A Thousand Cuts."
       - "history, July 2023: dated by its codebook PDF (created 22 July 2023, just after A Thousand Cuts), as Thomas Stubbs asked on 20 October 2026; the data files' own notes sheets say 'Version: June 2020', and the release may have been public then; the v2.0 main dataset (1980–2019, 220 country codes, BA1TOT 65,894); the codebook's 'Dataset Updates and Discrepancies' section."
       - "history, September 2017: the v1.0 codebook ('Version: September 2017'; 'How to cite the dataset': Kentikelenis, Stubbs, and King 2016); the v1.0 main dataset (INETDataset_Main.dta: 1980–2014, 216 country codes, BA1TOT 58,406)."
+      - "tagline: the codebook (conditions classified by type and into 13 policy areas), as in the page summary. Thomas Stubbs approved the wording on 22 October 2026."
 
   - id: programs
     name: "Programs"
-    tagline:
+    tagline: "Participation in IMF lending arrangements, by arrangement and as a yearly country panel."
     coverage: "1952–2025; 202 independent states"
     period: "1952–2025"
     counts:
@@ -238,10 +239,11 @@ datasets:
       - "File descriptions: codebook, Sections 1–3; the workbooks' sheets (raw: Arrangements, Members, Run_Metadata, Errors, Query_Log; panel: Country_Year and twelve sheets on countries, states, facilities, and checks); the scripts' headers and settings (the scraper queries the latest as-of date on the IMF page, so a rerun may differ from this release; Thomas Stubbs approved the wording on 21 October 2026; the panel script holds the state dates in STATE_EXISTENCE and reads the World Bank country API at run time). June 2020 file: its Dataset sheet's columns."
       - "history, October 2026: Programs codebook, Steps 1–4, and its source_note abbreviations ('IMFMonitor_Programs = the earlier hand-coded dataset'). Indicator names: the 21 variables added to the March 2026 Conditionality main dataset (IMFm, IMFnn, IMF6n, IMF33, IMF44, IMF55, IMF66, and the con- and non- versions) match the panel's. Months: the March 2026 Conditionality do-file counts a same-year spell as end month minus start month; the panel script's default 'calendar' method counts each month in force (its 'legacy' option reproduces the old arithmetic), and the codebook's IMFm definition gives March to September as 7."
       - "history, June 2020: v2020-06_IMFMonitor_Programs.xlsx (Dataset sheet: 1,284 rows, 144 country codes, arrangement dates 26 April 1978 to 20 December 2019). It was in the March 2026 Conditionality download on imfmonitor.org (the Wix file share, dated 27 March 2026); it is not in the July 2023 (v2.0) folder. The March 2026 Conditionality codebook has a 'Variable List for the Programs Dataset'."
+      - "tagline: Programs codebook, Sections 2 and 3 (raw dataset: one row per arrangement or outright purchase; panel dataset: one row per independent state per year). Thomas Stubbs approved the wording on 22 October 2026."
 
   - id: governance
     name: "Governance"
-    tagline:
+    tagline: "IMF Executive Board discussions of individual countries, with the full text of each comment."
     coverage: "1995–2015; 142 countries"
     period: "1995–2015"
     counts:
@@ -288,10 +290,11 @@ datasets:
       - "period and counts: the speech-level file, checked 21 October 2026: 3,111 distinct meeting_id values (meetings), as the codebook states (pp. 1, 2, and 5); 142 country prefixes in meeting_id (countries), as the codebook states on p. 5 (p. 7 says 141); discussion dates from 11 January 1995 to 14 December 2015 (period). The codebook gives 'more than 38 million words' (p. 1): the non-duplicate speeches of state representatives (sp_position ED, AED, TAED, SeniorAdvisor, Advisor, or Assistant; c_dupl 0) have 38,510,299 words by stringi's word count (words). 'Low- and middle-income countries' and 'primarily on the topics of lending and economic surveillance': codebook, pp. 1 and 7."
       - "File descriptions: codebook, p. 5 (Component 1, meeting-level data) and pp. 5–6 (Component 2, speech-level data: 164,263 observations, including attendees who did not speak). The speech-level file's 15 variables are the codebook's speech-level variables."
       - "history, January 2025: Harvard Dataverse doi:10.7910/DVN/7N7LCH (versions 1.0 and 1.1 both released 17 January 2025), which holds the same codebook and meeting- and speech-level files (MD5, 20 and 21 October 2026); the Wix file share's 'IMF Executive Board Minutes Dataset' folder, dated 2 May 2025, which held the codebook and speech-level file."
+      - "tagline: codebook, pp. 1 and 5 (country-specific Executive Board discussions; the speech-level data give the full text of each speech), as in the page summary. Thomas Stubbs approved the wording on 22 October 2026."
 
   - id: technical-assistance
     name: "Technical Assistance"
-    tagline:
+    tagline: "IMF technical assistance missions and resident advisors, by country and IMF department."
     coverage: "1964–1989; 161 countries"
     period: "1964–1989"
     counts:
@@ -309,6 +312,7 @@ datasets:
       - "unit: the dataset's draft codebook, 'Variable list for the raw dataset' (country-mission) and 'Transforming the dataset' (country-year panel)."
       - "Sources of the data, in the summary: the draft codebook, 'Assembling the dataset' (annual consolidated technical assistance reports issued as Executive Board Documents, and Secretary's Circulars listing personnel assignments)."
       - "citation: the working paper's title page (Iasmin Goes and Thomas Stubbs, dated 21 October 2026). Thomas Stubbs, 21 October 2026: cite the working paper until the dataset is released. The codebook gives no citation. This replaces the citation on the Wix page (Goes and Stubbs, 2026, 'Legitimacy by expertise … 1964-1990', working paper), an earlier title."
+      - "tagline: the draft codebook's variable list for the raw dataset (country and IMF department for each record) and the totals by department checked on 21 October 2026, which cover missions and resident advisor assignments alike. Thomas Stubbs approved the wording on 22 October 2026."
 
   # Other Data (plan Section 3): short entries on one page, newest
   # publication first after the reviews dataset. Replication packages link

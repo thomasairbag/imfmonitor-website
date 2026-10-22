@@ -22,5 +22,5 @@ IMF Monitor makes research data on the International Monetary Fund accessible to
 
 ## More data
 
-- [Other Data](other-data/index.qmd): smaller datasets and supplementary data.
-- [Replication Data](https://dataverse.harvard.edu/dataverse/imfmonitor): data and code for published research, on Harvard Dataverse.
+- [Other Data](other-data/index.qmd): the program reviews dataset, and data and code for selected publications.
+- [Replication Data](https://dataverse.harvard.edu/dataverse/imfmonitor): data and code for further publications, in the IMF Monitor collection on Harvard Dataverse.

@@ -379,8 +379,10 @@ local function card(args, kwargs, meta)
   local title = pandoc.Link(inlines(d.name), page_href(d), "", classes("stretched-link"))
   local coverage = { pandoc.Span({ pandoc.Str("Coverage:") }, classes("card-label")), pandoc.Space() }
   for _, inline in ipairs(value_or_tbc(d.coverage)) do table.insert(coverage, inline) end
+  -- no-anchor: the heading has no id, so Quarto's anchor link would point
+  -- to "#" and add a stray "Anchor" stop for keyboard users.
   return pandoc.Div({
-    pandoc.Header(3, { title }, classes("unnumbered", "unlisted")),
+    pandoc.Header(3, { title }, classes("unnumbered", "unlisted", "no-anchor")),
     pandoc.Para(value_or_tbc(d.tagline)),
     pandoc.Para(coverage),
     pandoc.Para({ status_badge(d) }),
