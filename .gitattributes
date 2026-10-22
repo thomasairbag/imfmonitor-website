@@ -3,5 +3,3 @@
 # copies (core.autocrlf would otherwise rewrite the .R scripts).
 files/** -text
 docs/files/** -text
-wp-content/** -text
-docs/wp-content/** -text

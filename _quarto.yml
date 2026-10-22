@@ -8,9 +8,9 @@ project:
   resources:
     # Tells GitHub Pages to serve the files as they are, without Jekyll.
     - ".nojekyll"
-    # Small downloads and the legacy codebook path (plan Sections 4 and 6).
+    # Dataset downloads. The old /wp-content/ codebook path is not kept
+    # (Thomas, 22 October 2026; plan decision 14).
     - "files/**"
-    - "wp-content/**"
     # Self-hosted fonts and their licences, referenced from styles/fonts.css.
     - "fonts/**"
 
@@ -20,7 +20,9 @@ project:
 website:
   title: "IMF Monitor"
   description: "Independent research data on the International Monetary Fund"
-  # site-url: set once the GitHub Pages address is known (plan Decision 4).
+  # The staging address (plan decisions 4 and 46). The 404 page needs it for
+  # links that work at any depth. Change to https://imfmonitor.org/ at cutover.
+  site-url: "https://thomasairbag.github.io/imfmonitor-website/"
   # Bar mark wordmark and tab icon (plan decision 21). R/make-favicon.R draws
   # the icon.
   favicon: images/favicon.png
