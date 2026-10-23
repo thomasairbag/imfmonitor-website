@@ -74,6 +74,19 @@ $navbar-nav-link-padding-x: 0.4rem;
   border: 2px solid $imfm-primary;
 }
 
+// Quarto's quarto-nav.js adds this rule once the page has loaded, so that a
+// section link stops below the fixed menu bar. For a page opened at a section
+// link (such as #downloads from Download Data) that is too late: the browser
+// has already scrolled, and the menu bar covers the heading. Declaring the
+// rule here makes it apply from the start; 61px is the menu bar's height at
+// every width, and Quarto's script then sets the exact value as before.
+section:target::before {
+  content: "";
+  display: block;
+  height: 61px;
+  margin: -61px 0 0;
+}
+
 // Text
 
 .lead {
