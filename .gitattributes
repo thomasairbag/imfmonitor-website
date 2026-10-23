@@ -3,3 +3,7 @@
 # copies (core.autocrlf would otherwise rewrite the .R scripts).
 files/** -text
 docs/files/** -text
+# Figure inputs copied from their sources: the World Bank boundaries and the
+# Source Sans 3 TTF files.
+R/boundaries/** -text
+R/fonts/** -text

@@ -193,10 +193,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- The project director first, then the collaborators by surname, with
      Al Mahmud under M (Thomas, 21 October 2026). The photos have empty alt
      text because each sits beside the person's name, which a screen reader
-     would otherwise announce twice. -->
+     would otherwise announce twice. The alt="" attribute must be explicit:
+     Pandoc writes no alt at all for an empty description, and screen readers
+     then read the file name. -->
 <div class="team">
 <div class="team-member">
-<p><img src="../images/team/stubbs.jpg" class="team-photo" width="120" height="120"></p>
+<p><img src="../images/team/stubbs.jpg" class="team-photo" alt="" width="120" height="120"></p>
 <section id="thomas-stubbs" class="level3 unnumbered unlisted team-text">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="thomas-stubbs">Thomas Stubbs</h3>
 <p><span class="team-role">Project Director</span><br>
@@ -208,7 +210,7 @@ Royal Holloway, University of London</p>
 </section>
 </div>
 <div class="team-member">
-<p><img src="../images/team/goes.jpg" class="team-photo" width="120" height="120"></p>
+<p><img src="../images/team/goes.jpg" class="team-photo" alt="" width="120" height="120"></p>
 <section id="iasmin-goes" class="level3 unnumbered unlisted team-text">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="iasmin-goes">Iasmin Goes</h3>
 <p><span class="team-role">Project Collaborator</span><br>
@@ -220,7 +222,7 @@ Central European University</p>
 </section>
 </div>
 <div class="team-member">
-<p><img src="../images/team/kentikelenis.jpg" class="team-photo" width="120" height="120"></p>
+<p><img src="../images/team/kentikelenis.jpg" class="team-photo" alt="" width="120" height="120"></p>
 <section id="alexandros-kentikelenis" class="level3 unnumbered unlisted team-text">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="alexandros-kentikelenis">Alexandros Kentikelenis</h3>
 <p><span class="team-role">Project Collaborator</span><br>
@@ -232,7 +234,7 @@ Bocconi University</p>
 </section>
 </div>
 <div class="team-member">
-<p><img src="../images/team/mahmud.jpg" class="team-photo" width="120" height="120"></p>
+<p><img src="../images/team/mahmud.jpg" class="team-photo" alt="" width="120" height="120"></p>
 <section id="abdullah-al-mahmud" class="level3 unnumbered unlisted team-text">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="abdullah-al-mahmud">Abdullah Al Mahmud</h3>
 <p><span class="team-role">Project Collaborator</span><br>
@@ -244,7 +246,7 @@ University of Glasgow</p>
 </section>
 </div>
 <div class="team-member">
-<p><img src="../images/team/reinsberg.jpg" class="team-photo" width="120" height="120"></p>
+<p><img src="../images/team/reinsberg.jpg" class="team-photo" alt="" width="120" height="120"></p>
 <section id="bernhard-reinsberg" class="level3 unnumbered unlisted team-text">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="bernhard-reinsberg">Bernhard Reinsberg</h3>
 <p><span class="team-role">Project Collaborator</span><br>

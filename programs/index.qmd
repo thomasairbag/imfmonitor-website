@@ -23,8 +23,19 @@ The IMF Programs Dataset records participation in IMF lending programs in {{< da
 
 ## Figures
 
-::: {.draft-note}
-Figures to come, redrawn in R from the data (Stage 6).
+<!-- Drawn by R/fig-programs-participation.R from the panel dataset. After a
+     new release, rerun it and check the alt text against the numbers it
+     prints. Phones get the -narrow image. -->
+
+::: {#fig-programs-participation}
+```{=html}
+<picture>
+<source media="(max-width: 575.98px)" srcset="../images/figures/programs-participation-narrow.png" width="720" height="600">
+<img src="../images/figures/programs-participation.png" width="1600" height="720" class="img-fluid" alt="Line chart of the number of states with an IMF program in force each year from 1952 to 2025, for all programs, concessional programs, and non-concessional programs. The total rises from 2 in 1952 to a peak of 75 in 1996, falls to 41 in 2007 and 40 in 2018, and stands at 55 in 2025. Concessional programs begin in 1986 and outnumber non-concessional ones in every year from 1997 to 2015.">
+</picture>
+```
+
+States with an IMF program in force at any time in the year, {{< dataset-value period >}}, from the panel dataset. A state can have a concessional and a non-concessional program in the same year, so those two lines can add up to more than all programs. No concessional program was in force before 1986, so until then the lines for all programs and non-concessional programs coincide. Rapid disbursements and outright purchases are left out.
 :::
 
 ## Related datasets

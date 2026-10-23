@@ -28,13 +28,6 @@
     "text": "How to cite\n\nGoes, I. & Stubbs, T. (2026). Embedded Expertise: The Political Economy of IMF Technical Assistance, 1964–1989. Working paper.\nCopy citation"
   },
   {
-    "objectID": "technical-assistance/index.html#figures",
-    "href": "technical-assistance/index.html#figures",
-    "title": "Technical Assistance",
-    "section": "Figures",
-    "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
-  },
-  {
     "objectID": "technical-assistance/index.html#publications-using-the-data",
     "href": "technical-assistance/index.html#publications-using-the-data",
     "title": "Technical Assistance",
@@ -130,7 +123,7 @@
     "href": "governance/index.html#figures",
     "title": "Governance",
     "section": "Figures",
-    "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
+    "text": "Figures\n\n\n\n\n\n\n\n\n\n\nFigure 1: Executive Board discussions of individual countries per year, by topic, 1995–2015: 3,111 in all, from the meeting-level data."
   },
   {
     "objectID": "governance/index.html#publications-using-the-data",
@@ -179,7 +172,7 @@
     "href": "conditionality/index.html#figures",
     "title": "Conditionality",
     "section": "Figures",
-    "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
+    "text": "Figures\n\n\n\n\n\n\n\n\n\n\nFigure 1: Conditions per country, 1980–2019, from the main dataset. Countries in grey have no conditions recorded. The map can’t show conditions for Czechoslovakia and Yugoslavia, which no longer exist, and some small countries are too small to see; the main dataset gives every country’s total. Boundaries: World Bank Official Boundaries (CC BY 4.0).\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Conditions per year, 1980–2019: 65,894 in all, from the main dataset."
   },
   {
     "objectID": "conditionality/index.html#related-datasets",
@@ -298,7 +291,7 @@
     "href": "programs/index.html#figures",
     "title": "Programs",
     "section": "Figures",
-    "text": "Figures\n\nFigures to come, redrawn in R from the data (Stage 6)."
+    "text": "Figures\n\n\n\n\n\n\n\n\n\n\nFigure 1: States with an IMF program in force at any time in the year, 1952–2025, from the panel dataset. A state can have a concessional and a non-concessional program in the same year, so those two lines can add up to more than all programs. No concessional program was in force before 1986, so until then the lines for all programs and non-concessional programs coincide. Rapid disbursements and outright purchases are left out."
   },
   {
     "objectID": "programs/index.html#related-datasets",

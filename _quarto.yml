@@ -12,7 +12,12 @@ project:
     # (Thomas, 22 October 2026; plan decision 14).
     - "files/**"
     # Self-hosted fonts and their licences, referenced from styles/fonts.css.
-    - "fonts/**"
+    # The leading slash keeps R/fonts (TTF files for drawing figures) out of
+    # the site: an unanchored "fonts/**" matches any folder named fonts.
+    - "/fonts/**"
+    # Figures drawn by R/fig-*.R. The pages reference the phone versions only
+    # in <picture> srcset attributes, which Quarto doesn't follow.
+    - "images/figures/**"
 
 # Dataset facts live in data/datasets.yml; the shortcodes in
 # _extensions/imfmonitor/ read and display them.

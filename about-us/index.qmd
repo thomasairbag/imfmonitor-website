@@ -24,11 +24,13 @@ If you hold rights in anything on this site, or have a concern about how a name 
 <!-- The project director first, then the collaborators by surname, with
      Al Mahmud under M (Thomas, 21 October 2026). The photos have empty alt
      text because each sits beside the person's name, which a screen reader
-     would otherwise announce twice. -->
+     would otherwise announce twice. The alt="" attribute must be explicit:
+     Pandoc writes no alt at all for an empty description, and screen readers
+     then read the file name. -->
 
 ::: {.team}
 ::: {.team-member}
-![](../images/team/stubbs.jpg){.team-photo width="120" height="120"}
+![](../images/team/stubbs.jpg){.team-photo width="120" height="120" alt=""}
 
 ::: {.team-text}
 ### Thomas Stubbs {.unnumbered .unlisted}
@@ -44,7 +46,7 @@ Royal Holloway, University of London
 :::
 
 ::: {.team-member}
-![](../images/team/goes.jpg){.team-photo width="120" height="120"}
+![](../images/team/goes.jpg){.team-photo width="120" height="120" alt=""}
 
 ::: {.team-text}
 ### Iasmin Goes {.unnumbered .unlisted}
@@ -60,7 +62,7 @@ Central European University
 :::
 
 ::: {.team-member}
-![](../images/team/kentikelenis.jpg){.team-photo width="120" height="120"}
+![](../images/team/kentikelenis.jpg){.team-photo width="120" height="120" alt=""}
 
 ::: {.team-text}
 ### Alexandros Kentikelenis {.unnumbered .unlisted}
@@ -76,7 +78,7 @@ Bocconi University
 :::
 
 ::: {.team-member}
-![](../images/team/mahmud.jpg){.team-photo width="120" height="120"}
+![](../images/team/mahmud.jpg){.team-photo width="120" height="120" alt=""}
 
 ::: {.team-text}
 ### Abdullah Al Mahmud {.unnumbered .unlisted}
@@ -92,7 +94,7 @@ University of Glasgow
 :::
 
 ::: {.team-member}
-![](../images/team/reinsberg.jpg){.team-photo width="120" height="120"}
+![](../images/team/reinsberg.jpg){.team-photo width="120" height="120" alt=""}
 
 ::: {.team-text}
 ### Bernhard Reinsberg {.unnumbered .unlisted}

@@ -23,8 +23,30 @@ The IMF Conditionality Dataset records the policy conditions attached to IMF len
 
 ## Figures
 
-::: {.draft-note}
-Figures to come, redrawn in R from the data (Stage 6).
+<!-- Drawn by R/fig-conditionality-map.R and R/fig-conditionality-years.R
+     from the main dataset. After a new release, rerun both and check the alt
+     text against the numbers they print. Phones get the -narrow images. -->
+
+::: {#fig-conditionality-map}
+```{=html}
+<picture>
+<source media="(max-width: 575.98px)" srcset="../images/figures/conditionality-map-narrow.png" width="720" height="540">
+<img src="../images/figures/conditionality-map.png" width="1600" height="860" class="img-fluid" alt="World map shading each country by its total IMF conditions from 1980 to 2019. Conditions are heaviest in sub-Saharan Africa, followed by eastern Europe and Central Asia, and Latin America and the Caribbean. Fourteen countries have more than 1,000, led by Pakistan with 1,303; eight of them are in West Africa. North America, most of western Europe, Japan, Australia, and most of the Arabian Peninsula have none.">
+</picture>
+```
+
+Conditions per country, {{< dataset-value period >}}, from the main dataset. Countries in grey have no conditions recorded. The map can't show conditions for Czechoslovakia and Yugoslavia, which no longer exist, and some small countries are too small to see; the main dataset gives every country's total. Boundaries: [World Bank Official Boundaries](https://datacatalog.worldbank.org/search/dataset/0038272) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+:::
+
+::: {#fig-conditionality-years}
+```{=html}
+<picture>
+<source media="(max-width: 575.98px)" srcset="../images/figures/conditionality-years-narrow.png" width="720" height="560">
+<img src="../images/figures/conditionality-years.png" width="1600" height="720" class="img-fluid" alt="Bar chart of IMF conditions per year from 1980 to 2019. Conditions rise from 412 in 1980 to a peak of 2,983 in 1996 and stay above 2,500 a year until 2004. From 2006 they range between 1,230 and 1,978 a year, with 1,422 in 2019.">
+</picture>
+```
+
+Conditions per year, {{< dataset-value period >}}: {{< dataset-value counts.conditions >}} in all, from the main dataset.
 :::
 
 ## Related datasets

@@ -21,11 +21,8 @@ The IMF Technical Assistance Dataset records the IMF's technical assistance to m
 
 {{< dataset-cite >}}
 
-## Figures
-
-::: {.draft-note}
-Figures to come, redrawn in R from the data (Stage 6).
-:::
+<!-- No Figures section until the dataset is released (Thomas, 23 October
+     2026; plan decision 53): the raw data can't go in the repository. -->
 
 ## Publications using the data
 

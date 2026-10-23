@@ -23,8 +23,19 @@ The IMF Executive Board Minutes Dataset is a text corpus of the IMF Executive Bo
 
 ## Figures
 
-::: {.draft-note}
-Figures to come, redrawn in R from the data (Stage 6).
+<!-- Drawn by R/fig-governance-meetings.R from the meeting-level data. After
+     a new release, rerun it and check the alt text against the numbers it
+     prints. Phones get the -narrow image. -->
+
+::: {#fig-governance-meetings}
+```{=html}
+<picture>
+<source media="(max-width: 575.98px)" srcset="../images/figures/governance-meetings-narrow.png" width="720" height="600">
+<img src="../images/figures/governance-meetings.png" width="1600" height="720" class="img-fluid" alt="Stacked bar chart of Executive Board discussions of individual countries each year from 1995 to 2015, divided into lending program, Article IV, and other discussions. There are between 107 and 177 a year, and fewer than 140 a year after 2010. Lending program discussions outnumber Article IV discussions in 18 of the 21 years; over the whole period there are 1,676 lending program, 1,098 Article IV, and 337 other discussions.">
+</picture>
+```
+
+Executive Board discussions of individual countries per year, by topic, {{< dataset-value period >}}: {{< dataset-value counts.meetings >}} in all, from the meeting-level data.
 :::
 
 ## Publications using the data
