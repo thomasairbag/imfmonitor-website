@@ -140,6 +140,41 @@
     "text": "Version history\n\nJanuary 2025\nThe codebook and the meeting- and speech-level data were published on Harvard Dataverse in January 2025, with the replication data for Forster, Honig, and Kentikelenis (2025). imfmonitor.org offered the codebook and speech-level data from May 2025.\nCurrent release: its files are under Downloads."
   },
   {
+    "objectID": "about/index.html",
+    "href": "about/index.html",
+    "title": "About",
+    "section": "",
+    "text": "Skip to main content\nIMF Monitor publishes research data on the International Monetary Fund: the conditions in its lending, its programs, its Executive Board, and its technical assistance. It began in 2017 with the first release of the Conditionality dataset, and is directed by Thomas Stubbs at Royal Holloway, University of London."
+  },
+  {
+    "objectID": "about/index.html#independence",
+    "href": "about/index.html#independence",
+    "title": "About",
+    "section": "Independence",
+    "text": "Independence\nIMF Monitor is an independent academic project. It is not affiliated with, endorsed by, or funded by the International Monetary Fund, and its datasets are not official IMF data. “IMF” and “International Monetary Fund” are used only to identify the subject of its research, and the site uses no IMF seal, logo, or other mark.\nIf you hold rights in anything on this site, or have a concern about how a name or mark is used, please contact Thomas Stubbs at thomas.stubbs@rhul.ac.uk so that it can be addressed."
+  },
+  {
+    "objectID": "about/index.html#team",
+    "href": "about/index.html#team",
+    "title": "About",
+    "section": "Team",
+    "text": "Team\n\n\n\n\n\nThomas Stubbs\nProject Director\nProfessor of Global Political Economy\nRoyal Holloway, University of London\n\n Email  Website  Bluesky  LinkedIn\n\n\n\n\n\n\nIasmin Goes\nProject Collaborator\nSenior Researcher\nCentral European University\n\n Website  LinkedIn\n\n\n\n\n\n\nAlexandros Kentikelenis\nProject Collaborator\nProfessor of Political Economy & Sociology\nBocconi University\n\n Website  Bluesky  LinkedIn\n\n\n\n\n\n\nAbdullah Al Mahmud\nProject Collaborator\nDoctoral Researcher\nUniversity of Glasgow\n\n University profile  LinkedIn\n\n\n\n\n\n\nBernhard Reinsberg\nProject Collaborator\nProfessor of International Political Economy & Development\nUniversity of Glasgow\n\n Website  X  LinkedIn"
+  },
+  {
+    "objectID": "about/index.html#funding",
+    "href": "about/index.html#funding",
+    "title": "About",
+    "section": "Funding",
+    "text": "Funding\n\nThe Institute for New Economic Thinking (INET) supported the Conditionality dataset with grant INO13-00020.\nThe Centre for Business Research at Cambridge Judge Business School funded updates to the Conditionality dataset through a Cambridge Political Economy Society Trust (CPEST) grant.\nThe Cambridge-INET Institute (now the Janeway Institute) at the University of Cambridge provided seed funding for the Executive Board minutes data, published here as the Governance dataset.\nThe Economic and Social Research Council (ESRC), part of UK Research and Innovation, funded the Technical Assistance dataset through grant ES/V012916/1."
+  },
+  {
+    "objectID": "about/index.html#contact",
+    "href": "about/index.html#contact",
+    "title": "About",
+    "section": "Contact",
+    "text": "Contact\nThomas Stubbs, thomas.stubbs@rhul.ac.uk\nDepartment of Politics & International Relations, Royal Holloway, Egham, TW20 0EX, United Kingdom"
+  },
+  {
     "objectID": "conditionality/index.html",
     "href": "conditionality/index.html",
     "title": "Conditionality",
@@ -194,48 +229,6 @@
     "title": "Conditionality",
     "section": "Version history",
     "text": "Version history\n\nOctober 2026\nRemoves the 21 program participation indicators added in March 2026: program participation is now recorded in the Programs dataset. The data are otherwise unchanged, and the main and raw datasets are identical to those of July 2023. The codebook drops its sections on program participation and the programs dataset, and the code no longer needs the programs file.\nCurrent release: its files are under Downloads.\n\n\nMarch 2026 (v2.1)\nAdds 21 indicators of IMF program participation to the main dataset: the number of months a program was in force in each year, and several yes-or-no measures of whether one was in force, each for all, concessional, and non-concessional programs. The codebook gains sections on these indicators and on the programs dataset, and a note on grouping the policy areas into broader categories. All other variables, and the raw dataset, are unchanged from July 2023.\n\n\n\n\nCodebook (v2026-03_IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 601 KB\n\nDownload\n\n\n\nMain dataset (v2026-03_IMFMonitor_Conditionality_Main.zip)\nIncludes the 21 program participation indicators.\nStata (.dta) in ZIP · 241 KB\n\nDownload\n\n\n\nCode (v2026-03_IMFMonitor_Conditionality_Code.zip)\nAlso needs the June 2020 programs dataset, under its original name IMFMonitor_Programs.xlsx; the Programs page’s version history has it as v2020-06_IMFMonitor_Programs.xlsx.\nStata do-file and World Bank income groups (.xls) in ZIP · 69 KB\n\nDownload\n\n\n\n\n\nJuly 2023 (v2.0)\nExtends coverage from 1980–2014 to 1980–2019, and from 216 to 220 countries and territories, with 65,894 conditions in all. It also revises the coding of some conditions from 1980–2014: for example, structural performance criteria in 2009 are no longer recoded as structural benchmarks, and conditions from previously embargoed documents are added. The codebook’s section on dataset updates lists each change. This release’s files are not offered separately: its main and raw datasets are identical to those of October 2026.\n\n\nSeptember 2017 (v1.0)\nFirst release, covering 1980–2014 for 216 countries and territories, with 58,406 conditions in the main dataset. Its codebook asks users to cite Kentikelenis, Stubbs, and King (2016).\n\n\n\n\nCodebook (v2017-09_IMFMonitor_Conditionality_Codebook.pdf)\nPDF · 2.0 MB\n\nDownload\n\n\n\nMain dataset (v2017-09_IMFMonitor_Conditionality_Main.zip)\nStata (.dta) in ZIP · 208 KB\n\nDownload\n\n\n\nRaw dataset (v2017-09_IMFMonitor_Conditionality_Raw.xlsx)\nExcel (.xlsx) · 4.1 MB\n\nDownload"
-  },
-  {
-    "objectID": "about-us/index.html",
-    "href": "about-us/index.html",
-    "title": "About",
-    "section": "",
-    "text": "Skip to main content\nIMF Monitor publishes research data on the International Monetary Fund: the conditions in its lending, its programs, its Executive Board, and its technical assistance. It began in 2017 with the first release of the Conditionality dataset, and is directed by Thomas Stubbs at Royal Holloway, University of London."
-  },
-  {
-    "objectID": "about-us/index.html#independence",
-    "href": "about-us/index.html#independence",
-    "title": "About",
-    "section": "Independence",
-    "text": "Independence\nIMF Monitor is an independent academic project. It is not affiliated with, endorsed by, or funded by the International Monetary Fund, and its datasets are not official IMF data. “IMF” and “International Monetary Fund” are used only to identify the subject of its research, and the site uses no IMF seal, logo, or other mark.\nIf you hold rights in anything on this site, or have a concern about how a name or mark is used, please contact Thomas Stubbs at thomas.stubbs@rhul.ac.uk so that it can be addressed."
-  },
-  {
-    "objectID": "about-us/index.html#team",
-    "href": "about-us/index.html#team",
-    "title": "About",
-    "section": "Team",
-    "text": "Team\n\n\n\n\n\nThomas Stubbs\nProject Director\nProfessor of Global Political Economy\nRoyal Holloway, University of London\n\n Email  Website  Bluesky  LinkedIn\n\n\n\n\n\n\nIasmin Goes\nProject Collaborator\nSenior Researcher\nCentral European University\n\n Website  LinkedIn\n\n\n\n\n\n\nAlexandros Kentikelenis\nProject Collaborator\nProfessor of Political Economy & Sociology\nBocconi University\n\n Website  Bluesky  LinkedIn\n\n\n\n\n\n\nAbdullah Al Mahmud\nProject Collaborator\nDoctoral Researcher\nUniversity of Glasgow\n\n University profile  LinkedIn\n\n\n\n\n\n\nBernhard Reinsberg\nProject Collaborator\nProfessor of International Political Economy & Development\nUniversity of Glasgow\n\n Website  X  LinkedIn"
-  },
-  {
-    "objectID": "about-us/index.html#funding",
-    "href": "about-us/index.html#funding",
-    "title": "About",
-    "section": "Funding",
-    "text": "Funding\n\nThe Institute for New Economic Thinking (INET) supported the Conditionality dataset with grant INO13-00020.\nThe Centre for Business Research at Cambridge Judge Business School funded updates to the Conditionality dataset through a Cambridge Political Economy Society Trust (CPEST) grant.\nThe Cambridge-INET Institute (now the Janeway Institute) at the University of Cambridge provided seed funding for the Executive Board minutes data, published here as the Governance dataset.\nThe Economic and Social Research Council (ESRC), part of UK Research and Innovation, funded the Technical Assistance dataset through grant ES/V012916/1."
-  },
-  {
-    "objectID": "about-us/index.html#contact",
-    "href": "about-us/index.html#contact",
-    "title": "About",
-    "section": "Contact",
-    "text": "Contact\nThomas Stubbs, thomas.stubbs@rhul.ac.uk\nDepartment of Politics & International Relations, Royal Holloway, Egham, TW20 0EX, United Kingdom"
-  },
-  {
-    "objectID": "download-data/index.html",
-    "href": "download-data/index.html",
-    "title": "Download Data",
-    "section": "",
-    "text": "Skip to main content\n\n\n\n\n\n\nEach IMF Monitor dataset’s files are on its own page, under Downloads, with its codebook, citation, and earlier releases.\n\n\n\n\nDataset\nCoverage\nVersion\nStatus\n\n\n\n\nConditionality\n1980–2019; conditions in 134 countries\nOctober 2026\nAvailable\n\n\nPrograms\n1952–2025; 202 independent states\nOctober 2026\nAvailable\n\n\nGovernance\n1995–2015; 142 countries\nJanuary 2025\nAvailable\n\n\nTechnical Assistance\n1964–1989; 161 countries\nNot yet released\nForthcoming\n\n\n\n\nOther Data has the program reviews dataset and replication data for four publications. Replication data and code for further published research are in the IMF Monitor collection on Harvard Dataverse."
   },
   {
     "objectID": "index.html",

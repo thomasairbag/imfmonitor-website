@@ -11,7 +11,7 @@
 #   name      display name
 #   page      only for an entry without a page of its own: the page that
 #             shows it (other-data). Links then go to that page's #id
-#             section, and the Download Data table leaves the entry out.
+#             section.
 #   tagline   one-line description for dataset cards
 #   coverage  period and countries covered, as the at-a-glance panel shows it
 #   period    years covered, for running text

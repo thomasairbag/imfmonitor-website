@@ -33,8 +33,10 @@ website:
   favicon: images/favicon.png
   navbar:
     logo: images/logo-mark.svg
-    # Decorative: the title text beside it already says "IMF Monitor".
-    logo-alt: ""
+    # Quarto makes the logo a link of its own, separate from the title, so it
+    # needs a name: an empty alt leaves screen readers an unnamed link
+    # (WCAG 2.4.4; found at staging, Thomas approved 23 October 2026).
+    logo-alt: "IMF Monitor"
     # The six items fit on one line from 992px, with about 60px to spare
     # (measured 21 October 2026), so laptop screens show the full menu and
     # narrower ones get the menu button (Thomas, 21 October 2026).
@@ -50,19 +52,18 @@ website:
         href: technical-assistance/index.qmd
       - text: Other Data
         href: other-data/index.qmd
-      # Download Data is not in the menu: each dataset's page has its files,
-      # and download-data/ only keeps the Wix address working (decision 45).
+      # There is no Download Data page: each dataset's page has its files
+      # (Thomas, 23 October 2026; plan decision 60).
       - text: About
-        href: about-us/index.qmd
-  # One centred block: the reuse sentence, the site's only licence statement,
-  # and contact; then a one-line independence note linking to the full
-  # statement on About (Thomas, 22 October 2026), styled as smaller print in
-  # custom.scss.
+        href: about/index.qmd
+  # One centred paragraph at one size: the reuse sentence, the site's only
+  # licence statement, and contact; then, after a line break, the independence
+  # note linking to the full statement on About (Thomas, 22 and 23 October
+  # 2026; plan decisions 50 and 63). The trailing backslash is the line break.
   page-footer:
     center: |
-      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
-
-      IMF Monitor is an [independent academic project](/about-us/index.qmd#independence), not affiliated with the International Monetary Fund.
+      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)\
+      IMF Monitor is an [independent academic project](/about/index.qmd#independence), not affiliated with the International Monetary Fund.
 
 format:
   html:
@@ -71,6 +72,10 @@ format:
       - default
       - styles/custom.scss
     css: styles/fonts.css
+    # Page titles read "Governance | IMF Monitor", as on the Wix site; Quarto
+    # writes "Governance – IMF Monitor" (plan decision 62).
+    template-partials:
+      - _includes/metadata.html
     include-in-header:
       # Keeps the site out of search engines until cutover (plan Stage 8).
       # Remove only with Thomas's approval.

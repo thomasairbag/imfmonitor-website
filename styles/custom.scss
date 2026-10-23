@@ -63,6 +63,14 @@ $navbar-nav-link-padding-x: 0.4rem;
   text-underline-offset: 0.45rem;
 }
 
+// Bootstrap's focus ring is the menu bar's own green, so keyboard focus on a
+// menu link couldn't be seen (WCAG 2.4.7). Sand on the green is 7.1:1.
+.navbar-nav .nav-link:focus-visible {
+  outline: 2px solid $imfm-sand;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
 .skip-link:focus {
   position: absolute;
   z-index: 2000;
@@ -76,10 +84,11 @@ $navbar-nav-link-padding-x: 0.4rem;
 
 // Quarto's quarto-nav.js adds this rule once the page has loaded, so that a
 // section link stops below the fixed menu bar. For a page opened at a section
-// link (such as #downloads from Download Data) that is too late: the browser
-// has already scrolled, and the menu bar covers the heading. Declaring the
-// rule here makes it apply from the start; 61px is the menu bar's height at
-// every width, and Quarto's script then sets the exact value as before.
+// link (such as #independence from the footer note) that is too late: the
+// browser has already scrolled, and the menu bar covers the heading.
+// Declaring the rule here makes it apply from the start; 61px is the menu
+// bar's height at every width, and Quarto's script then sets the exact value
+// as before.
 section:target::before {
   content: "";
   display: block;
@@ -151,7 +160,7 @@ a.uri {
   border-style: dashed;
   font-weight: 400;
   font-style: italic;
-  // Longer than the other badges; on phones it would widen the hub table.
+  // Longer than the other badges, so it may wrap rather than widen a card.
   white-space: normal;
 }
 
@@ -195,11 +204,12 @@ a.uri {
 }
 
 // Team (About): photo beside name, role, position, and links; two columns
-// where they fit, one on phones.
+// where they fit, one on phones. min() keeps a column within screens
+// narrower than 20rem plus margins (360px phones scrolled sideways).
 
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
   gap: 1.5rem 2rem;
   margin: 1rem 0 2rem;
 }
@@ -289,13 +299,6 @@ a.uri {
   }
 }
 
-// Download Data table: on phones its four columns need more than the text
-// column's width, so it scrolls inside its box rather than widening the page.
-
-.dataset-hub {
-  overflow-x: auto;
-}
-
 // Download list
 
 .downloads {
@@ -377,9 +380,9 @@ a.uri {
 
 // Footer
 
-// One centred block: the reuse and contact line, then the one-line
-// independence note as smaller print. Quarto's empty left and right slots are
-// removed so the block sits in the middle of the page.
+// One centred paragraph at one size: the reuse and contact line, then the
+// independence note after a line break (plan decision 63). Quarto's empty
+// left and right slots are removed so the block sits in the middle of the page.
 
 .nav-footer {
   font-size: 0.875rem;
@@ -396,11 +399,7 @@ a.uri {
   margin: 0 auto;
   text-align: center;
 
-  // em, not rem: Quarto already shrinks footer text to 0.825em, so a rem size
-  // would make the note larger than the line above it.
-  p:last-child {
+  p {
     margin-bottom: 0;
-    color: $imfm-muted;
-    font-size: 0.9em;
   }
 }

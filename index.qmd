@@ -1,7 +1,6 @@
 ---
 title: "IMF Monitor"
 subtitle: "Independent research data on the International Monetary Fund"
-pagetitle: "Independent research data on the International Monetary Fund"
 ---
 
 ::: {.lead}

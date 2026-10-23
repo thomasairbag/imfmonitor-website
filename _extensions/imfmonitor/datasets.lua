@@ -11,9 +11,6 @@
 --   {{< dataset-card ID >}}     summary card linking to the dataset's page
 --   {{< dataset-entry ID >}}    coverage, status, files, and citation for a
 --                               short entry on another page (Other Data)
---   {{< dataset-hub >}}         one table row per dataset with a page of
---                               its own, linking to its Downloads (Download
---                               Data)
 --
 -- glance, downloads, history, and cite use the ID given as their first
 -- argument, or else the page's `dataset` metadata. Empty fields show "To be
@@ -414,33 +411,6 @@ local function entry(args, kwargs, meta)
   return pandoc.Div(blocks, classes("dataset-entry"))
 end
 
--- Download Data keeps the Wix site's address for old links, so each row goes
--- straight to the dataset's Downloads section.
-local function hub(args, kwargs, meta)
-  local function cell(content) return { pandoc.Plain(content) } end
-  local headers = {
-    cell({ pandoc.Str("Dataset") }),
-    cell({ pandoc.Str("Coverage") }),
-    cell({ pandoc.Str("Version") }),
-    cell({ pandoc.Str("Status") }),
-  }
-  local rows = {}
-  for _, d in ipairs(all_datasets()) do
-    -- Short entries on other pages (Other Data) are not listed.
-    if is_empty(d.page) then
-      table.insert(rows, {
-        cell({ pandoc.Link(inlines(d.name), page_href(d) .. "#downloads") }),
-        cell(value_or_tbc(d.coverage)),
-        cell(version_or_status(d)),
-        cell({ status_badge(d) }),
-      })
-    end
-  end
-  local aligns = { pandoc.AlignDefault, pandoc.AlignDefault, pandoc.AlignDefault, pandoc.AlignDefault }
-  local simple = pandoc.SimpleTable({}, aligns, { 0, 0, 0, 0 }, headers, rows)
-  return pandoc.Div({ pandoc.utils.from_simple_table(simple) }, classes("dataset-hub"))
-end
-
 return {
   ["dataset-glance"] = glance,
   ["dataset-downloads"] = downloads,
@@ -449,5 +419,4 @@ return {
   ["dataset-cite"] = cite,
   ["dataset-card"] = card,
   ["dataset-entry"] = entry,
-  ["dataset-hub"] = hub,
 }
