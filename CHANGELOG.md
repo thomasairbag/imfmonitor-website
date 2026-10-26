@@ -4,7 +4,13 @@ One entry per site or data release, newest first.
 
 ## Unreleased
 
+Nothing yet.
+
+## 26 October 2026: canonical links, a new footer, and Google Analytics
+
 - Each page names its main address, ending in a slash (for example `https://imfmonitor.org/conditionality/`), in a canonical link, so search engines treat it and its `…/index.html` form as one page.
+- The footer spans the page, in larger text: the reuse sentence and independence note on the left, and a copyright line and contact on the right.
+- Every page carries Google Analytics, reporting to IMF Monitor's existing Analytics property.
 
 ## 26 October 2026: the rebuilt site goes live
 

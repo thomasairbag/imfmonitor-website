@@ -27,6 +27,10 @@ project:
 website:
   title: "IMF Monitor"
   description: "Independent research data on the International Monetary Fund"
+  # The imfmonitor Google Analytics property, which the Wix site also fed. No
+  # consent banner, privacy page, or opt-out (Thomas, 26 October 2026; plan
+  # decision 77).
+  google-analytics: "G-3EFVFHWD59"
   # The live address since cutover (plan Stage 8, decision 66); the staging
   # address was https://thomasairbag.github.io/imfmonitor-website/. The 404
   # page needs it for links that work at any depth.
@@ -59,13 +63,17 @@ website:
       # (Thomas, 23 October 2026; plan decision 60).
       - text: About
         href: about/index.qmd
-  # One centred paragraph: the reuse sentence, the site's only licence
-  # statement, and contact, followed directly by the independence note linking
-  # to the full statement on About (Thomas, 22–26 October 2026; plan decisions
-  # 50, 63, and 64).
+  # Across the full width, as GOV.UK's and ONS's footers are: on the left the
+  # reuse sentence, the site's only licence statement, and the independence
+  # note linking to the full statement on About; on the right the copyright
+  # line and contact (Thomas, 26 October 2026; plan decisions 50 and 76).
   page-footer:
-    center: |
-      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk). IMF Monitor is an [independent academic project](/about/index.qmd#independence), not affiliated with the International Monetary Fund.
+    left: |
+      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).\
+      IMF Monitor is an [independent academic project](/about/index.qmd#independence), not affiliated with the International Monetary Fund.
+    right: |
+      © 2026 IMF Monitor\
+      [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)
 
 format:
   html:

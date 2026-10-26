@@ -381,29 +381,64 @@ a.uri {
 
 // Footer
 
-// One centred paragraph: the reuse and contact sentences, then the
-// independence note (plan decisions 63 and 64). Quarto's empty left and right
-// slots are removed so the block sits in the middle of the page.
+// Licence and independence on the left, copyright and contact on the right,
+// across the full width (plan decision 76). Quarto's empty centre slot is
+// removed. Quarto gives the two sides equal shares; here the right side keeps
+// its natural width and the left side takes the rest, so each of its
+// sentences keeps to one line from 992px.
+// The text is 0.875rem (about 15px), near the figure captions' size, instead
+// of Quarto's 0.825em (14px). The side padding is the menu bar's (1rem, plus
+// the 0.75rem of its container), so the text lines up with the wordmark and
+// the search button.
 
-.nav-footer {
-  font-size: 0.875rem;
-  justify-content: center;
+footer.footer .nav-footer {
+  align-items: baseline;
+  border-top: 1px solid $imfm-rule;
+  padding: 1rem 1.75rem;
 }
 
-.nav-footer-left,
-.nav-footer-right {
+.nav-footer .nav-footer-center {
   display: none;
 }
 
-.nav-footer-center {
-  max-width: 46rem;
-  margin: 0 auto;
-  text-align: center;
+.nav-footer .nav-footer-left,
+.nav-footer .nav-footer-right {
+  font-size: 0.875rem;
+  line-height: 1.5;
 
-  // balance: the browser evens out the line lengths, so a wrapped paragraph
-  // doesn't end on a short last line.
   p {
     margin-bottom: 0;
-    text-wrap: balance;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .nav-footer .nav-footer-left {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .nav-footer .nav-footer-right {
+    flex: 0 0 auto;
+    margin: 0 0 0 2rem;
+    text-align: right;
+  }
+}
+
+// Below 992px, where the menu also collapses, the two sides stack, both
+// aligned left.
+@include media-breakpoint-down(lg) {
+  .nav-footer .nav-footer-left,
+  .nav-footer .nav-footer-right {
+    flex: 1 1 100%;
+    text-align: left;
+  }
+
+  .nav-footer .nav-footer-left {
+    margin-bottom: 0.75rem;
+  }
+
+  .nav-footer .nav-footer-right {
+    margin-bottom: 0;
   }
 }

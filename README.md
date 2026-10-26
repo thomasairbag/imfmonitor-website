@@ -8,7 +8,7 @@ To use the data, start from the dataset's page on the site, which has its files,
 
 - **Pages:** a Quarto website. Each page is `<slug>/index.qmd` (Home is `index.qmd`), and Quarto renders them into `docs/` as plain HTML. GitHub Pages serves `docs/` from the `main` branch, so `docs/` is committed with the sources. Only `.qmd` files are rendered, so this README, `CHANGELOG.md`, and `CLAUDE.md` never appear on the site.
 - **Domain:** the `CNAME` file names the domain, imfmonitor.org, for GitHub Pages, and `.nojekyll` makes it serve the files as they are. Quarto copies both into `docs/`.
-- **Design:** `_quarto.yml` holds the menu, footer, theme, and `site-url`; `styles/custom.scss` the colours and components; `fonts/` the self-hosted fonts, with their licences.
+- **Design:** `_quarto.yml` holds the menu, footer, theme, `site-url`, and the Google Analytics ID; `styles/custom.scss` the colours and components; `fonts/` the self-hosted fonts, with their licences.
 - **Dataset facts:** `data/datasets.yml` is the single source of truth for coverage, counts, versions, files, citations, and version histories, with the source of each fact. Its header documents the fields. Pages show it only through the shortcodes in `_extensions/imfmonitor/datasets.lua`, such as `dataset-downloads` and `dataset-value`, so each fact is changed in one place.
 - **Downloads:** `files/` holds each dataset's files, byte-identical to their originals. Files of earlier releases carry the prefix `vYYYY-MM_` from their release date.
 - **Figures:** the `R/fig-*.R` scripts draw them from the files in `files/` into `images/figures/`, and `R/fig-setup.R` holds their shared fonts, colours, and theme. They run by hand, not at render, and their PNG files are committed.
@@ -16,7 +16,7 @@ To use the data, start from the dataset's page on the site, which has its files,
 
 ## Preview and render
 
-Rendering needs Quarto, which comes with RStudio; the site is built with Quarto 1.9. The figure scripts need R (4.3) and the packages dplyr, ggplot2, haven, png, ragg, readxl, scales, sf, systemfonts, and tidyr.
+Rendering needs Quarto, which comes with RStudio; the site is built with Quarto 1.9. The figure scripts need R (4.3) and the packages dplyr, ggplot2, haven, ragg, readxl, scales, sf, systemfonts, and tidyr; `R/make-favicon.R`, which draws the browser-tab icon, also needs png.
 
 - **RStudio:** open `imfmonitor-website.Rproj`, then Build → Render Website. This renders every page into `docs/` and opens a preview.
 - **Terminal**, in the project folder: `quarto render` builds the whole site; `quarto preview` serves it and re-renders each page as you save it.
