@@ -43,8 +43,6 @@ Executive Board discussions of individual countries per year, by topic, {{< data
 <!-- Source: the codebook's citation; journal details checked against
      Crossref on 20 October 2026. -->
 
-The codebook asks users to cite Forster, Honig, and Kentikelenis (2025).
-
 - Forster, T., Honig, D., & Kentikelenis, A. (2025). Formal governance matters: When, how, and why states act on the IMF Executive Board. *Review of International Political Economy*, 32(3), 818–846. <https://doi.org/10.1080/09692290.2024.2441136>
 
 ## Version history

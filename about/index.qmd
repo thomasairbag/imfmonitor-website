@@ -88,7 +88,7 @@ Doctoral Researcher\
 University of Glasgow
 
 ::: {.team-links}
-[[]{.bi .bi-globe2 aria-hidden="true"} University profile](https://www.gla.ac.uk/pgrs/abdullahalmahmud/) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/zohaan-abdullah-al-mahmud/)
+[[]{.bi .bi-globe2 aria-hidden="true"} Website](https://www.gla.ac.uk/pgrs/abdullahalmahmud/) [[]{.bi .bi-linkedin aria-hidden="true"} LinkedIn](https://www.linkedin.com/in/zohaan-abdullah-al-mahmud/)
 :::
 :::
 :::

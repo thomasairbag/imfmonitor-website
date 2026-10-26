@@ -7,7 +7,7 @@ toc: true
 <!-- Every number in this text comes from data/datasets.yml through
      dataset-value; the sources there name the file behind each one. -->
 
-The IMF Conditionality Dataset records the policy conditions attached to IMF lending programs in {{< dataset-value period >}}: {{< dataset-value counts.conditions >}} conditions in {{< dataset-value counts.countries >}} countries. They are taken from the Letters of Intent and Memoranda of Economic and Financial Policies that borrowing governments draft with IMF staff, found in IMF Executive Board documents and Country Reports. Each condition is classified by type, from prior actions to structural benchmarks, and into one of {{< dataset-value counts.policy_areas >}} policy areas. The main dataset gives yearly indicators for {{< dataset-value counts.panel >}} countries and territories; the raw dataset lists each condition. The codebook explains how the data were collected, coded, and combined.
+The IMF Conditionality Dataset records the policy conditions attached to IMF lending programs in {{< dataset-value period >}}: {{< dataset-value counts.conditions >}} conditions in {{< dataset-value counts.countries >}} countries. They are taken from the Letters of Intent and Memoranda of Economic and Financial Policies that borrowing governments draft with IMF staff, found in IMF Executive Board documents and Country Reports. Each condition is classified by type—prior action, structural benchmark, quantitative or structural performance criterion, or indicative benchmark—and into one of {{< dataset-value counts.policy_areas >}} policy areas. The main dataset gives yearly indicators for {{< dataset-value counts.panel >}} countries and territories; the raw dataset lists each condition. The codebook explains how the data were collected, coded, and combined.
 
 ## At a glance
 
@@ -35,7 +35,7 @@ The IMF Conditionality Dataset records the policy conditions attached to IMF len
 </picture>
 ```
 
-Conditions per country, {{< dataset-value period >}}, from the main dataset. Countries in grey have no conditions recorded. The map can't show conditions for Czechoslovakia and Yugoslavia, which no longer exist, and some small countries are too small to see; the main dataset gives every country's total. Boundaries: [World Bank Official Boundaries](https://datacatalog.worldbank.org/search/dataset/0038272) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+Conditions per country, {{< dataset-value period >}}, from the main dataset. Boundaries: [World Bank Official Boundaries](https://datacatalog.worldbank.org/search/dataset/0038272) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
 :::
 
 ::: {#fig-conditionality-years}
@@ -60,8 +60,6 @@ Conditions per year, {{< dataset-value period >}}: {{< dataset-value counts.cond
 <!-- Confirmed by Thomas, 20 October 2026. Sources: the two codebooks'
      citations and the replication records in the IMF Monitor Dataverse
      collection; journal details checked against Crossref the same day. -->
-
-Newest first. The current codebook asks users to cite Kentikelenis and Stubbs (2023); the first, in 2017, asked for Kentikelenis, Stubbs, and King (2016).
 
 - Kentikelenis, A. & Stubbs, T. (2023). *A Thousand Cuts: Social Protection in the Age of Austerity*. Oxford University Press. <https://doi.org/10.1093/oso/9780190637736.001.0001>
 - Reinsberg, B., Stubbs, T., & Bujnoch, L. (2023). Structural adjustment, alienation, and mass protest. *Social Science Research*, 109, 102777. <https://doi.org/10.1016/j.ssresearch.2022.102777>

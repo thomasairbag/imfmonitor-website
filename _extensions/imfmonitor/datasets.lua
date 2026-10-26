@@ -172,8 +172,10 @@ local function kind(f)
   return stringify(f.kind or "")
 end
 
--- Files on the site download directly. A Harvard Dataverse DOI opens the
--- record's landing page, not a file, so its button names the repository.
+-- Files on the site download directly: the download attribute saves even a
+-- PDF instead of opening it in place of the page (Thomas, 26 October 2026).
+-- A Harvard Dataverse DOI opens the record's landing page, not a file, so its
+-- button names the repository.
 local function is_dataverse(href)
   return href:match("^https://doi%.org/10%.7910/") ~= nil
 end
@@ -198,8 +200,10 @@ local function file_list(files, show_version)
       if is_dataverse(href) then
         text, aria = "Harvard Dataverse", stringify(label) .. " on Harvard Dataverse"
       end
+      local attributes = { ["aria-label"] = aria }
+      if not href:match("^%a[%w+.-]*:") then attributes.download = "" end
       button = pandoc.Link({ pandoc.Str(text) }, from_root(href), "",
-        pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, { ["aria-label"] = aria }))
+        pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, attributes))
     end
     local text = { pandoc.Strong(label) }
     if not is_empty(f.description) then

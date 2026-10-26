@@ -45,7 +45,7 @@ world <- world |>
   )
 
 # Countries with conditions that the map can't show: states that no longer
-# exist have no boundaries. The page's caption says so.
+# exist (Czechoslovakia, Yugoslavia) have no boundaries.
 unmapped <- totals |>
   filter(conditions > 0, !ccode %in% world$ccode)
 message("Countries with conditions: ", sum(totals$conditions > 0),

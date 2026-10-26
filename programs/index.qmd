@@ -52,8 +52,6 @@ States with an IMF program in force at any time in the year, {{< dataset-value p
      21 October 2026; none says where its program data came from. Thomas,
      21 October 2026: list this one for now; he will add others later. -->
 
-The codebook gives Kentikelenis and Stubbs (2023) as a related reference, and the June 2020 file asked users to cite it.
-
 - Kentikelenis, A. & Stubbs, T. (2023). *A Thousand Cuts: Social Protection in the Age of Austerity*. Oxford University Press. <https://doi.org/10.1093/oso/9780190637736.001.0001>
 
 ## Version history

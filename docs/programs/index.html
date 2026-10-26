@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-fb3873f1b0c84fda8a8cf8d7097b7a4d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-cbc72b0291a759de7d711cd9a4f221b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 
 
 <link rel="stylesheet" href="../styles/fonts.css">
@@ -214,39 +215,39 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <strong>Codebook (IMFMonitor_Programs_Codebook.pdf)</strong><br>
 <span class="file-details">PDF · 414 KB · October 2026</span>
 </div>
-<a href="../files/programs/IMFMonitor_Programs_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (IMFMonitor_Programs_Codebook.pdf)">Download</a>
+<a href="../files/programs/IMFMonitor_Programs_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (IMFMonitor_Programs_Codebook.pdf)" download="">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Raw dataset (IMFMonitor_Programs_Raw.xlsx)</strong><br>
-<span class="file-description">One row per arrangement or outright purchase, with the IMF member, facility, approval and expiration dates, and amounts agreed, drawn, and outstanding, from IMF data as of 30 September 2026. A note on each row added from other IMF sources gives its evidence. Further sheets list the members queried and log the download.</span><br>
+<span class="file-description">One row per arrangement or outright purchase: IMF member, facility, dates, and amounts, from IMF data as of 30 September 2026.</span><br>
 <span class="file-details">Excel (.xlsx) · 117 KB · October 2026</span>
 </div>
-<a href="../files/programs/IMFMonitor_Programs_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Programs_Raw.xlsx)">Download</a>
+<a href="../files/programs/IMFMonitor_Programs_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Programs_Raw.xlsx)" download="">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Panel dataset (IMFMonitor_Programs_Panel.xlsx)</strong><br>
-<span class="file-description">One row per independent state per year, whether an IMF member or not: the months under an IMF program, and whether a program was in force at all or for at least three, four, five, or six months, for all, concessional, and non-concessional programs. Rapid disbursements and outright purchases are left out. Further sheets document the country list, state dates, facility groups, and checks.</span><br>
+<span class="file-description">One row per independent state per year: months under an IMF program, and whether one was in force, for all, concessional, and non-concessional programs.</span><br>
 <span class="file-details">Excel (.xlsx) · 912 KB · October 2026</span>
 </div>
-<a href="../files/programs/IMFMonitor_Programs_Panel.xlsx" class="btn btn-primary btn-sm" aria-label="Download Panel dataset (IMFMonitor_Programs_Panel.xlsx)">Download</a>
+<a href="../files/programs/IMFMonitor_Programs_Panel.xlsx" class="btn btn-primary btn-sm" aria-label="Download Panel dataset (IMFMonitor_Programs_Panel.xlsx)" download="">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)</strong><br>
-<span class="file-description">Downloads each member’s arrangements from the IMF’s History of Lending Commitments page, adds the arrangements and purchases the page does not show, and writes the raw dataset. It is provided for transparency: it takes the latest data the IMF offers, so a run today gives an updated dataset that may differ from this release, which used IMF data as of 30 September 2026.</span><br>
+<span class="file-description">Builds the raw dataset from the IMF’s History of Lending Commitments page. Provided for transparency: it takes the latest IMF data, so a run today may differ.</span><br>
 <span class="file-details">R script · 70 KB · October 2026</span>
 </div>
-<a href="../files/programs/IMFMonitor_Programs_Code_00_Webscraper.R" class="btn btn-primary btn-sm" aria-label="Download Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)">Download</a>
+<a href="../files/programs/IMFMonitor_Programs_Code_00_Webscraper.R" class="btn btn-primary btn-sm" aria-label="Download Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)" download="">Download</a>
 </div></li>
 <li><div class="download-item">
 <div class="download-label">
 <strong>Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)</strong><br>
-<span class="file-description">Builds the panel dataset from the raw dataset, using state dates set out in the script and the World Bank’s country list, which it downloads when run.</span><br>
+<span class="file-description">Builds the panel dataset from the raw dataset and the World Bank’s country list, which it downloads when run.</span><br>
 <span class="file-details">R script · 81 KB · October 2026</span>
 </div>
-<a href="../files/programs/IMFMonitor_Programs_Code_01_BuildPanel.R" class="btn btn-primary btn-sm" aria-label="Download Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)">Download</a>
+<a href="../files/programs/IMFMonitor_Programs_Code_01_BuildPanel.R" class="btn btn-primary btn-sm" aria-label="Download Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)" download="">Download</a>
 </div></li>
 </ul>
 </div>
@@ -295,7 +296,6 @@ Figure&nbsp;1: States with an IMF program in force at any time in the year, 1952
      Monitor Dataverse collection's replication records were checked on
      21 October 2026; none says where its program data came from. Thomas,
      21 October 2026: list this one for now; he will add others later. -->
-<p>The codebook gives Kentikelenis and Stubbs (2023) as a related reference, and the June 2020 file asked users to cite it.</p>
 <ul>
 <li>Kentikelenis, A. &amp; Stubbs, T. (2023). <em>A Thousand Cuts: Social Protection in the Age of Austerity</em>. Oxford University Press. <a href="https://doi.org/10.1093/oso/9780190637736.001.0001" class="uri">https://doi.org/10.1093/oso/9780190637736.001.0001</a></li>
 </ul>
@@ -315,10 +315,9 @@ Figure&nbsp;1: States with an IMF program in force at any time in the year, 1952
 <li><div class="download-item">
 <div class="download-label">
 <strong>Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)</strong><br>
-<span class="file-description">One row per arrangement, with its type, approval date, duration, amount, augmentations, expiration date, and source documents. The March 2026 Conditionality code reads it under its original name, IMFMonitor_Programs.xlsx.</span><br>
 <span class="file-details">Excel (.xlsx) · 150 KB</span>
 </div>
-<a href="../files/programs/v2020-06_IMFMonitor_Programs.xlsx" class="btn btn-primary btn-sm" aria-label="Download Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)">Download</a>
+<a href="../files/programs/v2020-06_IMFMonitor_Programs.xlsx" class="btn btn-primary btn-sm" aria-label="Download Programs dataset (v2020-06_IMFMonitor_Programs.xlsx)" download="">Download</a>
 </div></li>
 </ul>
 </div>
@@ -747,8 +746,7 @@ Figure&nbsp;1: States with an IMF program in force at any time in the year, 1952
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>You may reuse IMF Monitor data provided you cite it (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Contact: <a href="mailto:thomas.stubbs@rhul.ac.uk">thomas.stubbs@rhul.ac.uk</a><br>
-IMF Monitor is an <a href="../about/index.html#independence">independent academic project</a>, not affiliated with the International Monetary Fund.</p>
+<p>You may reuse IMF Monitor data provided you cite it (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Contact: <a href="mailto:thomas.stubbs@rhul.ac.uk">thomas.stubbs@rhul.ac.uk</a>. IMF Monitor is an <a href="../about/index.html#independence">independent academic project</a>, not affiliated with the International Monetary Fund.</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

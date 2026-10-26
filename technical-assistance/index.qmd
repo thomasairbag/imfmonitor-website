@@ -29,8 +29,6 @@ The IMF Technical Assistance Dataset records the IMF's technical assistance to m
 <!-- Source: the working paper's title page, dated 21 October 2026. Thomas,
      21 October 2026: cite it until the dataset is released. -->
 
-The working paper that introduces the dataset:
-
 - Goes, I. & Stubbs, T. (2026). *Embedded Expertise: The Political Economy of IMF Technical Assistance, 1964–1989*. Working paper.
 
 ## Version history

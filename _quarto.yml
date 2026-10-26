@@ -56,14 +56,13 @@ website:
       # (Thomas, 23 October 2026; plan decision 60).
       - text: About
         href: about/index.qmd
-  # One centred paragraph at one size: the reuse sentence, the site's only
-  # licence statement, and contact; then, after a line break, the independence
-  # note linking to the full statement on About (Thomas, 22 and 23 October
-  # 2026; plan decisions 50 and 63). The trailing backslash is the line break.
+  # One centred paragraph: the reuse sentence, the site's only licence
+  # statement, and contact, followed directly by the independence note linking
+  # to the full statement on About (Thomas, 22–26 October 2026; plan decisions
+  # 50, 63, and 64).
   page-footer:
     center: |
-      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk)\
-      IMF Monitor is an [independent academic project](/about/index.qmd#independence), not affiliated with the International Monetary Fund.
+      You may reuse IMF Monitor data provided you cite it ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). Contact: [thomas.stubbs@rhul.ac.uk](mailto:thomas.stubbs@rhul.ac.uk). IMF Monitor is an [independent academic project](/about/index.qmd#independence), not affiliated with the International Monetary Fund.
 
 format:
   html:
@@ -81,6 +80,11 @@ format:
       # Remove only with Thomas's approval.
       - text: |
           <meta name="robots" content="noindex, nofollow">
+      # Stops phones turning text such as "1995–2015; 142" into phone-number,
+      # date, or address links (seen on an iPhone, 26 October 2026; plan
+      # decision 64). The site's own links are unaffected.
+      - text: |
+          <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     include-before-body:
       - _includes/skip-link.html
     include-after-body:
