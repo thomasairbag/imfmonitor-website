@@ -4,7 +4,7 @@ One entry per site or data release, newest first.
 
 ## Unreleased
 
-Nothing yet.
+- Each page names its main address, ending in a slash (for example `https://imfmonitor.org/conditionality/`), in a canonical link, so search engines treat it and its `…/index.html` form as one page.
 
 ## 26 October 2026: the rebuilt site goes live
 

@@ -70,6 +70,10 @@ website:
 format:
   html:
     lang: en-GB
+    # Each page names its address ending in a slash (/conditionality/) as
+    # canonical, since the sitemap lists /conditionality/index.html (Thomas,
+    # 26 October 2026; plan decision 74).
+    canonical-url: true
     theme:
       - default
       - styles/custom.scss

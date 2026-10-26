@@ -200,8 +200,11 @@ local function file_list(files, show_version)
       if is_dataverse(href) then
         text, aria = "Harvard Dataverse", stringify(label) .. " on Harvard Dataverse"
       end
-      local attributes = { ["aria-label"] = aria }
-      if not href:match("^%a[%w+.-]*:") then attributes.download = "" end
+      -- A list of pairs rather than a table keyed by name: Lua's order for
+      -- named keys changes from run to run, which would rewrite docs/ pages
+      -- on every render (plan decision 75).
+      local attributes = { { "aria-label", aria } }
+      if not href:match("^%a[%w+.-]*:") then table.insert(attributes, { "download", "" }) end
       button = pandoc.Link({ pandoc.Str(text) }, from_root(href), "",
         pandoc.Attr("", { "btn", "btn-primary", "btn-sm" }, attributes))
     end
