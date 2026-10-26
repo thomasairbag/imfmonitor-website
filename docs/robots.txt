@@ -1,1 +1,1 @@
-Sitemap: https://thomasairbag.github.io/imfmonitor-website/sitemap.xml
+Sitemap: https://imfmonitor.org/sitemap.xml

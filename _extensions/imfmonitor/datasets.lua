@@ -367,10 +367,13 @@ local function cite(args, kwargs, meta)
     return pandoc.Div({ pandoc.Para({ pandoc.Span({ pandoc.Str("Citation " .. TBC:lower() .. ".") }, classes("tbc")) }) },
       classes("cite-box"))
   end
+  -- The hidden status line is what screen readers announce after a copy: a
+  -- change to the focused button's own text often goes unread (WCAG 4.1.3).
   return pandoc.Div({
     pandoc.Para(inlines(d.citation)),
     pandoc.RawBlock("html",
-      '<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>'),
+      '<button type="button" class="btn btn-outline-primary btn-sm cite-copy">Copy citation</button>' ..
+      '<span class="visually-hidden cite-status" role="status"></span>'),
   }, classes("cite-box"))
 end
 

@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cbc72b0291a759de7d711cd9a4f221b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a65458e92f592591405a8624ac8c7c77.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,7 +71,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<meta name="robots" content="noindex, nofollow">
 <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 
 
@@ -279,15 +278,28 @@ Department of Politics &amp; International Relations, Royal Holloway, Egham, TW2
 
 </main> <!-- /main -->
 <script>
-  // Copy button in citation boxes (the dataset-cite shortcode).
+  // Copy button in citation boxes (the dataset-cite shortcode). The button
+  // shows the result; the box's hidden status line tells screen readers.
   document.addEventListener("click", function (event) {
     var button = event.target.closest(".cite-copy");
-    if (!button || !navigator.clipboard) return;
-    var text = button.closest(".cite-box").querySelector("p").innerText;
-    navigator.clipboard.writeText(text).then(function () {
-      button.textContent = "Copied";
-      setTimeout(function () { button.textContent = "Copy citation"; }, 2000);
-    });
+    if (!button) return;
+    var box = button.closest(".cite-box");
+    var status = box.querySelector(".cite-status");
+    function report(label, message) {
+      button.textContent = label;
+      if (status) status.textContent = message;
+      setTimeout(function () {
+        button.textContent = "Copy citation";
+        if (status) status.textContent = "";
+      }, 2000);
+    }
+    function failed() {
+      report("Copy failed", "Copy failed: select the citation and copy it.");
+    }
+    if (!navigator.clipboard) { failed(); return; }
+    navigator.clipboard.writeText(box.querySelector("p").innerText).then(function () {
+      report("Copied", "Citation copied.");
+    }, failed);
   });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -363,7 +375,7 @@ Department of Politics &amp; International Relations, Royal Holloway, Egham, TW2
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/thomasairbag\.github\.io\/imfmonitor-website\/");
+        var filterRegex = new RegExp("https:\/\/imfmonitor\.org\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

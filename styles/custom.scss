@@ -86,14 +86,15 @@ $navbar-nav-link-padding-x: 0.4rem;
 // section link stops below the fixed menu bar. For a page opened at a section
 // link (such as #independence from the footer note) that is too late: the
 // browser has already scrolled, and the menu bar covers the heading.
-// Declaring the rule here makes it apply from the start; 61px is the menu
-// bar's height at every width, and Quarto's script then sets the exact value
-// as before.
+// Declaring the rule here makes it apply from the start: 77px is the menu
+// bar's 61px plus a 1rem gap, so a heading with no top margin (About's
+// Independence) doesn't sit flush against the bar. Quarto's script then sets
+// its own value for clicks within the page, as before.
 section:target::before {
   content: "";
   display: block;
-  height: 61px;
-  margin: -61px 0 0;
+  height: 77px;
+  margin: -77px 0 0;
 }
 
 // Text

@@ -8,6 +8,8 @@ project:
   resources:
     # Tells GitHub Pages to serve the files as they are, without Jekyll.
     - ".nojekyll"
+    # Tells GitHub Pages the site's domain, imfmonitor.org (plan Stage 8).
+    - "CNAME"
     # Dataset downloads. The old /wp-content/ codebook path is not kept
     # (Thomas, 22 October 2026; plan decision 14).
     - "files/**"
@@ -25,9 +27,10 @@ project:
 website:
   title: "IMF Monitor"
   description: "Independent research data on the International Monetary Fund"
-  # The staging address (plan decisions 4 and 46). The 404 page needs it for
-  # links that work at any depth. Change to https://imfmonitor.org/ at cutover.
-  site-url: "https://thomasairbag.github.io/imfmonitor-website/"
+  # The live address since cutover (plan Stage 8, decision 66); the staging
+  # address was https://thomasairbag.github.io/imfmonitor-website/. The 404
+  # page needs it for links that work at any depth.
+  site-url: "https://imfmonitor.org/"
   # Bar mark wordmark and tab icon (plan decision 21). R/make-favicon.R draws
   # the icon.
   favicon: images/favicon.png
@@ -76,10 +79,8 @@ format:
     template-partials:
       - _includes/metadata.html
     include-in-header:
-      # Keeps the site out of search engines until cutover (plan Stage 8).
-      # Remove only with Thomas's approval.
-      - text: |
-          <meta name="robots" content="noindex, nofollow">
+      # The staging site's noindex tag came off at cutover, with Thomas's
+      # approval (plan Stage 8).
       # Stops phones turning text such as "1995–2015; 142" into phone-number,
       # date, or address links (seen on an iPhone, 26 October 2026; plan
       # decision 64). The site's own links are unaffected.
