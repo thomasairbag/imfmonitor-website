@@ -2,7 +2,7 @@
 
 ## Purpose
 
-IMF Monitor (imfmonitor.org) is an independent academic project that publishes research data on the International Monetary Fund: datasets, codebooks, citations, and replication packages. This repository rebuilds the site, formerly on Wix, as a static Quarto website served free from GitHub Pages. The goals are portability (the site can move to another static host within a day), reproducibility, and accurate, well-documented access to the data. Project director: Professor Thomas Stubbs, Royal Holloway, University of London.
+IMF Monitor (imfmonitor.org) is an independent academic project that publishes research data on the International Monetary Fund: datasets, codebooks, citations, and replication packages. This repository rebuilds the site, formerly on Wix, as a static Quarto website served free from GitHub Pages. The goals are portability (the site can move to another static host within a day), reproducibility, and accurate, well-documented access to the data. The project also manages the IMF Monitor collection on Harvard Dataverse (see "Harvard Dataverse" below). Project director: Professor Thomas Stubbs, Royal Holloway, University of London.
 
 ## Working rules
 
@@ -20,7 +20,8 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 | --- | --- |
 | `_private/WEBSITE_AUDIT_PLAN.md` | **The agreed plan:** structure, URL map, file hosting, design, stages, and decisions log (Section 8) |
 | `_private/IMFMonitor_Claude_Project_Knowledge.md` | Dataset descriptions, DOI and link inventory, tone rules, and items marked VERIFY |
-| `CLAUDE.local.md` | This machine's paths: source data in Dropbox, R, and Quarto |
+| `_private/dataverse/` | Dataverse audits, change scripts and their dry-run output, deposit drafts, and the collection page settings |
+| `CLAUDE.local.md` | This machine's paths: source data in Dropbox, R, Quarto, and the Dataverse token |
 
 - Read the relevant section of the plan before working on a page, dataset, figure, URL, or deployment step. Don't copy plan or audit content into committed files; there is deliberately no public plan document.
 - Where the two documents disagree, the audit plan wins.
@@ -90,7 +91,7 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - Reproduce citations exactly as the sources give them. A dataset's citation is the one in its codebook, with the codebook's wording and italics (Thomas, 20 October 2026).
 - Every dataset is versioned by release date, as month and year (for example "March 2026"), not by number (Thomas, 20 October 2026). Old numbers (v1.0, v2.0, v2.1) survive only in file names and version histories. Dataverse numbers its records itself (V1, V1.1); leave those as they are.
 - Licence: one sentence in the footer covers the whole site: "You may reuse IMF Monitor data provided you cite it (CC BY 4.0)." Dataset pages, `datasets.yml`, and download lists state no licence (Thomas, 20 October 2026). The Dataverse records carry CC0 1.0; leave them as they are.
-- Distinguish full public datasets from research-specific replication packages. Don't present a DOI as part of the IMF Monitor Dataverse collection until its membership is confirmed. Checked 20 October 2026: DPV99L, GNYXU1, 8BSKWO, and V4V1BA are in the collection; 7N7LCH (Board minutes) and KVVFV1 (social spending floors) are not.
+- Distinguish full public datasets from research-specific replication packages. Don't present a DOI as part of the IMF Monitor Dataverse collection until its membership is confirmed. DPV99L, GNYXU1, 8BSKWO, V4V1BA, and (since 19 November 2026) KVVFV1 belong to the collection; 7N7LCH (Board minutes) belongs to the general Harvard Dataverse collection and is only linked into it.
 
 ## Addresses, file names, and DOIs
 
@@ -99,6 +100,15 @@ IMF Monitor (imfmonitor.org) is an independent academic project that publishes r
 - Keep the current release's data file names (`IMFMonitor_...`) unchanged. When a release is superseded, its files move to Version history with the prefix `vYYYY-MM_` from its release date, for example `v2017-09_IMFMonitor_Conditionality_Raw.xlsx`. Their contents stay unchanged (Thomas, 20 October 2026). The render warns if an archive entry in `datasets.yml` breaks this pattern.
 - Keep every existing DOI and Dataverse link. Link to DOIs, not to temporary Dataverse file URLs or Wix file links.
 - The site has no redirects: no Quarto `aliases` and no redirect pages (Thomas, 22 October 2026; plan decision 49). GitHub Pages itself sends `/conditionality` to `/conditionality/`, so addresses typed without the trailing slash still work (checked on staging, 23 October 2026). Ask before adding a redirect.
+
+## Harvard Dataverse
+
+- This project also manages the IMF Monitor collection, https://dataverse.harvard.edu/dataverse/imfmonitor (alias `imfmonitor`; Thomas, 19 November 2026; plan decision 78). It holds the Programs dataset and data and code for publications by members of the team. A release that touches both the site and Dataverse is one piece of work: deposit first, so `datasets.yml` can cite the DOI (README, release step 8).
+- Use the native API through `dataverse/dv-api.R`. Reading needs no key and works from Bash and R as well as the built-in browser. Changes need Thomas's API token in `DATAVERSE_KEY` in `~/.Renviron`: never put it in the repository, a command, or chat, and never print it. Tokens expire after a year; Thomas renews his on Dataverse (his name → API Token).
+- Every change function is a dry run unless told to send. Work in this order: dry run, Thomas's yes, send. Changes to a dataset's metadata or files make a draft that only editors see. Publish only once Thomas has checked the draft and said yes: a minor version for metadata alone, a major one when files change. Links, moves, and collection settings are live at once. Change scripts and their dry-run output go in `_private/dataverse/`.
+- Record conventions: the title is "Replication Data for: " and the publication's title. Authors are listed as in the publication, with affiliations as published and ORCIDs where a source gives them. The contact is Thomas Stubbs, the subject Social Sciences, and the licence CC0 1.0 (decision 30). The related publication carries its DOI in the identifier fields, with the relation IsSupplementTo, which DataCite turns into a link between data and publication; the citation text leaves the DOI out. Upload files unchanged from Dropbox, and check each by MD5 afterwards. Dataverse keeps the original of an ingested `.dta`, and bundles shapefile parts only when they arrive in a zip.
+- The collection owns 19 published records, all CC0 1.0, and lists a 20th by link: the Board minutes record (7N7LCH, by Forster, Honig, and Kentikelenis), owned by the general Harvard Dataverse collection. On 19 November 2026 social spending floors (KVVFV1) moved in from there (decision 80), and the HAUST (V7QOIW) and COVID (RBZIHY) packages were deposited (decision 83). Every replication record now links to its publication's DOI. The API's `/contents` lists only the records a collection owns; a search with `subtree=imfmonitor` shows linked ones too. The five records of the "Thomas Stubbs REF2021" collection are deaccessioned copies of collection records: never cite V7VJWG, VSUMH2, AX5FSJ, BCMAV5, or AQCOVX.
+- Conditionality has no record of its own for now: the *A Thousand Cuts* package (DPV99L) holds its raw data. It gets one at the next Conditionality release (Thomas, 19 November 2026; decision 79).
 
 ## Working conventions
 
@@ -138,4 +148,4 @@ Ask Thomas and wait for an explicit yes, each time, before:
 - Deleting files, or replacing a published dataset or its files.
 - Changing anything in the Dropbox copy of the project, which is the archive.
 - Changing, unpublishing, or deleting anything on Wix, or cancelling it.
-- Depositing to or editing Harvard Dataverse, or submitting to Google Search Console.
+- Depositing to or editing Harvard Dataverse (including publishing a draft, linking or moving a record, and collection settings), or submitting to Google Search Console.

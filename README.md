@@ -32,7 +32,7 @@ Stop any preview before a full render. On Windows, a server holding `docs/` open
 5. **Render** the whole site, with no errors or warnings.
 6. **Check links and downloads.** Serve `docs/` at the root, for example with `Rscript -e "httpuv::runStaticServer('docs', port = 4321)"`, and open http://localhost:4321/. Check the changed pages at phone and desktop widths, and follow every link and download on them. `docs/conditionality/index.html` must stay, since the data files cite https://imfmonitor.org/conditionality/ as the codebook's home.
 7. **Add a `CHANGELOG.md` entry**, dated, saying what the release changes.
-8. **Deposit on Harvard Dataverse where relevant**, for example as a new version of a dataset's existing record. If the page is to cite a new DOI, deposit before step 3, so that `datasets.yml` can give it.
+8. **Deposit on Harvard Dataverse where relevant**, for example as a new version of a dataset's existing record. If the page is to cite a new DOI, deposit before step 3, so that `datasets.yml` can give it. `dataverse/dv-api.R` has R functions for Dataverse's API (reading records, editing metadata, adding files, and publishing); changes need an API token in the `DATAVERSE_KEY` environment variable, and each function only prints what it would send unless given `dry_run = FALSE`.
 9. **Commit and push to `main`**, with the sources and `docs/` in one commit. A push publishes the site: GitHub Pages rebuilds it within a minute or two. Then check the changed pages and downloads on https://imfmonitor.org/. To undo a release, revert its commit and push.
 
 ## Moving to another host
