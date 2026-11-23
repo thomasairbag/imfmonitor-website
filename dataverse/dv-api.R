@@ -286,3 +286,29 @@ dv_add_file <- function(pid, path, directory = NULL, description = NULL, dry_run
   cat("Added", basename(path), "\n")
   invisible(added)
 }
+
+# Replaces a file with a new one under the file's id, so that Dataverse records
+# the new file as the old one's replacement rather than as an unrelated file.
+# The first replacement makes a draft. Publishing it needs a major version,
+# because the files changed. tabIngest = FALSE keeps a spreadsheet as uploaded
+# instead of converting its first sheet to a table. Dataverse refuses a file of
+# a different type unless forceReplace is set, which this never does.
+dv_replace_file <- function(pid, file_id, path, dry_run = TRUE) {
+  if (!file.exists(path)) stop("No such file: ", path, call. = FALSE)
+  json <- list(forceReplace = FALSE, tabIngest = FALSE)
+  if (dry_run) {
+    cat("DRY RUN, not sent: replace file", file_id, "of", pid, "with", basename(path),
+        paste0("(", file.size(path), " bytes, MD5 ", unname(tools::md5sum(path)), ")"), "\n")
+    return(invisible(NULL))
+  }
+  dv_wait_unlocked(pid)
+  req <- dv_request(paste0("api/files/", file_id, "/replace"), method = "POST") |>
+    httr2::req_body_multipart(
+      file = curl::form_file(path),
+      jsonData = as.character(jsonlite::toJSON(json, auto_unbox = TRUE))
+    ) |>
+    httr2::req_timeout(3600)
+  replaced <- dv_perform(req)
+  cat("Replaced file", file_id, "with", basename(path), "\n")
+  invisible(replaced)
+}

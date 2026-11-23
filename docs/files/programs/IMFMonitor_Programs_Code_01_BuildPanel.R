@@ -3,18 +3,22 @@
 # ==============================================================================
 #
 # Input:
-#   IMFMonitor_Programs_Raw.xlsx
+#   IMFMonitor_Programs_Raw.xlsx (Data and Members sheets), written by
+#   IMFMonitor_Programs_Code_00_Webscraper.R.
 #
-# Output:
-#   IMFMonitor_Programs_Panel.xlsx
+# Outputs:
+#   IMFMonitor_Programs_Panel.xlsx            Public dataset: Notes and Data
+#                                             (one row per country-year) sheets.
+#   IMFMonitor_Programs_Panel_Analytics.xlsx  Audit and diagnostic tables, not
+#                                             part of the public release.
 #
 # Rapid Credit Facility (RCF) and Rapid Financing Instrument (RFI) observations
 # are excluded before validation, spell construction, and indicator calculation.
 # So are the outright purchases that the scraper adds by hand: Emergency Natural
 # Disaster Assistance (ENDA), Emergency Post-Conflict Assistance (EPCA) and the
 # Systemic Transformation Facility (STF). All five are listed in
-# EXCLUDED_RAPID_FACILITIES and retained only in audit sheets inside the Excel
-# workbook.
+# EXCLUDED_RAPID_FACILITIES and retained only in the audit sheets of the
+# analytics workbook.
 #
 # Country-year universe (independent-state rule): the panel contains every
 # independent state for exactly the years in which it existed, as set out in
@@ -31,7 +35,24 @@
 # ---- User settings -----------------------------------------------------------
 
 INPUT_FILE <- "IMFMonitor_Programs_Raw.xlsx"
+
+# OUTPUT_FILE is the public dataset (Notes and Data sheets). ANALYTICS_FILE
+# holds the run summary and the audit and diagnostic tables and is not part of
+# the public release.
 OUTPUT_FILE <- "IMFMonitor_Programs_Panel.xlsx"
+ANALYTICS_FILE <- "IMFMonitor_Programs_Panel_Analytics.xlsx"
+
+# Text for the Notes sheet of the public dataset. Update DATASET_VERSION and
+# CITATION for each release and keep them the same as in
+# IMFMonitor_Programs_Code_00_Webscraper.R.
+DATASET_VERSION <- "October 2026"
+CITATION <- paste0(
+  "Stubbs, T. (2026). IMF Programs Dataset, 1952\u20132025 (Version: ",
+  DATASET_VERSION,
+  "). IMF Monitor. https://doi.org/10.7910/DVN/V4V1BA"
+)
+CODEBOOK_URL <- "https://imfmonitor.org/programs/"
+CONTACT_EMAIL <- "thomas.stubbs@rhul.ac.uk"
 
 # TRUE includes the workbook's IMF "as of" year. Because the indicators use
 # approved start and expiration dates, this includes scheduled months later in
@@ -39,7 +60,8 @@ OUTPUT_FILE <- "IMFMonitor_Programs_Panel.xlsx"
 # Set FALSE to end at the latest complete calendar year instead.
 INCLUDE_AS_OF_YEAR <- FALSE
 
-# Leave as NA to derive the final year from the workbook metadata. A fixed
+# Leave as NA to derive the final year from the workbook's IMF as-of date (the
+# as_of_date column of its Data sheet). A fixed
 # integer can be supplied for a reproducible earlier cutoff, but not for a year
 # later than the workbook's IMF as-of year.
 YEAR_MAX_OVERRIDE <- NA_integer_
@@ -727,7 +749,7 @@ if (!file.exists(INPUT_FILE)) {
 }
 
 available_sheets <- excel_sheets(INPUT_FILE)
-required_sheets <- c("Arrangements", "Members", "Run_Metadata")
+required_sheets <- c("Data", "Members")
 missing_sheets <- setdiff(required_sheets, available_sheets)
 
 if (length(missing_sheets) > 0L) {
@@ -738,13 +760,10 @@ if (length(missing_sheets) > 0L) {
   )
 }
 
-arrangements <- read_excel(INPUT_FILE, sheet = "Arrangements") |>
+arrangements <- read_excel(INPUT_FILE, sheet = "Data") |>
   as_tibble()
 
 members <- read_excel(INPUT_FILE, sheet = "Members") |>
-  as_tibble()
-
-run_metadata <- read_excel(INPUT_FILE, sheet = "Run_Metadata") |>
   as_tibble()
 
 require_columns(
@@ -752,11 +771,12 @@ require_columns(
   c(
     "country",
     "member_key",
+    "as_of_date",
     "facility",
     "date_of_arrangement",
     "expiration_date"
   ),
-  "Arrangements sheet"
+  "Data sheet"
 )
 
 require_columns(
@@ -765,11 +785,10 @@ require_columns(
   "Members sheet"
 )
 
-require_columns(
-  run_metadata,
-  c("item", "value"),
-  "Run_Metadata sheet"
-)
+# The IMF as-of date of the download is recorded on every row of the Data
+# sheet (the scraper checks that it is the same on every row). It is checked
+# below, where it sets the final year of the panel.
+as_of_values <- unique(coerce_excel_date(arrangements$as_of_date))
 
 # Rows the scraper appended from its MANUAL_ARRANGEMENTS table (source column
 # added by the scraper; older raw workbooks without it have no manual rows).
@@ -816,32 +835,25 @@ members <- members |>
   ) |>
   distinct()
 
-# The scraper's Members sheet lists only current members (the IMF dropdown).
-# Former or withdrawn members whose arrangements were added to the
-# Arrangements sheet (e.g. Cuba, Czechoslovakia, Yugoslavia) are added here
-# from the Arrangements sheet so that every arrangement has a member row.
+# The scraper's Members sheet lists the members it queried, including former
+# members queried under retired keys (e.g. Cuba, Czechoslovakia, Yugoslavia).
+# Any member that appears only in the Data sheet is added here from the Data
+# sheet so that every arrangement has a member row.
 members_added_from_arrangements <- arrangements |>
   distinct(imf_country, member_key) |>
   anti_join(members, by = "member_key")
 
 members <- bind_rows(members, members_added_from_arrangements)
 
-as_of_value <- run_metadata |>
-  filter(item == "IMF As of Date used") |>
-  pull(value)
-
-if (length(as_of_value) != 1L) {
+if (length(as_of_values) != 1L || is.na(as_of_values)) {
   stop(
-    "Run_Metadata must contain exactly one 'IMF As of Date used' value.",
+    "The as_of_date column of the Data sheet must hold one IMF as-of date, ",
+    "the same on every row.",
     call. = FALSE
   )
 }
 
-imf_as_of_date <- coerce_excel_date(as_of_value)
-
-if (length(imf_as_of_date) != 1L || is.na(imf_as_of_date)) {
-  stop("The IMF as-of date could not be parsed from Run_Metadata.", call. = FALSE)
-}
+imf_as_of_date <- as_of_values
 
 if (!is.logical(INCLUDE_AS_OF_YEAR) ||
     length(INCLUDE_AS_OF_YEAR) != 1L ||
@@ -1621,7 +1633,8 @@ if (nrow(overlap_diagnostic) > 0L) {
   warning(
     "Robust spell merging differs from the literal Stata cleaning for ",
     nrow(overlap_diagnostic),
-    " country-year/group observation(s). Review the Overlap_Diagnostic sheet."
+    " country-year/group observation(s). Review the Overlap_Diagnostic sheet ",
+    "of ", basename(ANALYTICS_FILE), "."
   )
 }
 
@@ -1708,6 +1721,7 @@ run_summary <- tibble(
   item = c(
     "Input workbook",
     "Excel output",
+    "Analytics output",
     "World Bank country API",
     "Run time (UTC)",
     "IMF as-of date",
@@ -1742,13 +1756,14 @@ run_summary <- tibble(
     "Independent states in panel",
     "States added that are not on the World Bank list",
     "World Bank economies excluded (not independent states)",
-    "Members added from Arrangements sheet",
+    "Members added from Data sheet",
     "Manual arrangement additions in input",
     "Official indicator method"
   ),
   value = c(
     INPUT_FILE,
     OUTPUT_FILE,
+    ANALYTICS_FILE,
     WB_COUNTRY_API,
     format(Sys.time(), tz = "UTC", usetz = TRUE),
     as.character(imf_as_of_date),
@@ -1876,11 +1891,142 @@ future_expirations_excel <- if (nrow(scheduled_expirations_after_panel) == 0L) {
   scheduled_expirations_after_panel
 }
 
-# ---- Save the single output workbook ----------------------------------------
+# ---- Save the output workbooks ----------------------------------------------
 
+# Two workbooks are written. OUTPUT_FILE is the public dataset: a Notes sheet
+# and the Data sheet (one row per country-year). ANALYTICS_FILE holds the run
+# summary and the audit and diagnostic tables and is not part of the public
+# release.
+
+for (output_path in c(OUTPUT_FILE, ANALYTICS_FILE)) {
+  dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
+}
+
+format_long_date <- function(x) {
+  paste(
+    as.integer(format(x, "%d")),
+    month.name[as.integer(format(x, "%m"))],
+    format(x, "%Y")
+  )
+}
+
+excluded_facility_list <- if (length(EXCLUDED_RAPID_FACILITIES) > 1L) {
+  paste0(
+    paste(head(EXCLUDED_RAPID_FACILITIES, -1L), collapse = ", "),
+    " and ",
+    tail(EXCLUDED_RAPID_FACILITIES, 1L)
+  )
+} else {
+  paste(EXCLUDED_RAPID_FACILITIES, collapse = "")
+}
+
+panel_years <- paste0(year_min, "\u2013", year_max)
+
+# Notes sheet: one line of text per row in column A, styled by the style
+# column ("title", "italic", "bold" or "plain"; NA text = blank row).
+notes <- tribble(
+  ~text, ~style,
+  paste0("IMF Programs Panel Dataset, ", panel_years), "title",
+  paste0("Version: ", DATASET_VERSION), "italic",
+  NA_character_, "plain",
+  paste0("When using the data, cite: ", CITATION), "bold",
+  NA_character_, "plain",
+  paste0("The codebook is available at: ", CODEBOOK_URL), "plain",
+  paste0("For comments and suggestions, email ", CONTACT_EMAIL), "plain",
+  NA_character_, "plain",
+  "Data Notes", "italic",
+  paste0(
+    "One row per independent state per year, ", panel_years, ": a state is ",
+    "included in a year if it was independent on 31 December of that year."
+  ), "plain",
+  paste0(
+    "Built from ", basename(INPUT_FILE), ", with IMF data as of ",
+    format_long_date(imf_as_of_date), ". Arrangements approved after ",
+    format_long_date(analysis_cutoff_date), " are not used."
+  ), "plain",
+  paste0(
+    "Indicators cover all programs (prefix IMF), concessional programs ",
+    "(prefix conIMF) and non-concessional programs (prefix nonIMF)."
+  ), "plain",
+  paste0("Not counted as programs: ", excluded_facility_list, "."), "plain",
+  "Rows sorted by country_code, then year.", "plain",
+  paste0(
+    "Produced by IMFMonitor_Programs_Code_01_BuildPanel.R, which also writes ",
+    basename(ANALYTICS_FILE), " (run summary, audit and diagnostic tables)."
+  ), "plain"
+)
+
+notes_styles <- list(
+  title = createStyle(fontSize = 12, textDecoration = "bold"),
+  italic = createStyle(textDecoration = "italic", wrapText = TRUE),
+  bold = createStyle(textDecoration = "bold", wrapText = TRUE),
+  plain = createStyle(wrapText = TRUE)
+)
+
+header_style <- createStyle(
+  fontColour = "#FFFFFF",
+  fgFill = "#1F4E78",
+  textDecoration = "bold",
+  halign = "center",
+  valign = "center",
+  wrapText = TRUE,
+  border = "Bottom",
+  borderColour = "#D9EAF7"
+)
+
+# Public dataset.
+wb <- createWorkbook(creator = "IMF Monitor")
+
+addWorksheet(wb, "Notes", gridLines = FALSE)
+writeData(
+  wb,
+  sheet = "Notes",
+  x = notes$text,
+  startRow = 1L,
+  startCol = 1L,
+  colNames = FALSE,
+  keepNA = FALSE
+)
+setColWidths(wb, sheet = "Notes", cols = 1L, widths = 180)
+for (style_name in names(notes_styles)) {
+  style_rows <- which(notes$style == style_name & !is.na(notes$text))
+  if (length(style_rows) > 0L) {
+    addStyle(
+      wb,
+      sheet = "Notes",
+      style = notes_styles[[style_name]],
+      rows = style_rows,
+      cols = 1L
+    )
+  }
+}
+
+addWorksheet(wb, "Data", gridLines = FALSE)
+writeData(
+  wb,
+  sheet = "Data",
+  x = country_year_panel,
+  startRow = 1L,
+  startCol = 1L,
+  colNames = TRUE,
+  rowNames = FALSE,
+  headerStyle = header_style,
+  withFilter = TRUE,
+  keepNA = FALSE
+)
+freezePane(wb, "Data", firstRow = TRUE)
+setColWidths(
+  wb,
+  sheet = "Data",
+  cols = seq_len(ncol(country_year_panel)),
+  widths = c(40, 14, 8, rep(11, ncol(country_year_panel) - 3L))
+)
+
+saveWorkbook(wb, OUTPUT_FILE, overwrite = TRUE)
+
+# Run summary and audit tables (not part of the public release).
 write.xlsx(
   x = list(
-    Country_Year = country_year_panel,
     Summary = run_summary,
     Country_Crosswalk = member_crosswalk_export,
     WB_Economies = wb_economies,
@@ -1899,7 +2045,7 @@ write.xlsx(
     Calendar_Diagnostic = calendar_excel,
     Overlap_Diagnostic = overlap_excel
   ),
-  file = OUTPUT_FILE,
+  file = ANALYTICS_FILE,
   overwrite = TRUE
 )
 
@@ -1915,3 +2061,4 @@ message(
 )
 message("Country-year rows: ", nrow(country_year_panel))
 message("Excel output: ", normalizePath(OUTPUT_FILE, winslash = "/", mustWork = FALSE))
+message("Analytics output: ", normalizePath(ANALYTICS_FILE, winslash = "/", mustWork = FALSE))

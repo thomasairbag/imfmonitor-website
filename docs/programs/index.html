@@ -222,7 +222,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <li><div class="download-item">
 <div class="download-label">
 <strong>Codebook (IMFMonitor_Programs_Codebook.pdf)</strong><br>
-<span class="file-details">PDF · 414 KB · October 2026</span>
+<span class="file-details">PDF · 413 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Codebook.pdf" class="btn btn-primary btn-sm" aria-label="Download Codebook (IMFMonitor_Programs_Codebook.pdf)" download="">Download</a>
 </div></li>
@@ -230,7 +230,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <div class="download-label">
 <strong>Raw dataset (IMFMonitor_Programs_Raw.xlsx)</strong><br>
 <span class="file-description">One row per arrangement or outright purchase: IMF member, facility, dates, and amounts, from IMF data as of 30 September 2026.</span><br>
-<span class="file-details">Excel (.xlsx) · 117 KB · October 2026</span>
+<span class="file-details">Excel (.xlsx) · 101 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Raw.xlsx" class="btn btn-primary btn-sm" aria-label="Download Raw dataset (IMFMonitor_Programs_Raw.xlsx)" download="">Download</a>
 </div></li>
@@ -238,7 +238,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <div class="download-label">
 <strong>Panel dataset (IMFMonitor_Programs_Panel.xlsx)</strong><br>
 <span class="file-description">One row per independent state per year: months under an IMF program, and whether one was in force, for all, concessional, and non-concessional programs.</span><br>
-<span class="file-details">Excel (.xlsx) · 912 KB · October 2026</span>
+<span class="file-details">Excel (.xlsx) · 849 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Panel.xlsx" class="btn btn-primary btn-sm" aria-label="Download Panel dataset (IMFMonitor_Programs_Panel.xlsx)" download="">Download</a>
 </div></li>
@@ -246,7 +246,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <div class="download-label">
 <strong>Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)</strong><br>
 <span class="file-description">Builds the raw dataset from the IMF’s History of Lending Commitments page. Provided for transparency: it takes the latest IMF data, so a run today may differ.</span><br>
-<span class="file-details">R script · 70 KB · October 2026</span>
+<span class="file-details">R script · 75 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Code_00_Webscraper.R" class="btn btn-primary btn-sm" aria-label="Download Scraper script (IMFMonitor_Programs_Code_00_Webscraper.R)" download="">Download</a>
 </div></li>
@@ -254,7 +254,7 @@ Arrangement or outright purchase (raw dataset); country-year (panel dataset)
 <div class="download-label">
 <strong>Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)</strong><br>
 <span class="file-description">Builds the panel dataset from the raw dataset and the World Bank’s country list, which it downloads when run.</span><br>
-<span class="file-details">R script · 81 KB · October 2026</span>
+<span class="file-details">R script · 86 KB · October 2026</span>
 </div>
 <a href="../files/programs/IMFMonitor_Programs_Code_01_BuildPanel.R" class="btn btn-primary btn-sm" aria-label="Download Panel build script (IMFMonitor_Programs_Code_01_BuildPanel.R)" download="">Download</a>
 </div></li>
@@ -313,7 +313,7 @@ Figure&nbsp;1: States with an IMF program in force at any time in the year, 1952
 <h2 class="anchored" data-anchor-id="version-history">Version history</h2>
 <section class="level3 unnumbered unlisted">
 <h3 class="unnumbered unlisted anchored" data-anchor-id="">October 2026</h3>
-<p>Replaces the hand-coded June 2020 file with a dataset built by two R scripts from the IMF’s History of Lending Commitments page, with 102 arrangements and outright purchases that the page does not show added from other IMF sources. Coverage extends from 1980–2019 to 1952–2025, and a new panel dataset gives yearly program participation indicators for every independent state. The dataset has its own codebook. The indicators have the same names as the 21 in the March 2026 <a href="../conditionality/index.html">Conditionality</a> release, but are built from the new data and count months differently: a program in force from March to September of one year now counts as seven months, not six.</p>
+<p>Replaces the hand-coded June 2020 file with a dataset built by two R scripts from the IMF’s History of Lending Commitments page, with 102 arrangements and outright purchases that the page does not show added from other IMF sources. Coverage extends from 1980–2019 to 1952–2025, and a new panel dataset gives yearly program participation indicators for every independent state. The dataset has its own codebook. The indicators have the same names as the 21 in the March 2026 <a href="../conditionality/index.html">Conditionality</a> release, but are built from the new data and count months differently: a program in force from March to September of one year now counts as seven months, not six. In November 2026 the workbooks were reissued with the same data: each now opens with a Notes sheet, the data are on a sheet named Data (formerly Arrangements in the raw dataset and Country_Year in the panel), and the scripts’ run records and diagnostic tables are left out.</p>
 <p>Current release: its files are under <a href="#downloads">Downloads</a>.</p>
 </section>
 <section class="level3 unnumbered unlisted">

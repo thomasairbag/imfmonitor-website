@@ -4,8 +4,13 @@
 # Source landing page:
 #   https://www.imf.org/external/np/fin/tad/extarr1.aspx
 #
-# Output:
-#   IMFMonitor_Programs_Raw.xlsx
+# Outputs:
+#   IMFMonitor_Programs_Raw.xlsx            Public dataset: Notes, Data
+#                                           (one row per arrangement) and
+#                                           Members sheets.
+#   IMFMonitor_Programs_Raw_Analytics.xlsx  Run record, not part of the
+#                                           public release: Run_Metadata,
+#                                           Errors and Query_Log sheets.
 #
 # The script discovers the current member keys, date choices, form action, and
 # exact parameter names from the live landing page. It selects the maximum date
@@ -94,7 +99,24 @@ suppressPackageStartupMessages({
 # ---- 2. User-adjustable settings --------------------------------------------
 
 LANDING_URL <- "https://www.imf.org/external/np/fin/tad/extarr1.aspx"
+
+# OUTPUT_FILE is the public dataset (Notes, Data and Members sheets).
+# ANALYTICS_FILE records the run (Run_Metadata, Errors and Query_Log sheets)
+# and is not part of the public release.
 OUTPUT_FILE <- "IMFMonitor_Programs_Raw.xlsx"
+ANALYTICS_FILE <- "IMFMonitor_Programs_Raw_Analytics.xlsx"
+
+# Text for the Notes sheet of the public dataset. Update DATASET_VERSION and
+# CITATION for each release and keep them the same as in
+# IMFMonitor_Programs_Code_01_BuildPanel.R.
+DATASET_VERSION <- "October 2026"
+CITATION <- paste0(
+  "Stubbs, T. (2026). IMF Programs Dataset, 1952\u20132025 (Version: ",
+  DATASET_VERSION,
+  "). IMF Monitor. https://doi.org/10.7910/DVN/V4V1BA"
+)
+CODEBOOK_URL <- "https://imfmonitor.org/programs/"
+CONTACT_EMAIL <- "thomas.stubbs@rhul.ac.uk"
 
 # Requests are deliberately sequential. Increase the pause if the IMF server
 # begins returning HTTP 429 or 5xx responses.
@@ -108,7 +130,7 @@ RETRY_BASE_DELAY_SECONDS <- 1.5
 MIN_EXPECTED_MEMBER_COUNT <- 180L
 
 # Arrangements that the IMF lending page no longer lists at the latest as-of
-# date but that the IMF approved. Each is appended to the Arrangements sheet
+# date but that the IMF approved. Each is appended to the Data sheet
 # with source = "Manual addition" and the evidence in source_note. Values are
 # taken from the IMF lending page at an earlier as-of date and are in thousands
 # of SDRs, like the scraped rows. A manual row is skipped automatically if the
@@ -127,8 +149,8 @@ MANUAL_ARRANGEMENTS <- tribble(
 # Outright purchases that the IMF lending page never lists, because they are
 # not arrangements: Emergency Natural Disaster Assistance (ENDA, 1962-2011),
 # Emergency Post-Conflict Assistance (EPCA, 1995-2011) and the Systemic
-# Transformation Facility (STF, 1993-95). Each is appended to the Arrangements
-# sheet as a manual addition. The panel builder excludes these facilities from
+# Transformation Facility (STF, 1993-95). Each is appended to the Data sheet
+# as a manual addition. The panel builder excludes these facilities from
 # all programme indicators, as it does RCF and RFI disbursements.
 #
 # Each row is one purchase. The expiration date is set to the approval date,
@@ -1652,7 +1674,8 @@ run_metadata <- tibble(
     "User-Agent",
     "R version",
     "Package versions",
-    "Output workbook"
+    "Output workbook",
+    "Analytics workbook"
   ),
   value = c(
     LANDING_URL,
@@ -1696,7 +1719,7 @@ run_metadata <- tibble(
           ),
           collapse = "; "
         ),
-        " (see source_note in the Arrangements sheet)"
+        " (see source_note in the Data sheet of the public workbook)"
       )
     },
     paste0(
@@ -1736,15 +1759,21 @@ run_metadata <- tibble(
     USER_AGENT,
     R.version.string,
     package_versions,
-    OUTPUT_FILE
+    OUTPUT_FILE,
+    ANALYTICS_FILE
   )
 )
 
-# ---- 11. Write the Excel workbook -------------------------------------------
+# ---- 11. Write the Excel workbooks ------------------------------------------
 
-dir.create(dirname(OUTPUT_FILE), recursive = TRUE, showWarnings = FALSE)
+# Two workbooks are written. OUTPUT_FILE is the public dataset: a Notes sheet,
+# the Data sheet (one row per arrangement or outright purchase) and the
+# Members sheet. ANALYTICS_FILE holds the record of the run (Run_Metadata,
+# Errors and Query_Log) and is not part of the public release.
 
-wb <- createWorkbook(creator = "IMF Financial Arrangements R scraper")
+for (output_path in c(OUTPUT_FILE, ANALYTICS_FILE)) {
+  dir.create(dirname(output_path), recursive = TRUE, showWarnings = FALSE)
+}
 
 header_style <- createStyle(
   fontColour = "#FFFFFF",
@@ -1804,9 +1833,97 @@ write_workbook_sheet <- function(
   }
 }
 
+# The Notes sheet: one line of text per row in column A, styled by the
+# style column ("title", "italic", "bold" or "plain"; NA text = blank row).
+NOTES_STYLES <- list(
+  title = createStyle(fontSize = 12, textDecoration = "bold"),
+  italic = createStyle(textDecoration = "italic", wrapText = TRUE),
+  bold = createStyle(textDecoration = "bold", wrapText = TRUE),
+  plain = createStyle(wrapText = TRUE)
+)
+
+write_notes_sheet <- function(workbook, notes) {
+  addWorksheet(workbook, "Notes", gridLines = FALSE)
+  writeData(
+    workbook,
+    sheet = "Notes",
+    x = notes$text,
+    startRow = 1L,
+    startCol = 1L,
+    colNames = FALSE,
+    keepNA = FALSE
+  )
+  setColWidths(workbook, sheet = "Notes", cols = 1L, widths = 180)
+  for (style_name in names(NOTES_STYLES)) {
+    style_rows <- which(notes$style == style_name & !is.na(notes$text))
+    if (length(style_rows) > 0L) {
+      addStyle(
+        workbook,
+        sheet = "Notes",
+        style = NOTES_STYLES[[style_name]],
+        rows = style_rows,
+        cols = 1L
+      )
+    }
+  }
+}
+
+format_long_date <- function(x) {
+  paste(
+    as.integer(format(x, "%d")),
+    month.name[as.integer(format(x, "%m"))],
+    format(x, "%Y")
+  )
+}
+
+approval_years <- range(as.integer(format(arrangements$date_of_arrangement, "%Y")))
+
+notes <- tribble(
+  ~text, ~style,
+  paste0(
+    "IMF Programs Raw Dataset, ",
+    approval_years[1], "\u2013", approval_years[2]
+  ), "title",
+  paste0("Version: ", DATASET_VERSION), "italic",
+  NA_character_, "plain",
+  paste0("When using the data, cite: ", CITATION), "bold",
+  NA_character_, "plain",
+  paste0("The codebook is available at: ", CODEBOOK_URL), "plain",
+  paste0("For comments and suggestions, email ", CONTACT_EMAIL), "plain",
+  NA_character_, "plain",
+  "Data Notes", "italic",
+  paste0(
+    "One row per IMF arrangement or outright purchase, with data as of ",
+    format_long_date(latest_as_of_date), "."
+  ), "plain",
+  paste0("Source: IMF, History of Lending Commitments (", LANDING_URL, ")."), "plain",
+  if (identical(units_used, "Thousands of SDRs")) {
+    "Amounts are in thousands of SDRs, as reported by the IMF."
+  } else {
+    "Amounts are in the units given in amount_unit, as reported by the IMF."
+  }, "plain",
+  paste0(
+    "Rows with source \"Manual addition\" are not listed on the IMF page; ",
+    "the evidence for each is in source_note."
+  ), "plain",
+  paste0(
+    "The Members sheet lists the IMF members queried, including former ",
+    "members under retired member keys."
+  ), "plain",
+  paste0(
+    "Produced by IMFMonitor_Programs_Code_00_Webscraper.R, which also writes ",
+    basename(ANALYTICS_FILE), " (run metadata, errors and query log)."
+  ), "plain"
+)
+
+# Public dataset.
+wb <- createWorkbook(creator = "IMF Monitor")
+
+write_notes_sheet(wb, notes)
+
 write_workbook_sheet(
   wb,
-  "Arrangements",
+  "Data",
   arrangements,
   widths = c(38, 13, 13, 46, 18, 18, 18, 18, 20, 22, 20, 90)
 )
@@ -1814,7 +1931,7 @@ write_workbook_sheet(
 if (nrow(arrangements) > 0L) {
   addStyle(
     wb,
-    "Arrangements",
+    "Data",
     amount_style,
     rows = 2L:(nrow(arrangements) + 1L),
     cols = match(AMOUNT_COLUMNS, names(arrangements)),
@@ -1823,7 +1940,7 @@ if (nrow(arrangements) > 0L) {
   )
   addStyle(
     wb,
-    "Arrangements",
+    "Data",
     text_style,
     rows = 2L:(nrow(arrangements) + 1L),
     cols = match("member_key", names(arrangements)),
@@ -1850,8 +1967,13 @@ if (nrow(members) > 0L) {
   )
 }
 
+saveWorkbook(wb, OUTPUT_FILE, overwrite = TRUE)
+
+# Record of the run (not part of the public release).
+analytics_wb <- createWorkbook(creator = "IMF Monitor")
+
 write_workbook_sheet(
-  wb,
+  analytics_wb,
   "Run_Metadata",
   run_metadata,
   widths = c(46, 110),
@@ -1859,7 +1981,7 @@ write_workbook_sheet(
 )
 
 write_workbook_sheet(
-  wb,
+  analytics_wb,
   "Errors",
   errors,
   widths = c(18, 36, 13, 85, 85, 14, 12, 30)
@@ -1868,14 +1990,13 @@ write_workbook_sheet(
 # The query log makes successful empty results directly inspectable without
 # conflating them with failures.
 write_workbook_sheet(
-  wb,
+  analytics_wb,
   "Query_Log",
   query_log,
   widths = c(14, 36, 13, 13, 85, 30, 18, 14, 12, 30, 24, 36, 60)
 )
 
-
-saveWorkbook(wb, OUTPUT_FILE, overwrite = TRUE)
+saveWorkbook(analytics_wb, ANALYTICS_FILE, overwrite = TRUE)
 
 # ---- 12. Concise console validation summary ---------------------------------
 
@@ -1896,9 +2017,15 @@ cat(sprintf("SRF sub-facility rows dropped:       %d\n", number_of_srf_rows_drop
 cat(sprintf("Manual additions appended:           %d\n", number_of_manual_additions))
 cat(sprintf("  of which outright purchases:       %d\n", number_of_outright_purchases_added))
 cat(sprintf("Exact duplicate rows detected:       %d\n", duplicate_rows_detected))
-cat(sprintf("Workbook written to:                 %s\n", normalizePath(OUTPUT_FILE)))
+cat(sprintf("Public workbook written to:          %s\n", normalizePath(OUTPUT_FILE)))
+cat(sprintf("Analytics workbook written to:       %s\n", normalizePath(ANALYTICS_FILE)))
 cat(strrep("=", 72L), "\n", sep = "")
 
 if (number_of_failures > 0L) {
-  cat("Review the Errors and Query_Log sheets before using the dataset.\n")
+  cat(
+    "Review the Errors and Query_Log sheets in ",
+    basename(ANALYTICS_FILE),
+    " before using the dataset.\n",
+    sep = ""
+  )
 }

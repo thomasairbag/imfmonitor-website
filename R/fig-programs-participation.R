@@ -1,5 +1,6 @@
 # Figure: states with an IMF program in force, 1952–2025 (Programs page).
-# Input: files/programs/IMFMonitor_Programs_Panel.xlsx, sheet Country_Year.
+# Input: files/programs/IMFMonitor_Programs_Panel.xlsx, sheet Data (named
+# Country_Year in the workbook first published in October 2026).
 # IMFnn, conIMFnn, and nonIMFnn are 1 if a program (any, concessional, or
 # non-concessional) was in force at any time in the year (codebook, Section 3).
 # Output: images/figures/programs-participation.png and -narrow.png.
@@ -9,7 +10,7 @@ library(dplyr)
 library(tidyr)
 
 panel <- readxl::read_excel("files/programs/IMFMonitor_Programs_Panel.xlsx",
-                            sheet = "Country_Year")
+                            sheet = "Data")
 
 series_labels <- c(IMFnn = "All programs", conIMFnn = "Concessional",
                    nonIMFnn = "Non-concessional")

@@ -4,7 +4,7 @@ One entry per site or data release, newest first.
 
 ## Unreleased
 
-Nothing yet.
+- Programs, October 2026 release: the raw and panel workbooks, the codebook, and the two R scripts are replaced with revised files of the same version. The data are unchanged. Each workbook now opens with a Notes sheet, its data are on a sheet named Data (formerly Arrangements and Country_Year), and the run records and diagnostic tables, which the scripts now write to separate workbooks, are no longer published. The version history says so.
 
 ## 26 October 2026: canonical links, a new footer, and Google Analytics
 
