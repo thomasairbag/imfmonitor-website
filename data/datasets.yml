@@ -342,6 +342,40 @@ datasets:
       - "citation: the file's Notes sheet ('When using the data, please cite …'), as worded there, with the title italicised as in the Conditionality codebook."
       - "Text on the Other Data page: the Conditionality codebook, Step 4 ('Extracting the Review Dates') and 'Variable List for the Reviews Dataset'; the October 2026 Conditionality do-file imports the file."
 
+  - id: liquidity
+    name: "IMF liquidity"
+    page: "other-data"
+    tagline:
+    coverage: "IMF financial years 1947–2024"
+    period: "1947–2024"
+    counts:
+      years: "78"
+    version: "November 2026"
+    unit: "IMF financial year"
+    status: "available"
+    citation: "Stubbs, T. (2026). *IMF Liquidity Dataset, 1947–2024* (Version: November 2026). IMF Monitor. <https://doi.org/10.7910/DVN/WXR8GS>"
+    files:
+      - label: "Codebook (IMFMonitor_Liquidity_Codebook.pdf)"
+        href: "files/liquidity/IMFMonitor_Liquidity_Codebook.pdf"
+        kind: "codebook"
+        format: "PDF"
+        size: "202 KB"
+        version: "November 2026"
+      - label: "Dataset (IMFMonitor_Liquidity.xlsx)"
+        href: "files/liquidity/IMFMonitor_Liquidity.xlsx"
+        description: "One row per IMF financial year: usable resources, liquid liabilities, and the liquidity ratio, with sources. A second sheet holds the member positions behind the 1947–1972 figures."
+        kind: "data"
+        format: "Excel (.xlsx)"
+        size: "107 KB"
+        version: "November 2026"
+    sources:
+      - "Files: Thomas Stubbs, 23 November 2026 (Dropbox, IMFMonitor/Liquidity: the workbook and the codebook, for the Other Data page and Harvard Dataverse). At his request, the record's DOI was added to the citation in the codebook and on the Notes sheet, and the Notes sheet's codebook address became https://imfmonitor.org/other-data/#liquidity; nothing else changed (every cell and formula checked in Excel, 23 November 2026). The workbook here is byte-identical to the Dropbox file (106,567 bytes). The codebook PDF was exported from IMFMonitor_Liquidity_Codebook.docx with Word on 23 November 2026 (9 pages, 202,108 bytes). The March 2022 IMFMonitor_Financials files (1973–2019) in the folder's v2022-03 subfolder are not published here."
+      - "coverage, period, counts, and unit: codebook, Step 1 and Section 2 (one row per IMF financial year, 78 rows, 1947–2024; a financial year ends on 30 April, except the first, on 30 June 1947), matching the Data sheet (checked 23 November 2026). The Members_1947-72 sheet has 949 rows."
+      - "version: the codebook ('Version: November 2026') and the Notes sheet."
+      - "status: Thomas Stubbs, 23 November 2026."
+      - "citation: the codebook's 'How to cite this dataset', worded and italicised as given there. The DOI is Harvard Dataverse doi:10.7910/DVN/WXR8GS, in the IMF Monitor collection, created as a draft and published as version 1.0 on 23 November 2026 with Thomas Stubbs's approval. Its two files, the workbook and the codebook (as .docx), are byte-identical to the Dropbox files (MD5, checked 23 November 2026)."
+      - "Text on the Other Data page: codebook, Section 1 and Step 1 (the definition, after Lang's series for 1973–2013; Valentin Lang's name from Crossref, doi:10.1007/s11558-020-09405-x) and Step 4 (no IMF total of usable currencies before 1973)."
+
   - id: greening
     name: "*Greening the International Monetary Fund*"
     page: "other-data"

@@ -266,9 +266,11 @@ dv_wait_unlocked <- function(pid, timeout = 1800) {
   }
 }
 
+# tabIngest = FALSE keeps a spreadsheet or .dta file as uploaded instead of
+# converting it to a table.
 dv_add_file <- function(pid, path, directory = NULL, description = NULL, dry_run = TRUE) {
   if (!file.exists(path)) stop("No such file: ", path, call. = FALSE)
-  json <- list(directoryLabel = directory, description = description, restrict = FALSE)
+  json <- list(directoryLabel = directory, description = description, restrict = FALSE, tabIngest = FALSE)
   json <- json[!vapply(json, is.null, logical(1))]
   if (dry_run) {
     cat("DRY RUN, not sent: add", basename(path), paste0("(", file.size(path), " bytes)"),

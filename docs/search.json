@@ -46,7 +46,7 @@
     "href": "other-data/index.html",
     "title": "Other Data",
     "section": "",
-    "text": "Skip to main content\nThe program reviews dataset, and the data and code behind four publications by IMF Monitor researchers. The reviews dataset downloads from this site. The replication packages, listed newest first, are on Harvard Dataverse."
+    "text": "Skip to main content\nThe program reviews and IMF liquidity datasets, and the data and code behind four publications by IMF Monitor researchers. Both datasets download from this site. The replication packages, listed newest first, are on Harvard Dataverse."
   },
   {
     "objectID": "other-data/index.html#reviews",
@@ -54,6 +54,13 @@
     "title": "Other Data",
     "section": "Program reviews",
     "text": "Program reviews\nThe dates of IMF Executive Board meetings for 762 IMF programs in 133 countries, 1980–2015: the meeting that approved each program, the meetings that concluded its reviews, and the date proposed for each next review. Programs approved in 1978 and 1979 are included only if they ran into 1980. The Conditionality code uses the dataset to adjust conditions for program interruptions, and the Conditionality codebook describes its variables.\n\nCoverage: 1980–2015; 133 countries Available\n\n\n\n\nReviews dataset (IMFMonitor_Reviews.xlsx)\nExcel (.xlsx) · 230 KB\n\nDownload\n\n\n\nHow to cite\n\nKentikelenis, A. & Stubbs, T. (2023). A Thousand Cuts: Social Protection in the Age of Austerity. Oxford University Press.\nCopy citation"
+  },
+  {
+    "objectID": "other-data/index.html#liquidity",
+    "href": "other-data/index.html#liquidity",
+    "title": "Other Data",
+    "section": "IMF liquidity",
+    "text": "IMF liquidity\nThe liquidity of the IMF at the end of each of its financial years, 1947–2024: its usable resources (holdings of usable currencies and SDRs), its liquid liabilities (members’ reserve tranche positions and outstanding IMF borrowing), and the ratio of the two. The dataset follows the definition of Valentin Lang’s series for 1973–2013 and applies it to every year from 1947. The IMF published no total of usable currencies before 1973, so the figures for 1947–1972 are computed from the positions of individual members, which the workbook includes.\n\nCoverage: IMF financial years 1947–2024 Available\n\n\n\n\nCodebook (IMFMonitor_Liquidity_Codebook.pdf)\nPDF · 202 KB\n\nDownload\n\n\n\nDataset (IMFMonitor_Liquidity.xlsx)\nOne row per IMF financial year: usable resources, liquid liabilities, and the liquidity ratio, with sources. A second sheet holds the member positions behind the 1947–1972 figures.\nExcel (.xlsx) · 107 KB\n\nDownload\n\n\n\nHow to cite\n\nStubbs, T. (2026). IMF Liquidity Dataset, 1947–2024 (Version: November 2026). IMF Monitor. https://doi.org/10.7910/DVN/WXR8GS\nCopy citation"
   },
   {
     "objectID": "other-data/index.html#greening",
@@ -249,7 +256,7 @@
     "href": "index.html#more-data",
     "title": "IMF Monitor",
     "section": "More data",
-    "text": "More data\n\nOther Data: the program reviews dataset, and data and code for selected publications.\nReplication Data: data and code for further publications, in the IMF Monitor collection on Harvard Dataverse."
+    "text": "More data\n\nOther Data: the program reviews and IMF liquidity datasets, and data and code for selected publications.\nReplication Data: data and code for further publications, in the IMF Monitor collection on Harvard Dataverse."
   },
   {
     "objectID": "programs/index.html",

@@ -7,13 +7,19 @@ toc: true
      dataset-value; the sources there name the file behind each one. Each
      heading's anchor is its record's id, which links to it use. -->
 
-The program reviews dataset, and the data and code behind four publications by IMF Monitor researchers. The reviews dataset downloads from this site. The replication packages, listed newest first, are on Harvard Dataverse.
+The program reviews and IMF liquidity datasets, and the data and code behind four publications by IMF Monitor researchers. Both datasets download from this site. The replication packages, listed newest first, are on Harvard Dataverse.
 
 ## Program reviews {#reviews}
 
 The dates of IMF Executive Board meetings for {{< dataset-value reviews counts.programs >}} IMF programs in {{< dataset-value reviews counts.countries >}} countries, {{< dataset-value reviews period >}}: the meeting that approved each program, the meetings that concluded its reviews, and the date proposed for each next review. Programs approved in 1978 and 1979 are included only if they ran into 1980. The [Conditionality](../conditionality/index.qmd) code uses the dataset to adjust conditions for program interruptions, and the [Conditionality codebook](../conditionality/index.qmd#downloads) describes its variables.
 
 {{< dataset-entry reviews >}}
+
+## IMF liquidity {#liquidity}
+
+The liquidity of the IMF at the end of each of its financial years, {{< dataset-value liquidity period >}}: its usable resources (holdings of usable currencies and SDRs), its liquid liabilities (members' reserve tranche positions and outstanding IMF borrowing), and the ratio of the two. The dataset follows the definition of Valentin Lang's series for 1973–2013 and applies it to every year from 1947. The IMF published no total of usable currencies before 1973, so the figures for 1947–1972 are computed from the positions of individual members, which the workbook includes.
+
+{{< dataset-entry liquidity >}}
 
 ## *Greening the International Monetary Fund* {#greening}
 
